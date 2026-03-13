@@ -1,0 +1,864 @@
+{
+  "summary": {
+    "table_count": 62,
+    "relationship_count": 69,
+    "measure_count": 82,
+    "report_page_count": 98,
+    "visual_count": 479,
+    "domains": {
+      "commercial": 23,
+      "iam": 13,
+      "ivsa": 7,
+      "shared_or_unknown": 1,
+      "calendar": 2,
+      "technical": 16
+    },
+    "actions": {
+      "replace_with_sql_dimension": 11,
+      "review_after_sql_access": 17,
+      "replace_with_sql_fact": 17,
+      "keep_as_business_overlay": 12,
+      "replace_with_shared_date_dimension": 2,
+      "keep_as_small_manual_mapping": 2,
+      "drop_powerbi_auto_date": 1
+    }
+  },
+  "table_plan": [
+    {
+      "table": "Banca ordenadas",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "other"
+      ]
+    },
+    {
+      "table": "Bancas",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 12,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Bind Inversiones",
+      "domain": "iam",
+      "priority": "medium",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx",
+      "column_count": 11,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Boletos IVSA",
+      "domain": "ivsa",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IVSA.xlsx",
+      "column_count": 13,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "CLUSTER FACTURACIÓN",
+      "domain": "shared_or_unknown",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "other"
+      ]
+    },
+    {
+      "table": "CPD-cheques-vendidos",
+      "domain": "ivsa",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\cheques operados.xlsx",
+      "column_count": 21,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Calendario",
+      "domain": "calendar",
+      "priority": "medium",
+      "recommended_action": "replace_with_shared_date_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2022\\Boletos IVSA.xlsx",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Calendario semanas",
+      "domain": "calendar",
+      "priority": "medium",
+      "recommended_action": "replace_with_shared_date_dimension",
+      "source_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos IAM.xlsm",
+      "column_count": 5,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Canal de Operación BI",
+      "domain": "iam",
+      "priority": "medium",
+      "recommended_action": "keep_as_small_manual_mapping",
+      "source_path": "",
+      "column_count": 14,
+      "report_count": 1,
+      "source_types": [
+        "other"
+      ]
+    },
+    {
+      "table": "Celula",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Clientes Traders",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Clusters",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "drop_powerbi_auto_date",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "Embajadores",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 9,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Empresas",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "IAM MOdelo",
+      "domain": "iam",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx",
+      "column_count": 12,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "IVSA MOdelo",
+      "domain": "ivsa",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx",
+      "column_count": 17,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "domain": "technical",
+      "priority": "low",
+      "recommended_action": "review_after_sql_access",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "Moneda de saldos",
+      "domain": "ivsa",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "",
+      "column_count": 3,
+      "report_count": 1,
+      "source_types": [
+        "other"
+      ]
+    },
+    {
+      "table": "Oficial BI",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 3,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Oficial Banco",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Operaciones BI",
+      "domain": "iam",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos Bind Inversiones.xlsx",
+      "column_count": 14,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Operaciones BI (2)",
+      "domain": "commercial",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 2.xlsx",
+      "column_count": 11,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Operaciones BI 3",
+      "domain": "commercial",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 3.xlsx",
+      "column_count": 15,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Operaciones BI 4",
+      "domain": "commercial",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 4.xlsx",
+      "column_count": 18,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Operaciones BI 5",
+      "domain": "commercial",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 5.xlsx",
+      "column_count": 16,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Operaciones BI 6",
+      "domain": "commercial",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 6.xlsx",
+      "column_count": 12,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Operaciones IAM",
+      "domain": "iam",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos IAM.xlsm",
+      "column_count": 13,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Operaciones por canal IAM",
+      "domain": "iam",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Canales de operacion.xlsx",
+      "column_count": 16,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "PEA embajadores",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx",
+      "column_count": 3,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Presupuesto x sem x producto",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx",
+      "column_count": 18,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Presupuesto x sem y of BI",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx",
+      "column_count": 16,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Presupuesto x sem y of Banco",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx",
+      "column_count": 13,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Productos",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 5,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Referidos",
+      "domain": "ivsa",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind UY.xlsx",
+      "column_count": 12,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Region",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "replace_with_sql_dimension",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Resumen OP BI",
+      "domain": "commercial",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Canales de operacion.xlsx",
+      "column_count": 4,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Saldos ivsa",
+      "domain": "ivsa",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Saldos IVSA.xlsx",
+      "column_count": 7,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "Seguimiento Bind Inversiones Sem",
+      "domain": "iam",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "",
+      "column_count": 10,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "Seguimiento Bind Inversiones mensual",
+      "domain": "iam",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "",
+      "column_count": 12,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "Seguimiento IAM mensual",
+      "domain": "iam",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "",
+      "column_count": 6,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "Seguimiento IVSA mensual",
+      "domain": "ivsa",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "",
+      "column_count": 4,
+      "report_count": 1,
+      "source_types": [
+        "unknown"
+      ]
+    },
+    {
+      "table": "Tabla (2)",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "keep_as_small_manual_mapping",
+      "source_path": "",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "other"
+      ]
+    },
+    {
+      "table": "boletos IAM 3",
+      "domain": "iam",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM3.xlsx",
+      "column_count": 9,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "boletos IAM 4",
+      "domain": "iam",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 4.xlsx",
+      "column_count": 9,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "boletos IAM 5",
+      "domain": "iam",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 5.xlsx",
+      "column_count": 11,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "boletos IAM 6",
+      "domain": "iam",
+      "priority": "high",
+      "recommended_action": "replace_with_sql_fact",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 6.xlsx",
+      "column_count": 9,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    },
+    {
+      "table": "inflación",
+      "domain": "commercial",
+      "priority": "medium",
+      "recommended_action": "keep_as_business_overlay",
+      "source_path": "G:\\Comercial\\Seguimiento comercial 2022\\Seguimiento Comercial Zafiro\\inflacion.xlsx",
+      "column_count": 2,
+      "report_count": 1,
+      "source_types": [
+        "excel"
+      ]
+    }
+  ],
+  "top_complex_measures": [
+    {
+      "table": "Bind Inversiones",
+      "name": "Media acumulada de Recuento de Nº Bind Inv",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Medidas",
+      "name": "FC CPD Compra s/BG",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Medidas",
+      "name": "FC CPD Venta s/BG y Bain",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Medidas",
+      "name": "Total acumulado de Cant Clientes en Año",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Moneda de saldos",
+      "name": "Saldo a ayer -2",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Moneda de saldos",
+      "name": "Saldo a ayer -3",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Moneda de saldos",
+      "name": "Saldo ayer -4",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Moneda de saldos",
+      "name": "saldo a ayer-1",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Pareto",
+      "name": "Pareto %",
+      "complexity_score": 10,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Bind Inversiones",
+      "name": "MTD de Recuento de Nº Bind Inv",
+      "complexity_score": 9,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Medidas",
+      "name": "FC CPD s/BG",
+      "complexity_score": 9,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Medidas",
+      "name": "Facturación acumulada",
+      "complexity_score": 9,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Medidas",
+      "name": "PEA CPD Empresa s/ BG",
+      "complexity_score": 9,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Medidas",
+      "name": "PEA YTD",
+      "complexity_score": 9,
+      "sql_convertibility": "hard"
+    },
+    {
+      "table": "Medidas",
+      "name": "modelo Minorista",
+      "complexity_score": 9,
+      "sql_convertibility": "hard"
+    }
+  ]
+}
