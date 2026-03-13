@@ -1,0 +1,434 @@
+{
+  "table_classifications": {
+    "Banca ordenadas": "dimension",
+    "Bancas": "dimension",
+    "Bind Inversiones": "dimension",
+    "Boletos IVSA": "dimension",
+    "CLUSTER FACTURACI\u00d3N": "dimension",
+    "CPD-cheques-vendidos": "dimension",
+    "Calendario": "dimension",
+    "Calendario semanas": "dimension",
+    "Canal de Operaci\u00f3n BI": "dimension",
+    "Celula": "dimension",
+    "Clientes Traders": "dimension",
+    "Clusters": "dimension",
+    "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd": "dimension",
+    "Embajadores": "dimension",
+    "Empresas": "dimension",
+    "IAM MOdelo": "dimension",
+    "IVSA MOdelo": "dimension",
+    "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3": "dimension",
+    "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5": "dimension",
+    "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074": "dimension",
+    "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf": "dimension",
+    "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543": "dimension",
+    "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc": "dimension",
+    "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d": "dimension",
+    "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8": "dimension",
+    "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49": "dimension",
+    "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f": "dimension",
+    "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099": "dimension",
+    "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5": "dimension",
+    "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62": "dimension",
+    "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949": "dimension",
+    "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593": "dimension",
+    "Moneda de saldos": "dimension",
+    "Oficial BI": "dimension",
+    "Oficial Banco": "dimension",
+    "Operaciones BI": "dimension",
+    "Operaciones BI (2)": "dimension",
+    "Operaciones BI 3": "dimension",
+    "Operaciones BI 4": "dimension",
+    "Operaciones BI 5": "dimension",
+    "Operaciones BI 6": "dimension",
+    "Operaciones IAM": "dimension",
+    "Operaciones por canal IAM": "dimension",
+    "PEA embajadores": "dimension",
+    "Presupuesto x sem x producto": "dimension",
+    "Presupuesto x sem y of BI": "dimension",
+    "Presupuesto x sem y of Banco": "dimension",
+    "Productos": "dimension",
+    "Referidos": "dimension",
+    "Region": "dimension",
+    "Resumen OP BI": "dimension",
+    "Saldos ivsa": "dimension",
+    "Seguimiento Bind Inversiones Sem": "dimension",
+    "Seguimiento Bind Inversiones mensual": "dimension",
+    "Seguimiento IAM mensual": "dimension",
+    "Seguimiento IVSA mensual": "dimension",
+    "Tabla (2)": "dimension",
+    "boletos IAM 3": "dimension",
+    "boletos IAM 4": "dimension",
+    "boletos IAM 5": "dimension",
+    "boletos IAM 6": "dimension",
+    "inflaci\u00f3n": "dimension"
+  },
+  "source_mapping": {
+    "Bancas": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Bind Inversiones": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx"
+    },
+    "Boletos IVSA": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IVSA.xlsx"
+    },
+    "CPD-cheques-vendidos": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\cheques operados.xlsx"
+    },
+    "Calendario": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2022\\Boletos IVSA.xlsx"
+    },
+    "Calendario semanas": {
+      "type": "excel",
+      "file_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos IAM.xlsm"
+    },
+    "Celula": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Clientes Traders": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Clusters": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Embajadores": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Empresas": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "IAM MOdelo": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx"
+    },
+    "IVSA MOdelo": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx"
+    },
+    "Oficial BI": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Oficial Banco": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Operaciones BI": {
+      "type": "excel",
+      "file_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos Bind Inversiones.xlsx"
+    },
+    "Operaciones BI (2)": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 2.xlsx"
+    },
+    "Operaciones BI 3": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 3.xlsx"
+    },
+    "Operaciones BI 4": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 4.xlsx"
+    },
+    "Operaciones BI 5": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 5.xlsx"
+    },
+    "Operaciones BI 6": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 6.xlsx"
+    },
+    "Operaciones IAM": {
+      "type": "excel",
+      "file_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos IAM.xlsm"
+    },
+    "Operaciones por canal IAM": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Canales de operacion.xlsx"
+    },
+    "PEA embajadores": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx"
+    },
+    "Presupuesto x sem x producto": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx"
+    },
+    "Presupuesto x sem y of BI": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx"
+    },
+    "Presupuesto x sem y of Banco": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx"
+    },
+    "Productos": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Referidos": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind UY.xlsx"
+    },
+    "Region": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Resumen OP BI": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Canales de operacion.xlsx"
+    },
+    "Saldos ivsa": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Saldos IVSA.xlsx"
+    },
+    "boletos IAM 3": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM3.xlsx"
+    },
+    "boletos IAM 4": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 4.xlsx"
+    },
+    "boletos IAM 5": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 5.xlsx"
+    },
+    "boletos IAM 6": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 6.xlsx"
+    },
+    "inflaci\u00f3n": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2022\\Seguimiento Comercial Zafiro\\inflacion.xlsx"
+    }
+  },
+  "schema_summary": {
+    "fact_tables": [],
+    "dimension_tables": [
+      "Banca ordenadas",
+      "Bancas",
+      "Bind Inversiones",
+      "Boletos IVSA",
+      "CLUSTER FACTURACI\u00d3N",
+      "CPD-cheques-vendidos",
+      "Calendario",
+      "Calendario semanas",
+      "Canal de Operaci\u00f3n BI",
+      "Celula",
+      "Clientes Traders",
+      "Clusters",
+      "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "Embajadores",
+      "Empresas",
+      "IAM MOdelo",
+      "IVSA MOdelo",
+      "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "Moneda de saldos",
+      "Oficial BI",
+      "Oficial Banco",
+      "Operaciones BI",
+      "Operaciones BI (2)",
+      "Operaciones BI 3",
+      "Operaciones BI 4",
+      "Operaciones BI 5",
+      "Operaciones BI 6",
+      "Operaciones IAM",
+      "Operaciones por canal IAM",
+      "PEA embajadores",
+      "Presupuesto x sem x producto",
+      "Presupuesto x sem y of BI",
+      "Presupuesto x sem y of Banco",
+      "Productos",
+      "Referidos",
+      "Region",
+      "Resumen OP BI",
+      "Saldos ivsa",
+      "Seguimiento Bind Inversiones Sem",
+      "Seguimiento Bind Inversiones mensual",
+      "Seguimiento IAM mensual",
+      "Seguimiento IVSA mensual",
+      "Tabla (2)",
+      "boletos IAM 3",
+      "boletos IAM 4",
+      "boletos IAM 5",
+      "boletos IAM 6",
+      "inflaci\u00f3n"
+    ],
+    "date_dimensions": []
+  },
+  "excel_sources": {
+    "Bancas": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Bind Inversiones": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx"
+    },
+    "Boletos IVSA": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IVSA.xlsx"
+    },
+    "CPD-cheques-vendidos": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\cheques operados.xlsx"
+    },
+    "Calendario": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2022\\Boletos IVSA.xlsx"
+    },
+    "Calendario semanas": {
+      "type": "excel",
+      "file_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos IAM.xlsm"
+    },
+    "Celula": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Clientes Traders": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Clusters": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Embajadores": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Empresas": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "IAM MOdelo": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx"
+    },
+    "IVSA MOdelo": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx"
+    },
+    "Oficial BI": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Oficial Banco": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Operaciones BI": {
+      "type": "excel",
+      "file_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos Bind Inversiones.xlsx"
+    },
+    "Operaciones BI (2)": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 2.xlsx"
+    },
+    "Operaciones BI 3": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 3.xlsx"
+    },
+    "Operaciones BI 4": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 4.xlsx"
+    },
+    "Operaciones BI 5": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 5.xlsx"
+    },
+    "Operaciones BI 6": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 6.xlsx"
+    },
+    "Operaciones IAM": {
+      "type": "excel",
+      "file_path": "\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos IAM.xlsm"
+    },
+    "Operaciones por canal IAM": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Canales de operacion.xlsx"
+    },
+    "PEA embajadores": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx"
+    },
+    "Presupuesto x sem x producto": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx"
+    },
+    "Presupuesto x sem y of BI": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx"
+    },
+    "Presupuesto x sem y of Banco": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx"
+    },
+    "Productos": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Referidos": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind UY.xlsx"
+    },
+    "Region": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx"
+    },
+    "Resumen OP BI": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Canales de operacion.xlsx"
+    },
+    "Saldos ivsa": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Saldos IVSA.xlsx"
+    },
+    "boletos IAM 3": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM3.xlsx"
+    },
+    "boletos IAM 4": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 4.xlsx"
+    },
+    "boletos IAM 5": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 5.xlsx"
+    },
+    "boletos IAM 6": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 6.xlsx"
+    },
+    "inflaci\u00f3n": {
+      "type": "excel",
+      "file_path": "G:\\Comercial\\Seguimiento comercial 2022\\Seguimiento Comercial Zafiro\\inflacion.xlsx"
+    }
+  }
+}

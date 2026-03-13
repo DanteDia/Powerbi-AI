@@ -1,0 +1,5780 @@
+{
+  "summary": {
+    "total_reports": 1,
+    "total_pages": 98,
+    "total_visuals": 479,
+    "visual_type_distribution": {
+      "slicer": 204,
+      "tableEx": 87,
+      "card": 28,
+      "pivotTable": 27,
+      "textbox": 21,
+      "textFilter25A4896A83E0487089E2B90C9AE57C8A": 19,
+      "clusteredBarChart": 18,
+      "areaChart": 17,
+      "clusteredColumnChart": 9,
+      "lineChart": 9,
+      "lineStackedColumnComboChart": 8,
+      "columnChart": 5,
+      "payPalKPIDonutChart55A431AB15A540ED924ACD72ED8D259F": 4,
+      "scatterChart": 4,
+      "barChart": 3,
+      "treemap": 3,
+      "lineClusteredColumnComboChart": 3,
+      "KPIColumn1823AB39DB23410928ADF752BCB2A457": 3,
+      "stackedAreaChart": 3,
+      "hundredPercentStackedColumnChart": 2,
+      "ribbonChart": 1,
+      "actionButton": 1
+    },
+    "most_used_tables": {
+      "Ajustes RV": 1,
+      "Autorizados Chatbot": 1,
+      "Banca ordenadas": 1,
+      "Bancas": 1,
+      "Bind Inversiones": 1,
+      "Boletos IVSA": 1,
+      "CPD-cheques-vendidos": 1,
+      "Calendario": 1,
+      "Calendario semanas": 1,
+      "Canal de Operaci\u00f3n BI": 1,
+      "Celula": 1,
+      "Clientes Traders": 1,
+      "Embajadores": 1,
+      "Empresas": 1,
+      "IVSA MOdelo": 1,
+      "Medidas": 1,
+      "Moneda de saldos": 1,
+      "Oficial BI": 1,
+      "Oficial Banco": 1,
+      "Operaciones BI": 1
+    }
+  },
+  "reports": [
+    {
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "page_count": 98,
+      "total_visuals": 479,
+      "visual_types": {
+        "slicer": 204,
+        "tableEx": 87,
+        "textbox": 21,
+        "clusteredBarChart": 18,
+        "lineStackedColumnComboChart": 8,
+        "barChart": 3,
+        "card": 28,
+        "areaChart": 17,
+        "treemap": 3,
+        "textFilter25A4896A83E0487089E2B90C9AE57C8A": 19,
+        "payPalKPIDonutChart55A431AB15A540ED924ACD72ED8D259F": 4,
+        "columnChart": 5,
+        "pivotTable": 27,
+        "lineClusteredColumnComboChart": 3,
+        "clusteredColumnChart": 9,
+        "KPIColumn1823AB39DB23410928ADF752BCB2A457": 3,
+        "lineChart": 9,
+        "stackedAreaChart": 3,
+        "hundredPercentStackedColumnChart": 2,
+        "scatterChart": 4,
+        "ribbonChart": 1,
+        "actionButton": 1
+      },
+      "report_filter_count": 2,
+      "bookmark_count": 0,
+      "tables_referenced": [
+        "Ajustes RV",
+        "Autorizados Chatbot",
+        "Banca ordenadas",
+        "Bancas",
+        "Bind Inversiones",
+        "Boletos IVSA",
+        "CPD-cheques-vendidos",
+        "Calendario",
+        "Calendario semanas",
+        "Canal de Operaci\u00f3n BI",
+        "Celula",
+        "Clientes Traders",
+        "Embajadores",
+        "Empresas",
+        "IVSA MOdelo",
+        "Medidas",
+        "Moneda de saldos",
+        "Oficial BI",
+        "Oficial Banco",
+        "Operaciones BI",
+        "Operaciones IAM",
+        "PEA embajadores",
+        "Pareto",
+        "Presupuesto x sem x producto",
+        "Presupuesto x sem y of BI",
+        "Presupuesto x sem y of Banco",
+        "Productos",
+        "Region",
+        "Saldos ivsa",
+        "Seguimiento Bind Inversiones Sem",
+        "Seguimiento Bind Inversiones mensual",
+        "Tabla (2)",
+        "inflaci\u00f3n"
+      ],
+      "fields_used": {
+        "Oficial BI": [
+          "Oficial BI"
+        ],
+        "Bancas": [
+          "Banca",
+          "Bancas agrupados",
+          "N\u00b0 Banca"
+        ],
+        "Empresas": [
+          "Empresa"
+        ],
+        "Productos": [
+          "Agrupaci\u00f3n de Productos",
+          "N\u00b0 Producto",
+          "Producto",
+          "Productos por empresa"
+        ],
+        "Operaciones BI": [
+          "Empresa",
+          "Facturacion",
+          "Mes",
+          "N\u00ba Bind Inversiones",
+          "N\u00ba Cliente",
+          "PN Prom bi",
+          "Performance",
+          "Producto",
+          "Volumen",
+          "performance producto"
+        ],
+        "Presupuesto x sem y of Banco": [
+          "PEA",
+          "PEA IVSA"
+        ],
+        "Presupuesto x sem y of BI": [
+          "PEA"
+        ],
+        "Medidas": [
+          "Cant de operaciones",
+          "Clientes Nuevos",
+          "Clientes Operativos",
+          "Comprativo a\u00f1o anterior",
+          "FC CPD Compra s/BG",
+          "FC CPD Venta s/BG y Bain",
+          "Facturaci\u00f3n - YTD",
+          "Facturaci\u00f3n 2023",
+          "Facturaci\u00f3n YTD",
+          "PN modelo minorista",
+          "Performance BI",
+          "Saldo al inicio",
+          "Saldo al inicio CABLE",
+          "Saldo al inicio MEP",
+          "Saldo cable semana anterior",
+          "Saldo mep semana anterior",
+          "Saldos Cable hoy",
+          "Saldos hoy CABLE",
+          "Saldos hoy MEP",
+          "Saldos mep hoy",
+          "Vol total",
+          "cant de Op web",
+          "crecimiento",
+          "dif mes anterior",
+          "fc con referidos",
+          "fc/vol",
+          "fc/vol Total",
+          "modelo Minorista",
+          "performance con referidoss"
+        ],
+        "Presupuesto x sem x producto": [
+          "PEA"
+        ],
+        "Calendario semanas": [
+          "A\u00f1o",
+          "Mes",
+          "Semana"
+        ],
+        "Clientes Traders": [
+          "Trader"
+        ],
+        "Region": [
+          "Region"
+        ],
+        "Bind Inversiones": [
+          "Cuotapartista",
+          "Empresa",
+          "N\u00ba Bind Inv",
+          "fecha inicio",
+          "fecha inicio.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+          "fecha inicio.Variaci\u00f3n.Jerarqu\u00eda de fechas.Trimestre"
+        ],
+        "Calendario": [
+          "A\u00f1o",
+          "Dia",
+          "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+          "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.D\u00eda",
+          "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes",
+          "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Trimestre",
+          "Mes"
+        ],
+        "Oficial Banco": [
+          "Oficial Banco"
+        ],
+        "Canal de Operaci\u00f3n BI": [
+          "% Canal BOT",
+          "% Canal Digital",
+          "% Canal WEB",
+          "% OP",
+          "% OP WEB",
+          "% vol de OP",
+          "Canal.1",
+          "Fecha de operacion",
+          "Importe real Operacion",
+          "N\u00b0 Bind Inversiones.1",
+          "N\u00b0 de Operacion",
+          "Operaci\u00f3n",
+          "Volumen BI"
+        ],
+        "Ajustes RV": [
+          "Comprativo a\u00f1o anterior",
+          "FC CPD s/BG",
+          "Facturaci\u00f3n 2021",
+          "Facturaci\u00f3n YTD",
+          "PEA CPD Empresa",
+          "Performance Cheques Empresa",
+          "fc/vol",
+          "porcentaje de participacion",
+          "suscipriones netas acumuladas",
+          "vol/q ops"
+        ],
+        "Boletos IVSA": [
+          "Boleto",
+          "COMITENTE",
+          "Fecha Operaci\u00f3n",
+          "Fee",
+          "Mes",
+          "OPERACION"
+        ],
+        "Operaciones IAM": [
+          "PN Prom"
+        ],
+        "Seguimiento Bind Inversiones Sem": [
+          "Banca",
+          "CLUSTER IAM",
+          "CLUSTER IVSA",
+          "Cluster BI",
+          "Cuotapartista",
+          "Mes",
+          "Oficial BI",
+          "TIPO DE CLIENTE",
+          "TIPO DE CLIENTE IAM",
+          "TIPO DE CLIENTE IVSA"
+        ],
+        "Embajadores": [
+          "Comisi\u00f3n embajadores",
+          "Embajador",
+          "Fecha de inicio"
+        ],
+        "Saldos ivsa": [
+          "Fecha",
+          "N\u00b0 Comitente",
+          "Saldo en Dolar Cable",
+          "Saldo en Dolar MEP",
+          "Saldo en Pesos"
+        ],
+        "Moneda de saldos": [
+          "Medida a usar",
+          "Medida a usar Promedio",
+          "Medida a usar por cliente",
+          "Moneda",
+          "Saldo ayer -1",
+          "Saldo ayer -2",
+          "Saldo ayer -3",
+          "saldo a ayer"
+        ],
+        "IVSA MOdelo": [
+          "Banca",
+          "Cliente",
+          "Fecha inicio",
+          "N\u00ba Bind Inv",
+          "N\u00ba IVSA",
+          "Oficial"
+        ],
+        "Tabla (2)": [
+          "Canal1"
+        ],
+        "PEA embajadores": [
+          "PEA",
+          "Perfromance Embajadores"
+        ],
+        "CPD-cheques-vendidos": [
+          "Monto Nominal",
+          "SGR"
+        ],
+        "Celula": [
+          "Celula"
+        ],
+        "Pareto": [
+          "Pareto",
+          "Pareto %",
+          "clasificacion ABC"
+        ],
+        "Autorizados Chatbot": [
+          "N\u00ba Bind Inv"
+        ],
+        "inflaci\u00f3n": [
+          "indice_tiempo",
+          "ipc_nivel_general_nacional"
+        ],
+        "Seguimiento Bind Inversiones mensual": [
+          "Cuotapartista",
+          "n\u00b0 Banca"
+        ],
+        "Banca ordenadas": [
+          "BANCA"
+        ]
+      },
+      "measures_referenced": [],
+      "pages": [
+        {
+          "name": "FC vs PEA",
+          "ordinal": 0,
+          "visual_count": 13,
+          "visual_types": {
+            "slicer": 9,
+            "tableEx": 3,
+            "textbox": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario semanas",
+            "Clientes Traders",
+            "Empresas",
+            "Medidas",
+            "Oficial BI",
+            "Operaciones BI",
+            "Presupuesto x sem x producto",
+            "Presupuesto x sem y of BI",
+            "Presupuesto x sem y of Banco",
+            "Productos",
+            "Region"
+          ],
+          "fields_used": {
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "Performance",
+              "performance producto"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ],
+            "Presupuesto x sem y of BI": [
+              "PEA"
+            ],
+            "Medidas": [
+              "Performance BI"
+            ],
+            "Presupuesto x sem x producto": [
+              "PEA"
+            ],
+            "Calendario semanas": [
+              "A\u00f1o",
+              "Mes",
+              "Semana"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ],
+            "Region": [
+              "Region"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Clientes nuevos y Operativos PARA COMITE",
+          "ordinal": 1,
+          "visual_count": 4,
+          "visual_types": {
+            "tableEx": 1,
+            "slicer": 3
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Medidas"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Medidas": [
+              "Clientes Nuevos",
+              "Clientes Operativos",
+              "dif mes anterior"
+            ],
+            "Bind Inversiones": [
+              "fecha inicio"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "principales clientes PARA COMITE",
+          "ordinal": 2,
+          "visual_count": 10,
+          "visual_types": {
+            "clusteredBarChart": 3,
+            "slicer": 7
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Calendario semanas",
+            "Clientes Traders",
+            "Oficial BI",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Region"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Calendario": [
+              "Mes"
+            ],
+            "Calendario semanas": [
+              "Semana"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ],
+            "Region": [
+              "Region"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Op digitales PARA COMITE IVSA",
+          "ordinal": 3,
+          "visual_count": 4,
+          "visual_types": {
+            "lineStackedColumnComboChart": 1,
+            "slicer": 2,
+            "tableEx": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "Medidas"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.D\u00eda",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Trimestre"
+            ],
+            "Medidas": [
+              "cant de Op web"
+            ],
+            "Bancas": [
+              "Banca",
+              "Bancas agrupados"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal Digital"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "DuOp digitales PARA COMITE IAM",
+          "ordinal": 4,
+          "visual_count": 3,
+          "visual_types": {
+            "lineStackedColumnComboChart": 1,
+            "slicer": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "Medidas"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Medidas": [
+              "cant de Op web"
+            ],
+            "Bancas": [
+              "Banca",
+              "Bancas agrupados"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal Digital"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "PERFORMANCE PF Y PJ",
+          "ordinal": 5,
+          "visual_count": 5,
+          "visual_types": {
+            "tableEx": 4,
+            "textbox": 1
+          },
+          "filter_count": 2,
+          "tables_referenced": [
+            "Ajustes RV",
+            "Bancas",
+            "Medidas",
+            "Operaciones BI",
+            "Presupuesto x sem y of Banco"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca",
+              "N\u00b0 Banca"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "Performance"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ],
+            "Medidas": [
+              "Facturaci\u00f3n YTD"
+            ],
+            "Ajustes RV": [
+              "Comprativo a\u00f1o anterior",
+              "Facturaci\u00f3n 2021"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "PF Y PJ PARA COMITE 2",
+          "ordinal": 6,
+          "visual_count": 4,
+          "visual_types": {
+            "tableEx": 4
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "PF Y PJ PARA COMITE ",
+          "ordinal": 7,
+          "visual_count": 3,
+          "visual_types": {
+            "tableEx": 3
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "PF Y PJ PARA COMITE 3",
+          "ordinal": 8,
+          "visual_count": 4,
+          "visual_types": {
+            "tableEx": 4
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "PF Y PJ PARA COMITE 4",
+          "ordinal": 9,
+          "visual_count": 5,
+          "visual_types": {
+            "tableEx": 5
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Medidas",
+            "Operaciones BI",
+            "Presupuesto x sem y of Banco"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Medidas": [
+              "Facturaci\u00f3n YTD",
+              "crecimiento"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Analisis Chatbot PARA COMITE",
+          "ordinal": 10,
+          "visual_count": 6,
+          "visual_types": {
+            "slicer": 2,
+            "barChart": 1,
+            "card": 3
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal BOT",
+              "% Canal Digital",
+              "% vol de OP",
+              "Canal.1"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "BANCAS COMITE",
+          "ordinal": 11,
+          "visual_count": 5,
+          "visual_types": {
+            "areaChart": 4,
+            "textbox": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Operaciones BI",
+            "Presupuesto x sem y of Banco"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "BANCAS COMITE 2",
+          "ordinal": 12,
+          "visual_count": 5,
+          "visual_types": {
+            "areaChart": 4,
+            "textbox": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Operaciones BI",
+            "Presupuesto x sem y of Banco"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "BANCAS COMITE 3",
+          "ordinal": 13,
+          "visual_count": 4,
+          "visual_types": {
+            "treemap": 3,
+            "textbox": 1
+          },
+          "filter_count": 2,
+          "tables_referenced": [
+            "Bancas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "FC vs PEA con referidos",
+          "ordinal": 14,
+          "visual_count": 11,
+          "visual_types": {
+            "slicer": 9,
+            "tableEx": 1,
+            "textbox": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Calendario semanas",
+            "Clientes Traders",
+            "Empresas",
+            "Medidas",
+            "Oficial BI",
+            "Presupuesto x sem y of BI",
+            "Productos",
+            "Region"
+          ],
+          "fields_used": {
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Medidas": [
+              "fc con referidos",
+              "performance con referidoss"
+            ],
+            "Presupuesto x sem y of BI": [
+              "PEA"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Calendario semanas": [
+              "Semana"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ],
+            "Region": [
+              "Region"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Clientes por Oficial",
+          "ordinal": 15,
+          "visual_count": 12,
+          "visual_types": {
+            "tableEx": 1,
+            "textbox": 1,
+            "slicer": 9,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Boletos IVSA",
+            "Calendario",
+            "Calendario semanas",
+            "Clientes Traders",
+            "Empresas",
+            "Oficial BI",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Region"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista",
+              "Empresa",
+              "N\u00ba Bind Inv"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Region": [
+              "Region"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Boletos IVSA": [
+              "COMITENTE"
+            ],
+            "Calendario semanas": [
+              "A\u00f1o"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Empresas": [
+              "Empresa"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Info OF BI",
+          "ordinal": 16,
+          "visual_count": 21,
+          "visual_types": {
+            "slicer": 10,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1,
+            "tableEx": 4,
+            "payPalKPIDonutChart55A431AB15A540ED924ACD72ED8D259F": 1,
+            "card": 4,
+            "textbox": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Calendario semanas",
+            "Canal de Operaci\u00f3n BI",
+            "Clientes Traders",
+            "Embajadores",
+            "Empresas",
+            "Oficial BI",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Operaciones IAM",
+            "Productos",
+            "Region",
+            "Seguimiento Bind Inversiones Sem"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista",
+              "N\u00ba Bind Inv"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "PN Prom bi",
+              "Performance",
+              "Volumen"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Operaciones IAM": [
+              "PN Prom"
+            ],
+            "Seguimiento Bind Inversiones Sem": [
+              "Cuotapartista",
+              "Mes",
+              "TIPO DE CLIENTE"
+            ],
+            "Calendario semanas": [
+              "Semana"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "N\u00b0 de Operacion"
+            ],
+            "Embajadores": [
+              "Embajador"
+            ],
+            "Region": [
+              "Region"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Saldos en IVSA Hoy",
+          "ordinal": 17,
+          "visual_count": 8,
+          "visual_types": {
+            "slicer": 6,
+            "tableEx": 1,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Moneda de saldos",
+            "Oficial BI",
+            "Oficial Banco",
+            "Saldos ivsa"
+          ],
+          "fields_used": {
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Saldos ivsa": [
+              "N\u00b0 Comitente",
+              "Saldo en Dolar Cable",
+              "Saldo en Dolar MEP",
+              "Saldo en Pesos"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Moneda de saldos": [
+              "Medida a usar",
+              "Moneda"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Saldos Promedios IVSA",
+          "ordinal": 18,
+          "visual_count": 9,
+          "visual_types": {
+            "slicer": 7,
+            "tableEx": 1,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Moneda de saldos",
+            "Oficial BI",
+            "Oficial Banco",
+            "Saldos ivsa"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia"
+            ],
+            "Saldos ivsa": [
+              "N\u00b0 Comitente",
+              "Saldo en Dolar Cable",
+              "Saldo en Dolar MEP",
+              "Saldo en Pesos"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Moneda de saldos": [
+              "Medida a usar Promedio",
+              "Moneda"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Saldos ultimos 5 dias",
+          "ordinal": 19,
+          "visual_count": 6,
+          "visual_types": {
+            "slicer": 4,
+            "tableEx": 1,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Moneda de saldos",
+            "Oficial BI",
+            "Oficial Banco",
+            "Saldos ivsa"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.D\u00eda"
+            ],
+            "Saldos ivsa": [
+              "N\u00b0 Comitente"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Moneda de saldos": [
+              "Medida a usar Promedio",
+              "Moneda",
+              "Saldo ayer -1",
+              "Saldo ayer -2",
+              "Saldo ayer -3",
+              "saldo a ayer"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Saldo Historico por cliente",
+          "ordinal": 20,
+          "visual_count": 9,
+          "visual_types": {
+            "slicer": 7,
+            "tableEx": 1,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Moneda de saldos",
+            "Oficial BI",
+            "Oficial Banco",
+            "Saldos ivsa"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.D\u00eda",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Saldos ivsa": [
+              "N\u00b0 Comitente",
+              "Saldo en Dolar Cable",
+              "Saldo en Dolar MEP",
+              "Saldo en Pesos"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Moneda de saldos": [
+              "Medida a usar por cliente",
+              "Moneda"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Clientes IVSA",
+          "ordinal": 21,
+          "visual_count": 6,
+          "visual_types": {
+            "tableEx": 1,
+            "slicer": 4,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Clientes Traders",
+            "IVSA MOdelo",
+            "Oficial BI"
+          ],
+          "fields_used": {
+            "IVSA MOdelo": [
+              "Banca",
+              "Cliente",
+              "Fecha inicio",
+              "N\u00ba Bind Inv",
+              "N\u00ba IVSA",
+              "Oficial"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Canal web",
+          "ordinal": 22,
+          "visual_count": 13,
+          "visual_types": {
+            "slicer": 6,
+            "card": 3,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1,
+            "columnChart": 1,
+            "clusteredBarChart": 1,
+            "pivotTable": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "Empresas",
+            "Oficial BI",
+            "Tabla (2)"
+          ],
+          "fields_used": {
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal WEB",
+              "% OP",
+              "% OP WEB",
+              "Canal.1",
+              "N\u00b0 Bind Inversiones.1",
+              "N\u00b0 de Operacion",
+              "Operaci\u00f3n",
+              "Volumen BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Tabla (2)": [
+              "Canal1"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Canal web detalle",
+          "ordinal": 23,
+          "visual_count": 7,
+          "visual_types": {
+            "slicer": 5,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1,
+            "tableEx": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Canal de Operaci\u00f3n BI",
+            "Empresas",
+            "Oficial BI",
+            "Oficial Banco"
+          ],
+          "fields_used": {
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal WEB",
+              "Canal.1",
+              "N\u00b0 de Operacion",
+              "Operaci\u00f3n"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Embajadores",
+          "ordinal": 24,
+          "visual_count": 9,
+          "visual_types": {
+            "tableEx": 2,
+            "lineClusteredColumnComboChart": 1,
+            "pivotTable": 1,
+            "slicer": 4,
+            "clusteredBarChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Calendario semanas",
+            "Embajadores",
+            "Empresas",
+            "Oficial Banco",
+            "Operaciones BI",
+            "PEA embajadores"
+          ],
+          "fields_used": {
+            "Embajadores": [
+              "Comisi\u00f3n embajadores",
+              "Embajador"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "PEA embajadores": [
+              "PEA",
+              "Perfromance Embajadores"
+            ],
+            "Calendario semanas": [
+              "Semana"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Calendario": [
+              "Mes"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Carteras",
+          "ordinal": 25,
+          "visual_count": 1,
+          "visual_types": {
+            "columnChart": 1
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Oficial BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Cliente activo",
+          "ordinal": 26,
+          "visual_count": 14,
+          "visual_types": {
+            "textbox": 1,
+            "slicer": 6,
+            "clusteredColumnChart": 3,
+            "tableEx": 3,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Calendario",
+            "Calendario semanas",
+            "Seguimiento Bind Inversiones Sem"
+          ],
+          "fields_used": {
+            "Seguimiento Bind Inversiones Sem": [
+              "CLUSTER IAM",
+              "CLUSTER IVSA",
+              "Cluster BI",
+              "Cuotapartista",
+              "Mes",
+              "Oficial BI",
+              "TIPO DE CLIENTE",
+              "TIPO DE CLIENTE IAM",
+              "TIPO DE CLIENTE IVSA"
+            ],
+            "Calendario semanas": [
+              "Semana"
+            ],
+            "Calendario": [
+              "Mes"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Performance BI",
+          "ordinal": 27,
+          "visual_count": 8,
+          "visual_types": {
+            "KPIColumn1823AB39DB23410928ADF752BCB2A457": 3,
+            "textbox": 1,
+            "payPalKPIDonutChart55A431AB15A540ED924ACD72ED8D259F": 3,
+            "slicer": 1
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Calendario",
+            "Operaciones BI",
+            "Presupuesto x sem x producto",
+            "Productos"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Mes"
+            ],
+            "Presupuesto x sem x producto": [
+              "PEA"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "Performance"
+            ],
+            "Productos": [
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Mapa producto IVSA",
+          "ordinal": 28,
+          "visual_count": 6,
+          "visual_types": {
+            "pivotTable": 1,
+            "slicer": 4,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Clientes Traders",
+            "Oficial BI",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Productos": [
+              "Agrupaci\u00f3n de Productos"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 1",
+          "ordinal": 29,
+          "visual_count": 3,
+          "visual_types": {
+            "tableEx": 3
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Ajustes RV",
+            "CPD-cheques-vendidos",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Productos": [
+              "Producto"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Ajustes RV": [
+              "FC CPD s/BG",
+              "PEA CPD Empresa",
+              "Performance Cheques Empresa",
+              "porcentaje de participacion"
+            ],
+            "CPD-cheques-vendidos": [
+              "Monto Nominal",
+              "SGR"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Mapa producto IAM",
+          "ordinal": 30,
+          "visual_count": 5,
+          "visual_types": {
+            "pivotTable": 1,
+            "slicer": 3,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Oficial BI",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Operaciones BI": [
+              "PN Prom bi"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 2",
+          "ordinal": 31,
+          "visual_count": 5,
+          "visual_types": {
+            "pivotTable": 3,
+            "tableEx": 2
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Ajustes RV",
+            "Bind Inversiones",
+            "Celula",
+            "Oficial BI",
+            "Pareto",
+            "Productos"
+          ],
+          "fields_used": {
+            "Productos": [
+              "Producto"
+            ],
+            "Celula": [
+              "Celula"
+            ],
+            "Ajustes RV": [
+              "Facturaci\u00f3n YTD",
+              "fc/vol",
+              "vol/q ops"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bind Inversiones": [
+              "N\u00ba Bind Inv"
+            ],
+            "Pareto": [
+              "Pareto",
+              "Pareto %",
+              "clasificacion ABC"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "FC vs PEA Oficiales banco",
+          "ordinal": 32,
+          "visual_count": 12,
+          "visual_types": {
+            "slicer": 8,
+            "tableEx": 3,
+            "textbox": 1
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario semanas",
+            "Clientes Traders",
+            "Empresas",
+            "Oficial BI",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Presupuesto x sem x producto",
+            "Presupuesto x sem y of Banco",
+            "Productos"
+          ],
+          "fields_used": {
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "Performance",
+              "performance producto"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA IVSA"
+            ],
+            "Presupuesto x sem x producto": [
+              "PEA"
+            ],
+            "Calendario semanas": [
+              "Mes",
+              "Semana"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "mapa por producto por banca",
+          "ordinal": 33,
+          "visual_count": 6,
+          "visual_types": {
+            "lineChart": 1,
+            "slicer": 4,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Oficial BI",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Productos": [
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Duplicado de mapa por producto por banca",
+          "ordinal": 34,
+          "visual_count": 6,
+          "visual_types": {
+            "pivotTable": 1,
+            "slicer": 4,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Oficial BI",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Nuevo modelo Banca Minorista",
+          "ordinal": 35,
+          "visual_count": 4,
+          "visual_types": {
+            "pivotTable": 3,
+            "slicer": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Embajadores",
+            "Medidas",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Embajadores": [
+              "Embajador"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Medidas": [
+              "modelo Minorista"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Productos": [
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "RV Traders",
+          "ordinal": 36,
+          "visual_count": 4,
+          "visual_types": {
+            "pivotTable": 1,
+            "tableEx": 3
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Presupuesto x sem x producto",
+            "Presupuesto x sem y of Banco",
+            "Productos"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "Facturacion",
+              "Performance",
+              "performance producto"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Calendario": [
+              "Mes"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Presupuesto x sem x producto": [
+              "PEA"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 4",
+          "ordinal": 37,
+          "visual_count": 2,
+          "visual_types": {
+            "pivotTable": 2
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Ajustes RV",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "Embajadores"
+          ],
+          "fields_used": {
+            "Embajadores": [
+              "Embajador"
+            ],
+            "Calendario": [
+              "Mes"
+            ],
+            "Ajustes RV": [
+              "suscipriones netas acumuladas"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "Importe real Operacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 6",
+          "ordinal": 38,
+          "visual_count": 2,
+          "visual_types": {
+            "pivotTable": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Embajadores",
+            "Medidas",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Mes"
+            ],
+            "Operaciones BI": [
+              "PN Prom bi"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Embajadores": [
+              "Embajador"
+            ],
+            "Medidas": [
+              "PN modelo minorista"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 7",
+          "ordinal": 39,
+          "visual_count": 1,
+          "visual_types": {
+            "columnChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Productos": [
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 8",
+          "ordinal": 40,
+          "visual_count": 1,
+          "visual_types": {
+            "tableEx": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Medidas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ],
+            "Medidas": [
+              "fc/vol Total"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Primeros embajadores",
+          "ordinal": 41,
+          "visual_count": 7,
+          "visual_types": {
+            "tableEx": 4,
+            "slicer": 3
+          },
+          "filter_count": 3,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "Embajadores",
+            "Empresas",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Calendario": [
+              "Mes"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "Fecha de operacion",
+              "N\u00b0 de Operacion",
+              "Operaci\u00f3n",
+              "Volumen BI"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Embajadores": [
+              "Embajador",
+              "Fecha de inicio"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Productos": [
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Segundos embajadores",
+          "ordinal": 42,
+          "visual_count": 2,
+          "visual_types": {
+            "tableEx": 2
+          },
+          "filter_count": 2,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Boletos IVSA",
+            "Calendario",
+            "Empresas",
+            "Oficial Banco",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Boletos IVSA": [
+              "Boleto",
+              "Fecha Operaci\u00f3n",
+              "Fee",
+              "Mes",
+              "OPERACION"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Calendario": [
+              "Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 11",
+          "ordinal": 43,
+          "visual_count": 3,
+          "visual_types": {
+            "lineChart": 3
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Presupuesto x sem x producto"
+          ],
+          "fields_used": {
+            "Presupuesto x sem x producto": [
+              "PEA"
+            ],
+            "Calendario": [
+              "Mes"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "PN",
+          "ordinal": 44,
+          "visual_count": 4,
+          "visual_types": {
+            "pivotTable": 2,
+            "slicer": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Operaciones BI": [
+              "PN Prom bi",
+              "Producto"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Grafico reunion trim 1",
+          "ordinal": 45,
+          "visual_count": 1,
+          "visual_types": {
+            "lineStackedColumnComboChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI",
+            "Presupuesto x sem y of Banco"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ],
+            "Bancas": [
+              "Bancas agrupados"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Graficos reunion trim 2 4 y 6",
+          "ordinal": 46,
+          "visual_count": 6,
+          "visual_types": {
+            "tableEx": 3,
+            "textbox": 3
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bancas",
+            "Medidas",
+            "Operaciones BI",
+            "Presupuesto x sem x producto",
+            "Presupuesto x sem y of Banco",
+            "Productos"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Bancas agrupados"
+            ],
+            "Medidas": [
+              "Comprativo a\u00f1o anterior",
+              "Facturaci\u00f3n - YTD",
+              "Facturaci\u00f3n 2023",
+              "Facturaci\u00f3n YTD"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ],
+            "Productos": [
+              "Agrupaci\u00f3n de Productos",
+              "Producto"
+            ],
+            "Presupuesto x sem x producto": [
+              "PEA"
+            ],
+            "Operaciones BI": [
+              "performance producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Grafico reunion trim 3",
+          "ordinal": 47,
+          "visual_count": 1,
+          "visual_types": {
+            "lineStackedColumnComboChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Operaciones BI",
+            "Presupuesto x sem y of Banco",
+            "Productos"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Productos": [
+              "Agrupaci\u00f3n de Productos"
+            ],
+            "Presupuesto x sem y of Banco": [
+              "PEA"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Grafico reunion trim 5",
+          "ordinal": 48,
+          "visual_count": 1,
+          "visual_types": {
+            "lineStackedColumnComboChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Operaciones BI",
+            "Presupuesto x sem x producto",
+            "Productos"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Presupuesto x sem x producto": [
+              "PEA"
+            ],
+            "Productos": [
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Cant operaciones",
+          "ordinal": 49,
+          "visual_count": 5,
+          "visual_types": {
+            "tableEx": 1,
+            "slicer": 4
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "Oficial BI",
+            "Oficial Banco",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista",
+              "N\u00ba Bind Inv"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "N\u00b0 Bind Inversiones.1"
+            ],
+            "Operaciones BI": [
+              "Volumen"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 16",
+          "ordinal": 50,
+          "visual_count": 4,
+          "visual_types": {
+            "slicer": 2,
+            "pivotTable": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Oficial Banco",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "RV Picho",
+          "ordinal": 51,
+          "visual_count": 7,
+          "visual_types": {
+            "tableEx": 5,
+            "slicer": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Boletos IVSA",
+            "CPD-cheques-vendidos",
+            "Calendario",
+            "Medidas"
+          ],
+          "fields_used": {
+            "Medidas": [
+              "FC CPD Compra s/BG",
+              "FC CPD Venta s/BG y Bain"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Boletos IVSA": [
+              "Fee"
+            ],
+            "CPD-cheques-vendidos": [
+              "Monto Nominal"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Grafico embajadores",
+          "ordinal": 52,
+          "visual_count": 2,
+          "visual_types": {
+            "lineStackedColumnComboChart": 1,
+            "slicer": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Empresas",
+            "Medidas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Medidas": [
+              "Cant de operaciones"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Analisis Chatbot",
+          "ordinal": 53,
+          "visual_count": 9,
+          "visual_types": {
+            "card": 5,
+            "slicer": 2,
+            "clusteredColumnChart": 2
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Autorizados Chatbot",
+            "Bancas",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI"
+          ],
+          "fields_used": {
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal BOT",
+              "Canal.1",
+              "Volumen BI"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Autorizados Chatbot": [
+              "N\u00ba Bind Inv"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Saldos ",
+          "ordinal": 54,
+          "visual_count": 11,
+          "visual_types": {
+            "slicer": 3,
+            "lineChart": 2,
+            "card": 6
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Medidas",
+            "Oficial BI",
+            "Oficial Banco",
+            "Saldos ivsa"
+          ],
+          "fields_used": {
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Saldos ivsa": [
+              "Fecha",
+              "Saldo en Dolar Cable",
+              "Saldo en Dolar MEP"
+            ],
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.D\u00eda",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Trimestre"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Medidas": [
+              "Saldo al inicio",
+              "Saldo al inicio MEP",
+              "Saldo cable semana anterior",
+              "Saldo mep semana anterior",
+              "Saldos Cable hoy",
+              "Saldos mep hoy"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Saldos CABLE",
+          "ordinal": 55,
+          "visual_count": 5,
+          "visual_types": {
+            "areaChart": 1,
+            "card": 2,
+            "textbox": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Medidas",
+            "Saldos ivsa"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.D\u00eda",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Saldos ivsa": [
+              "Saldo en Dolar Cable"
+            ],
+            "Medidas": [
+              "Saldo al inicio CABLE",
+              "Saldos hoy CABLE"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Saldos MEP",
+          "ordinal": 56,
+          "visual_count": 6,
+          "visual_types": {
+            "stackedAreaChart": 1,
+            "card": 2,
+            "textbox": 3
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Medidas",
+            "Saldos ivsa"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.D\u00eda",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Saldos ivsa": [
+              "Saldo en Dolar MEP"
+            ],
+            "Medidas": [
+              "Saldo al inicio MEP",
+              "Saldos hoy MEP"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Evolucion IAM/IVSA",
+          "ordinal": 57,
+          "visual_count": 2,
+          "visual_types": {
+            "lineChart": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Empresas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Empresas": [
+              "Empresa"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Distribuci\u00f3n Fee Hist\u00f3riica",
+          "ordinal": 58,
+          "visual_count": 2,
+          "visual_types": {
+            "hundredPercentStackedColumnChart": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Empresas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Empresas": [
+              "Empresa"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 15",
+          "ordinal": 59,
+          "visual_count": 2,
+          "visual_types": {
+            "stackedAreaChart": 1,
+            "slicer": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Productos": [
+              "Agrupaci\u00f3n de Productos"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Dispersi\u00f3n bancas anual",
+          "ordinal": 60,
+          "visual_count": 1,
+          "visual_types": {
+            "scatterChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Medidas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Medidas": [
+              "fc/vol Total"
+            ],
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o"
+            ],
+            "Bancas": [
+              "Bancas agrupados"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "facturaci\u00f3n hist\u00f3rica por empresa",
+          "ordinal": 61,
+          "visual_count": 2,
+          "visual_types": {
+            "stackedAreaChart": 1,
+            "slicer": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Productos": [
+              "Productos por empresa"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Dispersi\u00f3n fact vs Vol",
+          "ordinal": 62,
+          "visual_count": 1,
+          "visual_types": {
+            "scatterChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Medidas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Medidas": [
+              "Clientes Operativos",
+              "Vol total"
+            ],
+            "Bancas": [
+              "Banca"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 3",
+          "ordinal": 63,
+          "visual_count": 1,
+          "visual_types": {
+            "tableEx": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI",
+            "inflaci\u00f3n"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Bancas": [
+              "Bancas agrupados"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "inflaci\u00f3n": [
+              "ipc_nivel_general_nacional"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 17",
+          "ordinal": 64,
+          "visual_count": 2,
+          "visual_types": {
+            "pivotTable": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Oficial Banco",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Calendario": [
+              "Mes"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 19",
+          "ordinal": 65,
+          "visual_count": 3,
+          "visual_types": {
+            "lineStackedColumnComboChart": 1,
+            "slicer": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "N\u00b0 de Operacion"
+            ],
+            "Bancas": [
+              "Banca"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 20",
+          "ordinal": 66,
+          "visual_count": 3,
+          "visual_types": {
+            "barChart": 1,
+            "slicer": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "N\u00b0 de Operacion"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "Dia"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 21",
+          "ordinal": 67,
+          "visual_count": 5,
+          "visual_types": {
+            "areaChart": 4,
+            "slicer": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Medidas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "N\u00ba Bind Inversiones",
+              "Volumen"
+            ],
+            "Medidas": [
+              "fc/vol"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Duplicado de P\u00e1gina 21",
+          "ordinal": 68,
+          "visual_count": 5,
+          "visual_types": {
+            "areaChart": 4,
+            "slicer": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Medidas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "N\u00ba Bind Inversiones",
+              "Volumen"
+            ],
+            "Medidas": [
+              "fc/vol"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 22",
+          "ordinal": 69,
+          "visual_count": 2,
+          "visual_types": {
+            "scatterChart": 1,
+            "slicer": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Medidas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "N\u00ba Bind Inversiones",
+              "Volumen"
+            ],
+            "Medidas": [
+              "fc/vol"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Duplicado de P\u00e1gina 22",
+          "ordinal": 70,
+          "visual_count": 2,
+          "visual_types": {
+            "scatterChart": 1,
+            "slicer": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Medidas",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "N\u00ba Bind Inversiones",
+              "Volumen"
+            ],
+            "Medidas": [
+              "fc/vol"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 23",
+          "ordinal": 71,
+          "visual_count": 3,
+          "visual_types": {
+            "tableEx": 1,
+            "slicer": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Oficial BI",
+            "Operaciones BI",
+            "Region"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "Facturacion",
+              "N\u00ba Bind Inversiones",
+              "N\u00ba Cliente",
+              "Volumen"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Calendario": [
+              "Dia"
+            ],
+            "Region": [
+              "Region"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 24",
+          "ordinal": 72,
+          "visual_count": 2,
+          "visual_types": {
+            "tableEx": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "inflaci\u00f3n"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "N\u00b0 Bind Inversiones.1"
+            ],
+            "inflaci\u00f3n": [
+              "indice_tiempo",
+              "ipc_nivel_general_nacional"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "chama",
+          "ordinal": 73,
+          "visual_count": 1,
+          "visual_types": {
+            "pivotTable": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Oficial Banco",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "Facturacion",
+              "Mes"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "SUMA FACTURACION ",
+          "ordinal": 74,
+          "visual_count": 6,
+          "visual_types": {
+            "pivotTable": 1,
+            "clusteredBarChart": 2,
+            "tableEx": 3
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Clientes Nuevos por banca 2023",
+          "ordinal": 75,
+          "visual_count": 1,
+          "visual_types": {
+            "clusteredColumnChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Bancas": [
+              "Banca"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "CLientes Operativos 2023",
+          "ordinal": 76,
+          "visual_count": 3,
+          "visual_types": {
+            "clusteredBarChart": 2,
+            "clusteredColumnChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI",
+            "Seguimiento Bind Inversiones mensual"
+          ],
+          "fields_used": {
+            "Seguimiento Bind Inversiones mensual": [
+              "Cuotapartista",
+              "n\u00b0 Banca"
+            ],
+            "Operaciones BI": [
+              "N\u00ba Bind Inversiones"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "FAC ANUAL 2023",
+          "ordinal": 77,
+          "visual_count": 2,
+          "visual_types": {
+            "clusteredBarChart": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista",
+              "Empresa"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Facturacion anual x banca",
+          "ordinal": 78,
+          "visual_count": 1,
+          "visual_types": {
+            "clusteredColumnChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Cliente Activo",
+          "ordinal": 79,
+          "visual_count": 1,
+          "visual_types": {
+            "clusteredColumnChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Seguimiento Bind Inversiones Sem"
+          ],
+          "fields_used": {
+            "Seguimiento Bind Inversiones Sem": [
+              "Banca",
+              "Cuotapartista"
+            ],
+            "Calendario": [
+              "A\u00f1o"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "VOLUMEN OPERADO X MES IVSA",
+          "ordinal": 80,
+          "visual_count": 1,
+          "visual_types": {
+            "lineChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Volumen"
+            ],
+            "Bancas": [
+              "Banca"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "EVO FEE IVSA",
+          "ordinal": 81,
+          "visual_count": 1,
+          "visual_types": {
+            "columnChart": 1
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Medidas"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Medidas": [
+              "fc/vol"
+            ],
+            "Bancas": [
+              "Banca"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "info mark",
+          "ordinal": 82,
+          "visual_count": 2,
+          "visual_types": {
+            "tableEx": 2
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Canal de Operaci\u00f3n BI",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista",
+              "N\u00ba Bind Inv"
+            ],
+            "Operaciones BI": [
+              "N\u00ba Bind Inversiones",
+              "Volumen"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "Operaci\u00f3n"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "GRAF. COMITE",
+          "ordinal": 83,
+          "visual_count": 3,
+          "visual_types": {
+            "lineClusteredColumnComboChart": 2,
+            "lineStackedColumnComboChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Presupuesto x sem x producto"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes",
+              "Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion",
+              "Volumen"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Presupuesto x sem x producto": [
+              "PEA"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "GRAF. COMITE 2",
+          "ordinal": 84,
+          "visual_count": 1,
+          "visual_types": {
+            "barChart": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Calendario",
+            "Oficial Banco",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "CUADRO FAC EMB",
+          "ordinal": 85,
+          "visual_count": 1,
+          "visual_types": {
+            "tableEx": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Banca ordenadas",
+            "Bind Inversiones",
+            "Calendario",
+            "Empresas",
+            "Oficial Banco",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista",
+              "N\u00ba Bind Inv"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Banca ordenadas": [
+              "BANCA"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 9",
+          "ordinal": 86,
+          "visual_count": 1,
+          "visual_types": {
+            "pivotTable": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Calendario": [
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 10",
+          "ordinal": 87,
+          "visual_count": 3,
+          "visual_types": {
+            "ribbonChart": 1,
+            "pivotTable": 1,
+            "actionButton": 1
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bancas",
+            "Calendario",
+            "Operaciones BI"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Bancas agrupados"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 13",
+          "ordinal": 88,
+          "visual_count": 3,
+          "visual_types": {
+            "clusteredBarChart": 3
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Canal de Operaci\u00f3n BI"
+          ],
+          "fields_used": {
+            "Bancas": [
+              "Banca"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal Digital"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 12",
+          "ordinal": 89,
+          "visual_count": 1,
+          "visual_types": {
+            "tableEx": 1
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Canal de Operaci\u00f3n BI",
+            "Embajadores",
+            "Empresas",
+            "Oficial Banco",
+            "Productos"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "Fecha de operacion",
+              "Operaci\u00f3n",
+              "Volumen BI"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Embajadores": [
+              "Embajador"
+            ],
+            "Productos": [
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "P\u00e1gina 14",
+          "ordinal": 90,
+          "visual_count": 1,
+          "visual_types": {
+            "tableEx": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Embajadores",
+            "Empresas",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Productos"
+          ],
+          "fields_used": {
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Calendario": [
+              "Mes"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Embajadores": [
+              "Embajador"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Productos": [
+              "Producto"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": " Saldos Promedios KARINA",
+          "ordinal": 91,
+          "visual_count": 8,
+          "visual_types": {
+            "slicer": 6,
+            "tableEx": 1,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Moneda de saldos",
+            "Oficial BI",
+            "Oficial Banco",
+            "Saldos ivsa"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Dia"
+            ],
+            "Saldos ivsa": [
+              "N\u00b0 Comitente",
+              "Saldo en Dolar Cable",
+              "Saldo en Dolar MEP",
+              "Saldo en Pesos"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Moneda de saldos": [
+              "Medida a usar Promedio",
+              "Moneda"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "EMBAJADORES",
+          "ordinal": 92,
+          "visual_count": 5,
+          "visual_types": {
+            "slicer": 3,
+            "tableEx": 2
+          },
+          "filter_count": 3,
+          "tables_referenced": [
+            "Bind Inversiones",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "Embajadores",
+            "Empresas",
+            "Oficial Banco",
+            "Productos"
+          ],
+          "fields_used": {
+            "Calendario": [
+              "Mes"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Productos": [
+              "Producto"
+            ],
+            "Canal de Operaci\u00f3n BI": [
+              "Fecha de operacion",
+              "Operaci\u00f3n",
+              "Volumen BI"
+            ],
+            "Embajadores": [
+              "Embajador",
+              "Fecha de inicio"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Duplicado de principales clientes PARA COMITE",
+          "ordinal": 93,
+          "visual_count": 10,
+          "visual_types": {
+            "clusteredBarChart": 3,
+            "slicer": 7
+          },
+          "filter_count": 1,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Calendario semanas",
+            "Clientes Traders",
+            "Oficial BI",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Region"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Calendario": [
+              "Mes"
+            ],
+            "Calendario semanas": [
+              "Semana"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ],
+            "Region": [
+              "Region"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "manuel parcel",
+          "ordinal": 94,
+          "visual_count": 12,
+          "visual_types": {
+            "tableEx": 1,
+            "textbox": 1,
+            "slicer": 9,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Clientes Traders",
+            "Empresas",
+            "Oficial BI",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Region"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista",
+              "Empresa",
+              "N\u00ba Bind Inv"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ],
+            "Region": [
+              "Region"
+            ],
+            "Empresas": [
+              "Empresa"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Duplicado de Canal web",
+          "ordinal": 95,
+          "visual_count": 13,
+          "visual_types": {
+            "slicer": 6,
+            "card": 3,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1,
+            "columnChart": 1,
+            "clusteredBarChart": 1,
+            "pivotTable": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Canal de Operaci\u00f3n BI",
+            "Empresas",
+            "Oficial BI",
+            "Operaciones BI",
+            "Tabla (2)"
+          ],
+          "fields_used": {
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal WEB",
+              "% OP",
+              "% OP WEB",
+              "Canal.1",
+              "N\u00b0 Bind Inversiones.1",
+              "N\u00b0 de Operacion",
+              "Operaci\u00f3n",
+              "Volumen BI"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Calendario": [
+              "Dia",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "Dia.Variaci\u00f3n.Jerarqu\u00eda de fechas.Mes"
+            ],
+            "Tabla (2)": [
+              "Canal1"
+            ],
+            "Operaciones BI": [
+              "Facturacion"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Duplicado de Canal web detalle",
+          "ordinal": 96,
+          "visual_count": 8,
+          "visual_types": {
+            "slicer": 6,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1,
+            "tableEx": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Canal de Operaci\u00f3n BI",
+            "Empresas",
+            "Oficial BI",
+            "Oficial Banco"
+          ],
+          "fields_used": {
+            "Canal de Operaci\u00f3n BI": [
+              "% Canal WEB",
+              "Canal.1",
+              "Fecha de operacion",
+              "N\u00b0 de Operacion",
+              "Operaci\u00f3n"
+            ],
+            "Bind Inversiones": [
+              "Cuotapartista"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Empresas": [
+              "Empresa"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ]
+          },
+          "measures_referenced": []
+        },
+        {
+          "name": "Facturacion Clientes Mes x Mes JMF con Fecha inicio",
+          "ordinal": 97,
+          "visual_count": 12,
+          "visual_types": {
+            "tableEx": 1,
+            "textbox": 1,
+            "slicer": 9,
+            "textFilter25A4896A83E0487089E2B90C9AE57C8A": 1
+          },
+          "filter_count": 0,
+          "tables_referenced": [
+            "Bancas",
+            "Bind Inversiones",
+            "Calendario",
+            "Calendario semanas",
+            "Clientes Traders",
+            "Empresas",
+            "Oficial BI",
+            "Oficial Banco",
+            "Operaciones BI",
+            "Productos",
+            "Region"
+          ],
+          "fields_used": {
+            "Bind Inversiones": [
+              "Cuotapartista",
+              "Empresa",
+              "N\u00ba Bind Inv",
+              "fecha inicio.Variaci\u00f3n.Jerarqu\u00eda de fechas.A\u00f1o",
+              "fecha inicio.Variaci\u00f3n.Jerarqu\u00eda de fechas.Trimestre"
+            ],
+            "Bancas": [
+              "Banca"
+            ],
+            "Oficial Banco": [
+              "Oficial Banco"
+            ],
+            "Oficial BI": [
+              "Oficial BI"
+            ],
+            "Clientes Traders": [
+              "Trader"
+            ],
+            "Operaciones BI": [
+              "Empresa",
+              "Facturacion"
+            ],
+            "Productos": [
+              "N\u00b0 Producto"
+            ],
+            "Region": [
+              "Region"
+            ],
+            "Calendario semanas": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Calendario": [
+              "A\u00f1o",
+              "Mes"
+            ],
+            "Empresas": [
+              "Empresa"
+            ]
+          },
+          "measures_referenced": []
+        }
+      ],
+      "migration_checklist": [
+        {
+          "task": "Migrate data source for table 'Ajustes RV' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Autorizados Chatbot' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Banca ordenadas' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Bancas' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Bind Inversiones' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Boletos IVSA' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'CPD-cheques-vendidos' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Calendario' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Calendario semanas' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Canal de Operaci\u00f3n BI' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Celula' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Clientes Traders' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Embajadores' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Empresas' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'IVSA MOdelo' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Medidas' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Moneda de saldos' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Oficial BI' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Oficial Banco' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Operaciones BI' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Operaciones IAM' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'PEA embajadores' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Pareto' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Presupuesto x sem x producto' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Presupuesto x sem y of BI' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Presupuesto x sem y of Banco' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Productos' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Region' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Saldos ivsa' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Seguimiento Bind Inversiones Sem' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Seguimiento Bind Inversiones mensual' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'Tabla (2)' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Migrate data source for table 'inflaci\u00f3n' from Excel to SQL",
+          "category": "data_source",
+          "priority": "high",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'FC vs PEA' (13 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Clientes nuevos y Operativos PARA COMITE' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'principales clientes PARA COMITE' (10 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Op digitales PARA COMITE IVSA' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'DuOp digitales PARA COMITE IAM' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'PERFORMANCE PF Y PJ' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'PF Y PJ PARA COMITE 2' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'PF Y PJ PARA COMITE ' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'PF Y PJ PARA COMITE 3' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'PF Y PJ PARA COMITE 4' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Analisis Chatbot PARA COMITE' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'BANCAS COMITE' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'BANCAS COMITE 2' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'BANCAS COMITE 3' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'FC vs PEA con referidos' (11 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Clientes por Oficial' (12 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Info OF BI' (21 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Saldos en IVSA Hoy' (8 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Saldos Promedios IVSA' (9 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Saldos ultimos 5 dias' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Saldo Historico por cliente' (9 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Clientes IVSA' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Canal web' (13 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Canal web detalle' (7 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Embajadores' (9 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Carteras' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Cliente activo' (14 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Performance BI' (8 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Mapa producto IVSA' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 1' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Mapa producto IAM' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 2' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'FC vs PEA Oficiales banco' (12 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'mapa por producto por banca' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Duplicado de mapa por producto por banca' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Nuevo modelo Banca Minorista' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'RV Traders' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 4' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 6' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 7' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 8' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Primeros embajadores' (7 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Segundos embajadores' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 11' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'PN' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Grafico reunion trim 1' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Graficos reunion trim 2 4 y 6' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Grafico reunion trim 3' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Grafico reunion trim 5' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Cant operaciones' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 16' (4 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'RV Picho' (7 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Grafico embajadores' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Analisis Chatbot' (9 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Saldos ' (11 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Saldos CABLE' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Saldos MEP' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Evolucion IAM/IVSA' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Distribuci\u00f3n Fee Hist\u00f3riica' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 15' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Dispersi\u00f3n bancas anual' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'facturaci\u00f3n hist\u00f3rica por empresa' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Dispersi\u00f3n fact vs Vol' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 3' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 17' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 19' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 20' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 21' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Duplicado de P\u00e1gina 21' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 22' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Duplicado de P\u00e1gina 22' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 23' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 24' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'chama' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'SUMA FACTURACION ' (6 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Clientes Nuevos por banca 2023' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'CLientes Operativos 2023' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'FAC ANUAL 2023' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Facturacion anual x banca' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Cliente Activo' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'VOLUMEN OPERADO X MES IVSA' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'EVO FEE IVSA' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'info mark' (2 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'GRAF. COMITE' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'GRAF. COMITE 2' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'CUADRO FAC EMB' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 9' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 10' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 13' (3 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 12' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'P\u00e1gina 14' (1 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page ' Saldos Promedios KARINA' (8 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'EMBAJADORES' (5 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Duplicado de principales clientes PARA COMITE' (10 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'manuel parcel' (12 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Duplicado de Canal web' (13 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Duplicado de Canal web detalle' (8 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate page 'Facturacion Clientes Mes x Mes JMF con Fecha inicio' (12 visuals)",
+          "category": "report_page",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        },
+        {
+          "task": "Recreate 2 report-level filters",
+          "category": "filter",
+          "priority": "medium",
+          "status": "pending",
+          "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+        }
+      ]
+    }
+  ],
+  "migration_checklist": [
+    {
+      "task": "Migrate data source for table 'Ajustes RV' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Autorizados Chatbot' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Banca ordenadas' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Bancas' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Bind Inversiones' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Boletos IVSA' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'CPD-cheques-vendidos' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Calendario' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Calendario semanas' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Canal de Operaci\u00f3n BI' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Celula' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Clientes Traders' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Embajadores' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Empresas' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'IVSA MOdelo' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Medidas' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Moneda de saldos' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Oficial BI' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Oficial Banco' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Operaciones BI' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Operaciones IAM' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'PEA embajadores' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Pareto' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Presupuesto x sem x producto' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Presupuesto x sem y of BI' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Presupuesto x sem y of Banco' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Productos' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Region' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Saldos ivsa' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Seguimiento Bind Inversiones Sem' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Seguimiento Bind Inversiones mensual' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'Tabla (2)' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Migrate data source for table 'inflaci\u00f3n' from Excel to SQL",
+      "category": "data_source",
+      "priority": "high",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'FC vs PEA' (13 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Clientes nuevos y Operativos PARA COMITE' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'principales clientes PARA COMITE' (10 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Op digitales PARA COMITE IVSA' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'DuOp digitales PARA COMITE IAM' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'PERFORMANCE PF Y PJ' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'PF Y PJ PARA COMITE 2' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'PF Y PJ PARA COMITE ' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'PF Y PJ PARA COMITE 3' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'PF Y PJ PARA COMITE 4' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Analisis Chatbot PARA COMITE' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'BANCAS COMITE' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'BANCAS COMITE 2' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'BANCAS COMITE 3' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'FC vs PEA con referidos' (11 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Clientes por Oficial' (12 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Info OF BI' (21 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Saldos en IVSA Hoy' (8 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Saldos Promedios IVSA' (9 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Saldos ultimos 5 dias' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Saldo Historico por cliente' (9 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Clientes IVSA' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Canal web' (13 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Canal web detalle' (7 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Embajadores' (9 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Carteras' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Cliente activo' (14 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Performance BI' (8 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Mapa producto IVSA' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 1' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Mapa producto IAM' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 2' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'FC vs PEA Oficiales banco' (12 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'mapa por producto por banca' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Duplicado de mapa por producto por banca' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Nuevo modelo Banca Minorista' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'RV Traders' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 4' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 6' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 7' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 8' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Primeros embajadores' (7 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Segundos embajadores' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 11' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'PN' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Grafico reunion trim 1' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Graficos reunion trim 2 4 y 6' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Grafico reunion trim 3' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Grafico reunion trim 5' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Cant operaciones' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 16' (4 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'RV Picho' (7 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Grafico embajadores' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Analisis Chatbot' (9 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Saldos ' (11 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Saldos CABLE' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Saldos MEP' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Evolucion IAM/IVSA' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Distribuci\u00f3n Fee Hist\u00f3riica' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 15' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Dispersi\u00f3n bancas anual' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'facturaci\u00f3n hist\u00f3rica por empresa' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Dispersi\u00f3n fact vs Vol' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 3' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 17' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 19' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 20' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 21' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Duplicado de P\u00e1gina 21' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 22' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Duplicado de P\u00e1gina 22' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 23' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 24' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'chama' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'SUMA FACTURACION ' (6 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Clientes Nuevos por banca 2023' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'CLientes Operativos 2023' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'FAC ANUAL 2023' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Facturacion anual x banca' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Cliente Activo' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'VOLUMEN OPERADO X MES IVSA' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'EVO FEE IVSA' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'info mark' (2 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'GRAF. COMITE' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'GRAF. COMITE 2' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'CUADRO FAC EMB' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 9' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 10' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 13' (3 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 12' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'P\u00e1gina 14' (1 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page ' Saldos Promedios KARINA' (8 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'EMBAJADORES' (5 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Duplicado de principales clientes PARA COMITE' (10 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'manuel parcel' (12 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Duplicado de Canal web' (13 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Duplicado de Canal web detalle' (8 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate page 'Facturacion Clientes Mes x Mes JMF con Fecha inicio' (12 visuals)",
+      "category": "report_page",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "task": "Recreate 2 report-level filters",
+      "category": "filter",
+      "priority": "medium",
+      "status": "pending",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    }
+  ]
+}

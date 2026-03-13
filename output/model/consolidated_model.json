@@ -1,0 +1,2342 @@
+{
+  "summary": {
+    "total_tables": 62,
+    "total_reports": 1,
+    "source_types": {
+      "other": 5,
+      "excel": 37,
+      "unknown": 20
+    },
+    "total_relationships": 69,
+    "potential_duplicates": 2
+  },
+  "tables": {
+    "Banca ordenadas": {
+      "columns": {
+        "BANCA": "string",
+        "ORDEN": "Int64"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "other"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"Jcy7DkBAEIXhV5GpFe5qQSEhemuLKZBJMJvZ9f7WKr//JEcpmJ2whRhS0LGCiW4Wsg59yf7Sj4NHHtDRQQ7PaH2SJKuipu2+rQhbfxnZLH5fZQgL7iTsWQW2LIYF3eZLDVq/\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [BANCA = _t, ORDEN = _t]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(Origen,{{\"BANCA\", type text}, {\"ORDEN\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Bancas": {
+      "columns": {
+        "N\u00b0 Banca": "string",
+        "Banca": "string",
+        "Bancas agrupados": "object",
+        "Orden": "Int64",
+        "Column4": "string",
+        "Column5": "string",
+        "Column6": "string",
+        "Column7": "string",
+        "Column8": "string",
+        "Column9": "string",
+        "Column10": "string",
+        "Column11": "string"
+      },
+      "column_count": 12,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    Bancas_Sheet = Origen{[Item=\"Bancas\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Bancas_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Orden\", Int64.Type}}),\n    #\"Filas filtradas\" = Table.SelectRows(#\"Tipo cambiado\", each [#\"N\u00b0 Banca\"] <> null and [#\"N\u00b0 Banca\"] <> \"\")\nin\n    #\"Filas filtradas\""
+      }
+    },
+    "Bind Inversiones": {
+      "columns": {
+        "Cuotapartista": "string",
+        "Banca": "Int64",
+        "Oficial": "Int64",
+        "Empresa": "string",
+        "N\u00ba Bind Inv": "Int64",
+        "fecha inicio": "datetime64[ns]",
+        "Oficial BI": "Int64",
+        "Trader": "Int64",
+        "Column11": "string",
+        "Column9": "string",
+        "cuit CNV": "string"
+      },
+      "column_count": 11,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx\"), null, true),\n    #\"Bind Inversiones_Sheet\" = Origen{[Item=\"Bind Inversiones\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Bind Inversiones_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00ba Bind Inv\", Int64.Type}, {\"Cuotapartista\", type text}, {\"Banca\", Int64.Type}, {\"Oficial\", Int64.Type}, {\"fecha inicio\", type date}, {\"Oficial BI\", Int64.Type}, {\"Trader\", Int64.Type}}),\n    #\"Filas filtradas\" = Table.SelectRows(#\"Tipo cambiado\", each [N\u00ba Bind Inv] <> null and [N\u00ba Bind Inv] <> \"\")\nin\n    #\"Filas filtradas\""
+      }
+    },
+    "Boletos IVSA": {
+      "columns": {
+        "Boleto": "Int64",
+        "COMITENTE": "Int64",
+        "ESPECIE": "string",
+        "Asset Class": "string",
+        "Fecha Operaci\u00f3n": "datetime64[ns]",
+        "Mes": "string",
+        "A\u00f1o": "string",
+        "OPERACION": "string",
+        "Volumen": "Float64",
+        "Fee": "Float64",
+        "TC": "string",
+        "Canal": "string",
+        "N\u00b0 Bind Inversiones": "Int64"
+      },
+      "column_count": 13,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos IVSA.xlsx\"), null, true),\n    #\"Boletos IVSA_Sheet\" = Origen{[Item=\"Boletos IVSA\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Boletos IVSA_Sheet\", [PromoteAllScalars=true]),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Encabezados promovidos\",{\"Column15\", \"Column16\", \"Column17\"}),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Columnas quitadas\",{{\"Fee\", type number}, {\"Volumen\", type number}, {\"Fecha Operaci\u00f3n\", type date}, {\"N\u00b0 Bind Inversiones\", Int64.Type}, {\"Boleto\", Int64.Type}, {\"COMITENTE\", Int64.Type}}),\n    #\"Columnas quitadas1\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"})\nin\n    #\"Columnas quitadas1\""
+      }
+    },
+    "CLUSTER FACTURACI\u00d3N": {
+      "columns": {
+        "Cluster": "string",
+        "Limite facturaci\u00f3n": "Int64"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "other"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"TcrBDcAwCEPRXThzSABniaoToOy/RktQJPvmr5cpeEQFoyZbU+b7/zkoKE4iYxWMjLUxMl7ByXgbJxMVgky0CTIngAzagMyqsK7ZHw==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Cluster = _t, #\"Limite facturaci\u00f3n\" = _t]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(Origen,{{\"Cluster\", type text}, {\"Limite facturaci\u00f3n\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "CPD-cheques-vendidos": {
+      "columns": {
+        "ID Cheque": "Int64",
+        "Custodia": "string",
+        "Fec. Pago ": "datetime64[ns]",
+        "Fec. Conc.": "datetime64[ns]",
+        "Monto Nominal": "Float64",
+        "Segmento": "string",
+        "Nro Cheque": "Int64",
+        "Cod Cheque": "string",
+        "Comit V.": "Int64",
+        "CUIT Comprador": "string",
+        "Cond.": "string",
+        "Banco": "string",
+        "Plaza": "string",
+        "Librador": "string",
+        "SGR": "string",
+        "Tipo de op": "string",
+        "No a la orden": "string",
+        "Moneda": "string",
+        "IVSA MOdelo.Cliente": "string",
+        "IVSA MOdelo.N\u00ba Bind Inv": "Int64",
+        "Column19": "string"
+      },
+      "column_count": 21,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\cheques operados.xlsx\"), null, true),\n    #\"CPD-cheques-vendidos_Sheet\" = Origen{[Item=\"CPD-cheques-vendidos\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"CPD-cheques-vendidos_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"ID Cheque\", Int64.Type}, {\"Custodia\", type text}, {\"Fec. Pago \", type date}, {\"Fec. Conc.\", type date}, {\"Monto Nominal\", type number}, {\"Segmento\", type text}, {\"Nro Cheque\", Int64.Type}, {\"Cod Cheque\", type text}, {\"Comit V.\", Int64.Type}, {\"CUIT Comprador\", type text}, {\"Cond.\", type text}, {\"Banco\", type text}, {\"Plaza\", type text}, {\"Librador\", type text}, {\"SGR\", type text}, {\"Tipo de op\", type text}, {\"No a la orden\", type text}, {\"Moneda\", type text}}),\n    #\"Valor reemplazado\" = Table.ReplaceValue(#\"Tipo cambiado\",\"-\",\"\",Replacer.ReplaceText,{\"CUIT Comprador\"}),\n    #\"Consultas combinadas\" = Table.NestedJoin(#\"Valor reemplazado\", {\"CUIT Comprador\"}, #\"IVSA MOdelo\", {\"Cuit\"}, \"IVSA MOdelo\", JoinKind.LeftOuter),\n    #\"Se expandi\u00f3 IVSA MOdelo\" = Table.ExpandTableColumn(#\"Consultas combinadas\", \"IVSA MOdelo\", {\"N\u00ba Bind Inv\", \"Cliente\"}, {\"IVSA MOdelo.N\u00ba Bind Inv\", \"IVSA MOdelo.Cliente\"})\nin\n    #\"Se expandi\u00f3 IVSA MOdelo\""
+      }
+    },
+    "Calendario": {
+      "columns": {
+        "Dia": "datetime64[ns]",
+        "A\u00f1o": "Int64",
+        "Mes": "Int64",
+        "Semana": "Int64",
+        "ID Semana": "string",
+        "Habil": "string"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2022\\Boletos IVSA.xlsx\"), null, true),\n    Calendario_Sheet = Origen{[Item=\"Calendario\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Calendario_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Dia\", type date}, {\"A\u00f1o\", Int64.Type}, {\"Mes\", Int64.Type}, {\"Semana\", Int64.Type}, {\"ID Semana\", type text}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Calendario semanas": {
+      "columns": {
+        "A\u00f1o": "Int64",
+        "Mes": "Int64",
+        "Semana": "Int64",
+        "ID Semana": "string",
+        "n\u00b0 semana": "Int64"
+      },
+      "column_count": 5,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos IAM.xlsm\"), null, true),\n    #\"Calendario semanas_Sheet\" = Origen{[Item=\"Calendario semanas\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Calendario semanas_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"A\u00f1o\", Int64.Type}, {\"Mes\", Int64.Type}, {\"Semana\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Canal de Operaci\u00f3n BI": {
+      "columns": {
+        "N\u00b0 Bind Inversiones.1": "Int64",
+        "N\u00b0 de cliente IAM/IVSA": "Int64",
+        "N\u00b0 de Operacion": "Int64",
+        "Operaci\u00f3n": "string",
+        "Producto.1": "Int64",
+        "Fecha de operacion": "datetime64[ns]",
+        "Importe real Operacion": "Float64",
+        "Canal.1": "string",
+        "Empresa": "Int64",
+        "Volumen BI": "Float64",
+        "Column11": "string",
+        "Column12": "string",
+        "Column13": "string",
+        "Column14": "string"
+      },
+      "column_count": 14,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "other"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Table.Combine({#\"Operaciones por canal IAM\", #\"Boletos IVSA\"}),\n    #\"Columnas combinadas\" = Table.CombineColumns(Table.TransformColumnTypes(Origen, {{\"Producto\", type text}, {\"Asset Class\", type text}}, \"es-AR\"),{\"Producto\", \"Asset Class\"},Combiner.CombineTextByDelimiter(\"\", QuoteStyle.None),\"Producto.1\"),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Columnas combinadas\",{{\"Producto.1\", Int64.Type}}),\n    #\"Columnas combinadas1\" = Table.CombineColumns(Table.TransformColumnTypes(#\"Tipo cambiado\", {{\"Canal\", type text}}, \"es-AR\"),{\"Canal de Venta\", \"Canal\"},Combiner.CombineTextByDelimiter(\"\", QuoteStyle.None),\"Canal.1\"),\n    #\"Filas filtradas1\" = Table.SelectRows(#\"Columnas combinadas1\", each true),\n    #\"Columnas combinadas2\" = Table.CombineColumns(Table.TransformColumnTypes(#\"Filas filtradas1\", {{\"IAM MOdelo.N\u00ba Bind Inv\", type text}, {\"N\u00b0 Bind Inversiones\", type text}}, \"es-AR\"),{\"IAM MOdelo.N\u00ba Bind Inv\", \"N\u00b0 Bind Inversiones\"},Combiner.CombineTextByDelimiter(\"\", QuoteStyle.None),\"N\u00b0 Bind Inversiones.1\"),\n    #\"Columnas combinadas3\" = Table.CombineColumns(Table.TransformColumnTypes(#\"Columnas combinadas2\", {{\"Boleto\", type text}, {\"# Liquidaci\u00f3n\", type text}}, \"es-AR\"),{\"Boleto\", \"# Liquidaci\u00f3n\"},Combiner.CombineTextByDelimiter(\"\", QuoteStyle.None),\"N\u00b0 de Operacion\"),\n    #\"Columnas combinadas4\" = Table.CombineColumns(Table.TransformColumnTypes(#\"Columnas combinadas3\", {{\"Fecha\", type text}, {\"Fecha Operaci\u00f3n\", type text}}, \"es-AR\"),{\"Fecha\", \"Fecha Operaci\u00f3n\"},Combiner.CombineTextByDelimiter(\"\", QuoteStyle.None),\"Fecha de operacion\"),\n    #\"Columnas combinadas5\" = Table.CombineColumns(Table.TransformColumnTypes(#\"Columnas combinadas4\", {{\"COMITENTE\", type text}, {\"n\u00b0 Cuotapartista\", type text}}, \"es-AR\"),{\"COMITENTE\", \"n\u00b0 Cuotapartista\"},Combiner.CombineTextByDelimiter(\"\", QuoteStyle.None),\"N\u00b0 de cliente IAM/IVSA\"),\n    #\"Filas filtradas\" = Table.SelectRows(#\"Columnas combinadas5\", each true),\n    #\"Columnas combinadas6\" = Table.CombineColumns(Table.TransformColumnTypes(#\"Filas filtradas\", {{\"OPERACION\", type text}}, \"es-AR\"),{\"OPERACION\", \"Tipo de operacion\"},Combiner.CombineTextByDelimiter(\"\", QuoteStyle.None),\"Operaci\u00f3n\"),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Columnas combinadas6\",{\"Cuit\", \"Condici\u00f3n de I/E\", \"ESPECIE\", \"Mes\", \"A\u00f1o\", \"Fee\", \"TC\"}),\n    #\"Valor reemplazado\" = Table.ReplaceValue(#\"Columnas quitadas\",null,0,Replacer.ReplaceValue,{\"Volumen\"}),\n    #\"Columnas reordenadas\" = Table.ReorderColumns(#\"Valor reemplazado\",{\"N\u00b0 Bind Inversiones.1\", \"N\u00b0 de cliente IAM/IVSA\", \"N\u00b0 de Operacion\", \"Nombre Cuotapartista\", \"Operaci\u00f3n\", \"Importe real Operacion\", \"Producto.1\", \"Fecha de operacion\", \"Volumen\", \"Canal.1\"}),\n    #\"Columnas quitadas1\" = Table.RemoveColumns(#\"Columnas reordenadas\",{\"Nombre Cuotapartista\"}),\n    #\"Columnas reordenadas1\" = Table.ReorderColumns(#\"Columnas quitadas1\",{\"N\u00b0 Bind Inversiones.1\", \"N\u00b0 de cliente IAM/IVSA\", \"N\u00b0 de Operacion\", \"Operaci\u00f3n\", \"Producto.1\", \"Fecha de operacion\", \"Importe real Operacion\", \"Volumen\", \"Canal.1\"}),\n    #\"Tipo cambiado1\" = Table.TransformColumnTypes(#\"Columnas reordenadas1\",{{\"N\u00b0 Bind Inversiones.1\", Int64.Type}, {\"N\u00b0 de cliente IAM/IVSA\", Int64.Type}, {\"N\u00b0 de Operacion\", Int64.Type}, {\"Fecha de operacion\", type date}}),\n    #\"Columna condicional agregada\" = Table.AddColumn(#\"Tipo cambiado1\", \"Empresa\", each if [Operaci\u00f3n] = \"Suscripci\u00f3n\" then 1 else if [Operaci\u00f3n] = \"Rescate\" then 1 else 2),\n    #\"Tipo cambiado2\" = Table.TransformColumnTypes(#\"Columna condicional agregada\",{{\"Empresa\", Int64.Type}}),\n    #\"Columnas combinadas7\" = Table.CombineColumns(Table.TransformColumnTypes(#\"Tipo cambiado2\", {{\"Volumen\", type text}, {\"Importe operacion\", type text}}, \"es-AR\"),{\"Volumen\", \"Importe operacion\"},Combiner.CombineTextByDelimiter(\"\", QuoteStyle.None),\"Volumen BI\"),\n    #\"Tipo cambiado3\" = Table.TransformColumnTypes(#\"Columnas combinadas7\",{{\"Volumen BI\", type number}})\nin\n    #\"Tipo cambiado3\""
+      }
+    },
+    "Celula": {
+      "columns": {
+        "Cod": "Int64",
+        "Celula": "string"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    Celula_Sheet = Origen{[Item=\"Celula\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Celula_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Cod\", Int64.Type}, {\"Celula\", type text}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Clientes Traders": {
+      "columns": {
+        "Cod Trader": "Int64",
+        "Trader": "string"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    #\"Clientes Traders_Sheet\" = Origen{[Item=\"Clientes Traders\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Clientes Traders_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Cod Trader\", Int64.Type}, {\"Trader\", type text}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Clusters": {
+      "columns": {
+        "Cluster": "string",
+        "Valor": "Int64"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    Clusters_Sheet = Origen{[Item=\"Clusters\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Clusters_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Cluster\", type text}, {\"Valor\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "Embajadores": {
+      "columns": {
+        "Cod Embajador": "Int64",
+        "Embajador": "string",
+        "Fecha de inicio": "string",
+        "Sucursal": "string",
+        "Column5": "string",
+        "Column6": "string",
+        "Column7": "string",
+        "Column8": "string",
+        "Column9": "string"
+      },
+      "column_count": 9,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    Embajadores_Sheet = Origen{[Item=\"Embajadores\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Embajadores_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Cod Embajador\", Int64.Type}, {\"Embajador\", type text}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Empresas": {
+      "columns": {
+        "N\u00b0 Empresa": "Int64",
+        "Empresa": "string"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    Empresas_Sheet = Origen{[Item=\"Empresas\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Empresas_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00b0 Empresa\", Int64.Type}, {\"Empresa\", type text}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "IAM MOdelo": {
+      "columns": {
+        "N\u00ba Bind Inv": "Int64",
+        "N\u00ba IAM": "Int64",
+        "Cuit": "Int64",
+        "Cuotapartista": "string",
+        "Banca": "Int64",
+        "Oficial": "Int64",
+        "Fecha inicio": "string",
+        "Column9": "string",
+        "Column10": "string",
+        "Column11": "string",
+        "Column12": "string",
+        "Column8": "string"
+      },
+      "column_count": 12,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx\"), null, true),\n    #\"IAM MOdelo_Sheet\" = Origen{[Item=\"IAM MOdelo\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"IAM MOdelo_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00ba Bind Inv\", Int64.Type}, {\"N\u00ba IAM\", Int64.Type}, {\"Cuit\", Int64.Type}, {\"Cuotapartista\", type text}, {\"Banca\", Int64.Type}, {\"Oficial\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "IVSA MOdelo": {
+      "columns": {
+        "N\u00ba Bind Inv": "Int64",
+        "N\u00ba IVSA": "Int64",
+        "Cuit": "string",
+        "Cliente": "string",
+        "Banca": "Int64",
+        "Oficial": "Int64",
+        "Fecha inicio": "string",
+        "Oficial BI": "string",
+        "trader": "string",
+        "Column10": "string",
+        "Column12": "string",
+        "Column13": "string",
+        "Column14": "string",
+        "Column15": "string",
+        "RESPOSABLE SALDO": "string",
+        "Column16": "string",
+        "Column17": "string"
+      },
+      "column_count": 17,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\clientes Bind Inversiones.xlsx\"), null, true),\n    #\"IVSA MOdelo_Sheet\" = Origen{[Item=\"IVSA MOdelo\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"IVSA MOdelo_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00ba Bind Inv\", Int64.Type}, {\"N\u00ba IVSA\", Int64.Type}, {\"Cuit\", type any}, {\"Cliente\", type text}, {\"Banca\", Int64.Type}, {\"Oficial\", Int64.Type}}),\n    #\"Tipo cambiado1\" = Table.TransformColumnTypes(#\"Tipo cambiado\",{{\"Cuit\", type text}})\nin\n    #\"Tipo cambiado1\""
+      }
+    },
+    "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074": {
+      "columns": {
+        "A\u00f1o": "Int64",
+        "NroMes": "Int64",
+        "Mes": "string",
+        "NroTrimestre": "Int64",
+        "Trimestre": "string",
+        "D\u00eda": "Int64"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f": {
+      "columns": {
+        "A\u00f1o": "Int64",
+        "NroMes": "Int64",
+        "Mes": "string",
+        "NroTrimestre": "Int64",
+        "Trimestre": "string",
+        "D\u00eda": "Int64"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099": {
+      "columns": {
+        "A\u00f1o": "Int64",
+        "NroMes": "Int64",
+        "Mes": "string",
+        "NroTrimestre": "Int64",
+        "Trimestre": "string",
+        "D\u00eda": "Int64"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62": {
+      "columns": {
+        "A\u00f1o": "Int64",
+        "NroMes": "Int64",
+        "Mes": "string",
+        "NroTrimestre": "Int64",
+        "Trimestre": "string",
+        "D\u00eda": "Int64"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949": {
+      "columns": {
+        "A\u00f1o": "Int64",
+        "NroMes": "Int64",
+        "Mes": "string",
+        "NroTrimestre": "Int64",
+        "Trimestre": "string",
+        "D\u00eda": "Int64"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593": {
+      "columns": {
+        "A\u00f1o": "object",
+        "NroMes": "object",
+        "Mes": "object",
+        "NroTrimestre": "object",
+        "Trimestre": "object",
+        "D\u00eda": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "Moneda de saldos": {
+      "columns": {
+        "ID Medida": "Int64",
+        "Moneda": "string",
+        "Medida seleccionada": "Int64"
+      },
+      "column_count": 3,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "other"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WMlTSUQpILc4vBtKGSrE60UpGQJZLfk5ikYJvagGQbQQWNYaLOicm5aQCecZKsbEA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"ID Medida\" = _t, Moneda = _t, #\"Medida seleccionada\" = _t]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(Origen,{{\"ID Medida\", Int64.Type}, {\"Moneda\", type text}, {\"Medida seleccionada\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Oficial BI": {
+      "columns": {
+        "N\u00b0 Oficial BI": "Int64",
+        "Oficial BI": "string",
+        "Email": "string"
+      },
+      "column_count": 3,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    #\"Oficial BI_Sheet\" = Origen{[Item=\"Oficial BI\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Oficial BI_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00b0 Oficial BI\", Int64.Type}, {\"Oficial BI\", type text}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Oficial Banco": {
+      "columns": {
+        "N\u00b0 Oficial Banco": "Int64",
+        "Oficial Banco": "string",
+        "N\u00b0 Banca": "Int64",
+        "N\u00b0 Oficial BI": "Int64",
+        "N\u00b0 Celula": "string",
+        "Column6": "string"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    #\"Oficial Banco_Sheet\" = Origen{[Item=\"Oficial Banco\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Oficial Banco_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00b0 Oficial Banco\", Int64.Type}, {\"Oficial Banco\", type text}, {\"N\u00b0 Banca\", Int64.Type}, {\"N\u00b0 Oficial BI\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Operaciones BI": {
+      "columns": {
+        "Empresa": "Int64",
+        "Cod Region": "string",
+        "N\u00ba Bind Inversiones": "Int64",
+        "N\u00ba Cliente": "Int64",
+        "Fecha": "datetime64[ns]",
+        "Producto": "Int64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "PN": "Float64",
+        "Volumen": "Float64",
+        "Facturacion": "Float64",
+        "ID Semana": "object",
+        "Column13": "string",
+        "Column14": "string"
+      },
+      "column_count": 14,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos Bind Inversiones.xlsx\"), null, true),\n    #\"Operaciones BI_Sheet\" = Origen{[Item=\"Operaciones BI\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Operaciones BI_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Empresa\", Int64.Type}, {\"N\u00ba Bind Inversiones\", Int64.Type}, {\"N\u00ba Cliente\", Int64.Type}, {\"Fecha\", type date}, {\"Producto\", Int64.Type}, {\"Semana\", Int64.Type}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}, {\"PN\", type number}, {\"Volumen\", Int64.Type}, {\"Facturacion\", type number}}),\n    #\"Consulta anexada\" = Table.Combine({#\"Tipo cambiado\", #\"Operaciones BI (2)\"}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Consulta anexada\",{\"Semana\"}),\n    #\"Consulta anexada1\" = Table.Combine({#\"Columnas quitadas\", #\"Operaciones BI 3\"}),\n    #\"Consulta anexada2\" = Table.Combine({#\"Consulta anexada1\", #\"Operaciones BI 4\"}),\n    #\"Consulta anexada3\" = Table.Combine({#\"Consulta anexada2\", #\"Operaciones BI 5\"}),\n    #\"Columnas quitadas1\" = Table.RemoveColumns(#\"Consulta anexada3\",{\"Column13\", \"Column14\", \"Column15\", \"Column16\", \"Column17\", \"Column18\", \"Column19\"}),\n    #\"Consulta anexada4\" = Table.Combine({#\"Columnas quitadas1\", #\"Operaciones BI 6\"}),\n    #\"Columnas quitadas2\" = Table.RemoveColumns(#\"Consulta anexada4\",{\"Semana\"})\nin\n    #\"Columnas quitadas2\""
+      }
+    },
+    "Operaciones BI (2)": {
+      "columns": {
+        "Empresa": "Int64",
+        "N\u00ba Bind Inversiones": "Int64",
+        "N\u00ba Cliente": "Int64",
+        "Fecha": "datetime64[ns]",
+        "Producto": "Int64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "PN": "Int64",
+        "Volumen": "Float64",
+        "Facturacion": "Float64",
+        "Cod Region": "string"
+      },
+      "column_count": 11,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 2.xlsx\"), null, true),\n    #\"Operaciones BI_Sheet\" = Origen{[Item=\"Operaciones BI\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Operaciones BI_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Empresa\", Int64.Type}, {\"N\u00ba Bind Inversiones\", Int64.Type}, {\"N\u00ba Cliente\", Int64.Type}, {\"Fecha\", type date}, {\"Producto\", Int64.Type}, {\"Semana\", Int64.Type}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}, {\"PN\", Int64.Type}, {\"Volumen\", type number}, {\"Facturacion\", type number}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"})\nin\n    #\"Columnas quitadas\""
+      }
+    },
+    "Operaciones BI 3": {
+      "columns": {
+        "Empresa": "Int64",
+        "Cod Region": "Int64",
+        "N\u00ba Bind Inversiones": "Int64",
+        "N\u00ba Cliente": "Int64",
+        "Fecha": "datetime64[ns]",
+        "Producto": "Int64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "PN": "Float64",
+        "Volumen": "Float64",
+        "Facturacion": "Float64",
+        "Column13": "string",
+        "Column14": "string",
+        "Column15": "string",
+        "Column16": "string"
+      },
+      "column_count": 15,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 3.xlsx\"), null, true),\n    Hoja1_Sheet = Origen{[Item=\"Hoja1\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Empresa\", Int64.Type}, {\"Cod Region\", Int64.Type}, {\"N\u00ba Bind Inversiones\", Int64.Type}, {\"N\u00ba Cliente\", Int64.Type}, {\"Fecha\", type date}, {\"Producto\", Int64.Type}, {\"Semana\", type any}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}, {\"PN\", type number}, {\"Volumen\", Int64.Type}, {\"Facturacion\", type number}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"}),\n    #\"Tipo cambiado1\" = Table.TransformColumnTypes(#\"Columnas quitadas\",{{\"Volumen\", type number}})\nin\n    #\"Tipo cambiado1\""
+      }
+    },
+    "Operaciones BI 4": {
+      "columns": {
+        "Empresa": "Int64",
+        "Cod Region": "Int64",
+        "N\u00ba Bind Inversiones": "Int64",
+        "N\u00ba Cliente": "Int64",
+        "Fecha": "datetime64[ns]",
+        "Producto": "Int64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "PN": "Float64",
+        "Volumen": "Int64",
+        "Facturacion": "Float64",
+        "Column13": "string",
+        "Column14": "string",
+        "Column15": "string",
+        "Column16": "string",
+        "Column17": "string",
+        "Column18": "string",
+        "Column19": "string"
+      },
+      "column_count": 18,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 4.xlsx\"), null, true),\n    #\"Operaciones BI 4_Sheet\" = Origen{[Item=\"Operaciones BI 4\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Operaciones BI 4_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Empresa\", Int64.Type}, {\"Cod Region\", Int64.Type}, {\"N\u00ba Bind Inversiones\", Int64.Type}, {\"N\u00ba Cliente\", Int64.Type}, {\"Fecha\", type date}, {\"Producto\", Int64.Type}, {\"Semana\", type any}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}, {\"PN\", type number}, {\"Volumen\", Int64.Type}, {\"Facturacion\", type number}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"})\nin\n    #\"Columnas quitadas\""
+      }
+    },
+    "Operaciones BI 5": {
+      "columns": {
+        "Empresa": "Int64",
+        "Cod Region": "Int64",
+        "N\u00ba Bind Inversiones": "Int64",
+        "N\u00ba Cliente": "Int64",
+        "Fecha": "datetime64[ns]",
+        "Producto": "Int64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "PN": "Int64",
+        "Volumen": "Float64",
+        "Facturacion": "Int64",
+        "Column13": "string",
+        "Column14": "string",
+        "Column15": "string",
+        "Column16": "string",
+        "Column17": "string"
+      },
+      "column_count": 16,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 5.xlsx\"), null, true),\n    #\"Operaciones BI 5_Sheet\" = Origen{[Item=\"Operaciones BI 5\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Operaciones BI 5_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Empresa\", Int64.Type}, {\"Cod Region\", Int64.Type}, {\"N\u00ba Bind Inversiones\", Int64.Type}, {\"N\u00ba Cliente\", Int64.Type}, {\"Fecha\", type date}, {\"Producto\", Int64.Type}, {\"Semana\", type any}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}, {\"PN\", Int64.Type}, {\"Volumen\", type number}, {\"Facturacion\", Int64.Type}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"})\nin\n    #\"Columnas quitadas\""
+      }
+    },
+    "Operaciones BI 6": {
+      "columns": {
+        "Empresa": "Int64",
+        "Cod Region": "Int64",
+        "N\u00ba Bind Inversiones": "Int64",
+        "N\u00ba Cliente": "Int64",
+        "Fecha": "datetime64[ns]",
+        "Producto": "Int64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "PN": "Int64",
+        "Volumen": "Float64",
+        "Facturacion": "Int64",
+        "Semana": "string"
+      },
+      "column_count": 12,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind Inversiones 6.xlsx\"), null, true),\n    #\"Operaciones BI 5_Sheet\" = Origen{[Item=\"Operaciones BI 6\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Operaciones BI 5_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Empresa\", Int64.Type}, {\"Cod Region\", Int64.Type}, {\"N\u00ba Bind Inversiones\", Int64.Type}, {\"N\u00ba Cliente\", Int64.Type}, {\"Fecha\", type date}, {\"Producto\", Int64.Type}, {\"Semana\", type any}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}, {\"PN\", Int64.Type}, {\"Volumen\", type number}, {\"Facturacion\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Operaciones IAM": {
+      "columns": {
+        "N\u00ba Bind Inversiones": "Int64",
+        "NumCuotapartista": "Int64",
+        "Fecha": "datetime64[ns]",
+        "NomCuotapartista": "string",
+        "NombreFondoAbreviado": "Int64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "$ PN Cuotap. (23/01/22)": "Float64",
+        "$ Facturaci\u00f3n CP": "Float64",
+        "Column11": "string",
+        "Column12": "string",
+        "N\u00b0 Bind Inversiones": "Int64",
+        "NumCuotapartista_1": "Int64"
+      },
+      "column_count": 13,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"\\\\CPDWFSGRPBIND\\iam$\\Comercial\\Seguimiento comercial 2022\\Boletos IAM.xlsm\"), null, true),\n    #\"Operaciones IAM_Sheet\" = Origen{[Item=\"Operaciones IAM\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Operaciones IAM_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00ba Bind Inversiones\", Int64.Type}, {\"NumCuotapartista\", Int64.Type}, {\"Fecha\", type date}, {\"NomCuotapartista\", type text}, {\"NombreFondoAbreviado\", Int64.Type}, {\"Semana\", Int64.Type}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}, {\"$ PN Cuotap. (23/01/22)\", type number}, {\"$ Facturaci\u00f3n CP\", type number}}),\n    #\"Consulta anexada\" = Table.Combine({#\"Tipo cambiado\", #\"boletos IAM 3\"}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Consulta anexada\",{\"Semana\"}),\n    #\"Consulta anexada1\" = Table.Combine({#\"Columnas quitadas\", #\"boletos IAM 4\"}),\n    #\"Consulta anexada2\" = Table.Combine({#\"Consulta anexada1\", #\"boletos IAM 5\"}),\n    #\"Consulta anexada3\" = Table.Combine({#\"Consulta anexada2\", #\"boletos IAM 6\"})\nin\n    #\"Consulta anexada3\""
+      }
+    },
+    "Operaciones por canal IAM": {
+      "columns": {
+        "# Liquidaci\u00f3n": "Int64",
+        "Fecha": "datetime64[ns]",
+        "n\u00b0 Cuotapartista": "Int64",
+        "Nombre Cuotapartista": "string",
+        "Importe operacion": "Float64",
+        "Producto": "Int64",
+        "Tipo de operacion": "string",
+        "Cuit": "string",
+        "Condici\u00f3n de I/E": "string",
+        "Canal de Venta": "string",
+        "Importe real Operacion": "Float64",
+        "IAM MOdelo.N\u00ba Bind Inv": "Int64",
+        "Column11": "string",
+        "Column12": "string",
+        "Column13": "string",
+        "Column14": "string"
+      },
+      "column_count": 16,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Canales de operacion.xlsx\"), null, true),\n    #\"Operaciones IAM_Sheet\" = Origen{[Item=\"Operaciones IAM\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Operaciones IAM_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"# Liquidaci\u00f3n\", Int64.Type}, {\"Fecha\", type any}, {\"Cuotapartista\", type any}, {\"Cuotapartista_1\", type text}, {\"Moneda de Liquidaci\u00f3n\", type any}, {\"Fondo\", type text}, {\"Tipo de Liquidaci\u00f3n\", type text}, {\"Cuotapartista_2\", type any}, {\"Condici\u00f3n de I/E\", type text}, {\"Canal de Venta\", type text}}),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(#\"Tipo cambiado\",{{\"Cuotapartista\", \"n\u00b0 Cuotapartista\"}, {\"Cuotapartista_1\", \"Nombre Cuotapartista\"}, {\"Moneda de Liquidaci\u00f3n\", \"Importe operacion\"}, {\"Fondo\", \"Producto\"}, {\"Tipo de Liquidaci\u00f3n\", \"Tipo de operacion\"}, {\"Cuotapartista_2\", \"Cuit\"}}),\n    #\"Filas superiores quitadas\" = Table.Skip(#\"Columnas con nombre cambiado\",1),\n    #\"Valor reemplazado\" = Table.ReplaceValue(#\"Filas superiores quitadas\",\"AHORRO\",\"1\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado1\" = Table.ReplaceValue(#\"Valor reemplazado\",\"PLUS\",\"2\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado2\" = Table.ReplaceValue(#\"Valor reemplazado1\",\"CRECIMIENTO\",\"3\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado3\" = Table.ReplaceValue(#\"Valor reemplazado2\",\"VARIABLE\",\"4\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado4\" = Table.ReplaceValue(#\"Valor reemplazado3\",\"PYMES\",\"5\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado5\" = Table.ReplaceValue(#\"Valor reemplazado4\",\"CAPITAL\",\"6\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado6\" = Table.ReplaceValue(#\"Valor reemplazado5\",\"DOLARES\",\"7\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado7\" = Table.ReplaceValue(#\"Valor reemplazado6\",\"ESTRATEGIA\",\"8\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado8\" = Table.ReplaceValue(#\"Valor reemplazado7\",\"MERCADO FONDO\",\"9\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado9\" = Table.ReplaceValue(#\"Valor reemplazado8\",\"IPA\",\"10\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado10\" = Table.ReplaceValue(#\"Valor reemplazado9\",\"BALANCEADA\",\"11\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Valor reemplazado11\" = Table.ReplaceValue(#\"Valor reemplazado10\",\"GLOBAL\",\"22\",Replacer.ReplaceText,{\"Producto\"}),\n    #\"Filas filtradas\" = Table.SelectRows(#\"Valor reemplazado11\", each true),\n    #\"Tipo cambiado1\" = Table.TransformColumnTypes(#\"Filas filtradas\",{{\"Producto\", Int64.Type}}),\n    #\"Personalizada agregada\" = Table.AddColumn(#\"Tipo cambiado1\", \"Importe real Operacion\", each if [Tipo de operacion] = \"Suscripci\u00f3n\" then [Importe operacion] else -[Importe operacion]),\n    #\"Tipo cambiado2\" = Table.TransformColumnTypes(#\"Personalizada agregada\",{{\"Fecha\", type date}, {\"n\u00b0 Cuotapartista\", Int64.Type}, {\"Importe operacion\", type number}, {\"Importe real Operacion\", type number}}),\n    #\"Consultas combinadas\" = Table.NestedJoin(#\"Tipo cambiado2\", {\"n\u00b0 Cuotapartista\"}, #\"IAM MOdelo\", {\"N\u00ba IAM\"}, \"IAM MOdelo\", JoinKind.LeftOuter),\n    #\"Se expandi\u00f3 IAM MOdelo\" = Table.ExpandTableColumn(#\"Consultas combinadas\", \"IAM MOdelo\", {\"N\u00ba Bind Inv\"}, {\"IAM MOdelo.N\u00ba Bind Inv\"}),\n    #\"Filas ordenadas\" = Table.Sort(#\"Se expandi\u00f3 IAM MOdelo\",{{\"IAM MOdelo.N\u00ba Bind Inv\", Order.Ascending}})\nin\n    #\"Filas ordenadas\""
+      }
+    },
+    "PEA embajadores": {
+      "columns": {
+        "PEA": "Float64",
+        "Fecha": "datetime64[ns]",
+        "N\u00ba Embajador": "Int64"
+      },
+      "column_count": 3,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx\"), null, true),\n    #\"PEA embajadores_Sheet\" = Origen{[Item=\"PEA embajadores\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"PEA embajadores_Sheet\", [PromoteAllScalars=true]),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Encabezados promovidos\",{\"Column4\", \"Column5\", \"Column6\", \"Column7\", \"Column8\", \"Column9\", \"Column10\"}),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Columnas quitadas\",{{\"PEA\", type number}, {\"N\u00ba Embajador\", Int64.Type}, {\"Fecha\", type date}}),\n    #\"Filas filtradas\" = Table.SelectRows(#\"Tipo cambiado\", each true)\nin\n    #\"Filas filtradas\""
+      }
+    },
+    "Presupuesto x sem x producto": {
+      "columns": {
+        "Empresa": "Int64",
+        "ID Semana": "string",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "N\u00ba Producto": "Int64",
+        "Producto": "string",
+        "PEA": "Float64",
+        "Semana": "Int64",
+        "Column9": "string",
+        "Column10": "string",
+        "Column11": "string",
+        "Column13": "string",
+        "Column14": "string",
+        "Column15": "string",
+        "Column16": "string",
+        "Column12": "string",
+        "Columna": "object",
+        "ID Semana Correcto": "object"
+      },
+      "column_count": 18,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx\"), null, true),\n    #\"Presupuesto x sem x producto_Sheet\" = Origen{[Item=\"Presupuesto x sem x producto\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Presupuesto x sem x producto_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"PEA\", type number}}),\n    #\"Filas filtradas\" = Table.SelectRows(#\"Tipo cambiado\", each ([A\u00f1o] = 2026)),\n    #\"Filas ordenadas\" = Table.Sort(#\"Filas filtradas\",{{\"Mes\", Order.Ascending}}),\n    #\"Tipo cambiado1\" = Table.TransformColumnTypes(#\"Filas ordenadas\",{{\"Semana\", Int64.Type}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}, {\"Empresa\", Int64.Type}, {\"N\u00ba Producto\", Int64.Type}})\nin\n    #\"Tipo cambiado1\""
+      }
+    },
+    "Presupuesto x sem y of BI": {
+      "columns": {
+        "Empresa": "string",
+        "ID Semana": "string",
+        "Semana": "string",
+        "Mes": "string",
+        "A\u00f1o": "string",
+        "PEA": "Float64",
+        "OF BI": "string",
+        "Column9": "string",
+        "Column10": "string",
+        "Oficial": "string",
+        "Orig": "string",
+        "Ajuste": "string",
+        "Column12": "string",
+        "Ajuste 2": "string",
+        "Original despues de Ajuste 1": "string",
+        "Ultima version PEA ": "string"
+      },
+      "column_count": 16,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx\"), null, true),\n    #\"Presupuesto x sem y of BI_Sheet\" = Origen{[Item=\"Presupuesto x sem y of BI\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Presupuesto x sem y of BI_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"PEA\", type number}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Presupuesto x sem y of Banco": {
+      "columns": {
+        "ID Semana": "string",
+        "Mes": "string",
+        "A\u00f1o": "string",
+        "ID Oficial": "string",
+        "Empresa": "string",
+        "PEA": "Float64",
+        "Semana": "string",
+        "Column8": "string",
+        "Column9": "string",
+        "Column10": "string",
+        "Column11": "string",
+        "Column12": "string",
+        "Column13": "string"
+      },
+      "column_count": 13,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\PEA 2023.xlsx\"), null, true),\n    #\"Presupuesto x sem y of Banco_Sheet\" = Origen{[Item=\"Presupuesto x sem y of Banco\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Presupuesto x sem y of Banco_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"PEA\", type number}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Productos": {
+      "columns": {
+        "N\u00b0 Producto": "Int64",
+        "Producto": "string",
+        "N\u00b0 Empresa": "Int64",
+        "Agrupaci\u00f3n de Productos": "object",
+        "Productos por empresa": "object"
+      },
+      "column_count": 5,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    Productos_Sheet = Origen{[Item=\"Productos\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Productos_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00b0 Producto\", Int64.Type}, {\"Producto\", type text}, {\"N\u00b0 Empresa\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Referidos": {
+      "columns": {
+        "Empresa": "Int64",
+        "Regi\u00f3n": "Int64",
+        "n\u00ba Bind Inversiones": "Int64",
+        "Comitente": "Int64",
+        "Fecha": "datetime64[ns]",
+        "ISIN": "string",
+        "Descripcion": "string",
+        "Producto": "Int64",
+        "Volumen": "Int64",
+        "Facturaci\u00f3n CCL": "Float64",
+        "Tipo de cambio": "Float64",
+        "Facturaci\u00f3n $": "Float64"
+      },
+      "column_count": 12,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos Bind UY.xlsx\"), null, true),\n    Referidos_Sheet = Origen{[Item=\"Referidos\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Referidos_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Empresa\", Int64.Type}, {\"Regi\u00f3n\", Int64.Type}, {\"n\u00ba Bind Inversiones\", Int64.Type}, {\"Comitente\", Int64.Type}, {\"Fecha\", type date}, {\"ISIN\", type text}, {\"Descripcion\", type text}, {\"Producto\", Int64.Type}, {\"Volumen\", Int64.Type}, {\"Facturaci\u00f3n CCL\", type number}, {\"Tipo de cambio\", type number}, {\"Facturaci\u00f3n $\", type number}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Region": {
+      "columns": {
+        "Cod Region": "Int64",
+        "Region": "string"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Estructura Comercial.xlsx\"), null, true),\n    Region_Sheet = Origen{[Item=\"Region\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(Region_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Cod Region\", Int64.Type}, {\"Region\", type text}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Resumen OP BI": {
+      "columns": {
+        "Fecha": "datetime64[ns]",
+        "Canal de Operacion": "string",
+        "# Operaciones": "Int64",
+        "Empresa": "Int64"
+      },
+      "column_count": 4,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Canales de operacion.xlsx\"), null, true),\n    #\"Resumen OP BI_Sheet\" = Origen{[Item=\"Resumen OP BI\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Resumen OP BI_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"Fecha\", type date}, {\"Canal de Operacion\", type text}, {\"# Operaciones\", Int64.Type}, {\"Empresa\", Int64.Type}})\nin\n    #\"Tipo cambiado\""
+      }
+    },
+    "Saldos ivsa": {
+      "columns": {
+        "N\u00b0 Bind Inversiones": "Int64",
+        "N\u00b0 Comitente": "Int64",
+        "Cliente": "string",
+        "Saldo en Pesos": "Float64",
+        "Saldo en Dolar Cable": "Float64",
+        "Saldo en Dolar MEP": "Float64",
+        "Fecha": "datetime64[ns]"
+      },
+      "column_count": 7,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Saldos IVSA.xlsx\"), null, true),\n    Listado_Pesos_y_Dolares_Sheet = Origen{[Item=\"Listado_Pesos_y_Dolares\",Kind=\"Sheet\"]}[Data],\n    #\"Columnas quitadas\" = Table.RemoveColumns(Listado_Pesos_y_Dolares_Sheet,{\"Column7\", \"Column8\", \"Column9\", \"Column10\"}),\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"Columnas quitadas\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"'Comitente'\", Int64.Type}, {\"'Nombre de la cuenta'\", type text}, {\"'Pesos Venc.'\", type number}, {\"'DOLAR CABLE     Venc'\", type number}, {\"'DOLARES         Venc'\", type number}, {\"Fecha\", type date}}),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(#\"Tipo cambiado\",{{\"'Pesos Venc.'\", \"Saldo en Pesos\"}}),\n    #\"Columnas con nombre cambiado1\" = Table.RenameColumns(#\"Columnas con nombre cambiado\",{{\"'DOLAR CABLE     Venc'\", \"Saldo en Dolar Cable\"}}),\n    #\"Columnas con nombre cambiado2\" = Table.RenameColumns(#\"Columnas con nombre cambiado1\",{{\"'DOLARES         Venc'\", \"Saldo en Dolar MEP\"}}),\n    #\"Consultas combinadas\" = Table.NestedJoin(#\"Columnas con nombre cambiado2\", {\"'Comitente'\"}, #\"IVSA MOdelo\", {\"N\u00ba IVSA\"}, \"IVSA MOdelo\", JoinKind.LeftOuter),\n    #\"Se expandi\u00f3 IVSA MOdelo\" = Table.ExpandTableColumn(#\"Consultas combinadas\", \"IVSA MOdelo\", {\"N\u00ba Bind Inv\"}, {\"IVSA MOdelo.N\u00ba Bind Inv\"}),\n    #\"Columnas con nombre cambiado3\" = Table.RenameColumns(#\"Se expandi\u00f3 IVSA MOdelo\",{{\"'Comitente'\", \"N\u00b0 Comitente\"}, {\"'Nombre de la cuenta'\", \"Cliente\"}, {\"IVSA MOdelo.N\u00ba Bind Inv\", \"N\u00b0 Bind Inversiones\"}}),\n    #\"Columnas reordenadas\" = Table.ReorderColumns(#\"Columnas con nombre cambiado3\",{\"N\u00b0 Bind Inversiones\", \"N\u00b0 Comitente\", \"Cliente\", \"Saldo en Pesos\", \"Saldo en Dolar Cable\", \"Saldo en Dolar MEP\", \"Fecha\"}),\n    #\"Valor reemplazado\" = Table.ReplaceValue(#\"Columnas reordenadas\",200,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado1\" = Table.ReplaceValue(#\"Valor reemplazado\",1000,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado2\" = Table.ReplaceValue(#\"Valor reemplazado1\",1001,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado3\" = Table.ReplaceValue(#\"Valor reemplazado2\",1004,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado4\" = Table.ReplaceValue(#\"Valor reemplazado3\",999060,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado5\" = Table.ReplaceValue(#\"Valor reemplazado4\",999001,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado6\" = Table.ReplaceValue(#\"Valor reemplazado5\",999010,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado7\" = Table.ReplaceValue(#\"Valor reemplazado6\",999016,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado8\" = Table.ReplaceValue(#\"Valor reemplazado7\",999019,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado9\" = Table.ReplaceValue(#\"Valor reemplazado8\",999021,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado10\" = Table.ReplaceValue(#\"Valor reemplazado9\",999024,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado11\" = Table.ReplaceValue(#\"Valor reemplazado10\",999029,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado12\" = Table.ReplaceValue(#\"Valor reemplazado11\",999038,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado13\" = Table.ReplaceValue(#\"Valor reemplazado12\",999060,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado14\" = Table.ReplaceValue(#\"Valor reemplazado13\",999998,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"}),\n    #\"Valor reemplazado15\" = Table.ReplaceValue(#\"Valor reemplazado14\",999999,null,Replacer.ReplaceValue,{\"N\u00b0 Comitente\"})\nin\n    #\"Valor reemplazado15\""
+      }
+    },
+    "Seguimiento Bind Inversiones Sem": {
+      "columns": {
+        "Cluster PN IAM": "object",
+        "cluster Vol IVSA": "object",
+        "cluster Facturacion IAM": "object",
+        "cluster Facturacion IVSA": "object",
+        "CLUSTER IAM": "object",
+        "CLUSTER IVSA": "object",
+        "Cluster BI": "object",
+        "TIPO DE CLIENTE": "object",
+        "TIPO DE CLIENTE IAM": "object",
+        "TIPO DE CLIENTE IVSA": "object"
+      },
+      "column_count": 10,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "Seguimiento Bind Inversiones mensual": {
+      "columns": {
+        "dias del mes": "object",
+        "PN Prom": "object",
+        "Cluster PN IAM": "object",
+        "cluster Facturacion IAM": "object",
+        "CLUSTER IAM": "object",
+        "cluster Vol IVSA": "object",
+        "cluster Facturacion IVSA": "object",
+        "CLUSTER IVSA": "object",
+        "Cluster BI": "object",
+        "TIPO DE CLIENTE (IAM)": "object",
+        "TIPO DE CLIENTE (IVSA)": "object",
+        "TIPO DE CLIENTE BI": "object"
+      },
+      "column_count": 12,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "Seguimiento IAM mensual": {
+      "columns": {
+        "dias del mes": "object",
+        "PN Promedio": "object",
+        "cluster PN": "object",
+        "cluster Facturacion": "object",
+        "CLUSTER": "object",
+        "TIPO DE CLIENTE": "object"
+      },
+      "column_count": 6,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "Seguimiento IVSA mensual": {
+      "columns": {
+        "cluster Vol": "object",
+        "cluster Facturacion": "object",
+        "CLUSTER": "object",
+        "TIPO DE CLIENTE": "object"
+      },
+      "column_count": 4,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "unknown"
+      ],
+      "power_query_expressions": {}
+    },
+    "Tabla (2)": {
+      "columns": {
+        "n de canal": "Int64",
+        "Canal": "string"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "other"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WMlTSUXLKL1GK1YlWMgKyw1OTwGxjINs3Ma80MUcpNhYA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"n de canal\" = _t, Canal1 = _t]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(Origen,{{\"n de canal\", Int64.Type}, {\"Canal1\", type text}}),\n    #\"Columnas con nombre cambiado\" = Table.RenameColumns(#\"Tipo cambiado\",{{\"Canal1\", \"Canal\"}})\nin\n    #\"Columnas con nombre cambiado\""
+      }
+    },
+    "boletos IAM 3": {
+      "columns": {
+        "N\u00b0 Bind Inversiones": "Int64",
+        "NumCuotapartista": "Int64",
+        "Fecha": "datetime64[ns]",
+        "NomCuotapartista": "string",
+        "NombreFondoAbreviado": "Int64",
+        "$ PN Cuotap. (23/01/22)": "Float64",
+        "$ Facturaci\u00f3n CP": "Float64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64"
+      },
+      "column_count": 9,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM3.xlsx\"), null, true),\n    #\"boletos IAM 3_Sheet\" = Origen{[Item=\"boletos IAM 3\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"boletos IAM 3_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"N\u00b0 Bind Inversiones\", Int64.Type}, {\"NumCuotapartista\", Int64.Type}, {\"Fecha\", type date}, {\"NomCuotapartista\", type text}, {\"NombreFondoAbreviado\", Int64.Type}, {\"$ PN Cuotap. (23/01/22)\", type number}, {\"$ Facturaci\u00f3n CP\", type number}, {\"Semana\", type any}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"})\nin\n    #\"Columnas quitadas\""
+      }
+    },
+    "boletos IAM 4": {
+      "columns": {
+        "NumCuotapartista": "Int64",
+        "NumCuotapartista_1": "Int64",
+        "Fecha": "datetime64[ns]",
+        "NomCuotapartista": "string",
+        "NombreFondoAbreviado": "Int64",
+        "$ PN Cuotap. (23/01/22)": "Float64",
+        "$ Facturaci\u00f3n CP": "Float64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64"
+      },
+      "column_count": 9,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 4.xlsx\"), null, true),\n    #\"boletos IAM 4_Sheet\" = Origen{[Item=\"boletos IAM 4\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"boletos IAM 4_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"NumCuotapartista\", Int64.Type}, {\"NumCuotapartista_1\", Int64.Type}, {\"Fecha\", type date}, {\"NomCuotapartista\", type text}, {\"NombreFondoAbreviado\", Int64.Type}, {\"$ PN Cuotap. (23/01/22)\", type number}, {\"$ Facturaci\u00f3n CP\", type number}, {\"Semana\", type any}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"})\nin\n    #\"Columnas quitadas\""
+      }
+    },
+    "boletos IAM 5": {
+      "columns": {
+        "NumCuotapartista": "Int64",
+        "NumCuotapartista_1": "Int64",
+        "Fecha": "datetime64[ns]",
+        "NomCuotapartista": "string",
+        "NombreFondoAbreviado": "Int64",
+        "$ PN Cuotap. (23/01/22)": "Float64",
+        "$ Facturaci\u00f3n CP": "Float64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64",
+        "Column11": "string",
+        "Column12": "string"
+      },
+      "column_count": 11,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 5.xlsx\"), null, true),\n    #\"boletos IAM 5_Sheet\" = Origen{[Item=\"boletos IAM 5\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"boletos IAM 5_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"NumCuotapartista\", Int64.Type}, {\"NumCuotapartista_1\", Int64.Type}, {\"Fecha\", type date}, {\"NomCuotapartista\", type text}, {\"NombreFondoAbreviado\", Int64.Type}, {\"$ PN Cuotap. (23/01/22)\", type number}, {\"$ Facturaci\u00f3n CP\", type number}, {\"Semana\", type any}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"})\nin\n    #\"Columnas quitadas\""
+      }
+    },
+    "boletos IAM 6": {
+      "columns": {
+        "NumCuotapartista": "Int64",
+        "NumCuotapartista_1": "Int64",
+        "Fecha": "datetime64[ns]",
+        "NomCuotapartista": "string",
+        "NombreFondoAbreviado": "Int64",
+        "$ PN Cuotap. (23/01/22)": "Float64",
+        "$ Facturaci\u00f3n CP": "Float64",
+        "Mes": "Int64",
+        "A\u00f1o": "Int64"
+      },
+      "column_count": 9,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2023\\Boletos IAM 6.xlsx\"), null, true),\n    #\"boletos IAM 5_Sheet\" = Origen{[Item=\"Boletos IAM 6\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(#\"boletos IAM 5_Sheet\", [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"NumCuotapartista\", Int64.Type}, {\"NumCuotapartista_1\", Int64.Type}, {\"Fecha\", type date}, {\"NomCuotapartista\", type text}, {\"NombreFondoAbreviado\", Int64.Type}, {\"$ PN Cuotap. (23/01/22)\", type number}, {\"$ Facturaci\u00f3n CP\", type number}, {\"Semana\", type any}, {\"Mes\", Int64.Type}, {\"A\u00f1o\", Int64.Type}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Semana\"})\nin\n    #\"Columnas quitadas\""
+      }
+    },
+    "inflaci\u00f3n": {
+      "columns": {
+        "indice_tiempo": "datetime64[ns]",
+        "ipc_nivel_general_nacional": "Float64"
+      },
+      "column_count": 2,
+      "used_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ],
+      "report_count": 1,
+      "row_counts": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": 0
+      },
+      "source_types": [
+        "excel"
+      ],
+      "power_query_expressions": {
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix": "let\n    Origen = Excel.Workbook(File.Contents(\"G:\\Comercial\\Seguimiento comercial 2022\\Seguimiento Comercial Zafiro\\inflacion.xlsx\"), null, true),\n    inflaci\u00f3n_Sheet = Origen{[Item=\"inflaci\u00f3n\",Kind=\"Sheet\"]}[Data],\n    #\"Encabezados promovidos\" = Table.PromoteHeaders(inflaci\u00f3n_Sheet, [PromoteAllScalars=true]),\n    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"indice_tiempo\", type date}, {\"ipc_nivel_general_nacional\", type number}, {\"Column3\", type any}, {\"Column4\", type any}, {\"Column5\", type any}, {\"Column6\", type any}, {\"Column7\", type any}, {\"Column8\", type any}, {\"Column9\", type any}, {\"Column10\", type any}, {\"Column11\", type any}, {\"Column12\", type any}, {\"Column13\", type any}, {\"Column14\", type any}, {\"Column15\", type any}, {\"Column16\", type any}, {\"Column17\", type any}, {\"Column18\", type any}, {\"Column19\", type any}, {\"Column20\", type any}, {\"Column21\", type any}, {\"Column22\", type any}, {\"Column23\", type any}, {\"Column24\", type any}, {\"Column25\", type any}, {\"Column26\", type any}, {\"Column27\", type any}, {\"Column28\", type any}, {\"Column29\", type any}, {\"Column30\", type any}}),\n    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado\",{\"Column3\", \"Column4\", \"Column5\", \"Column6\", \"Column7\", \"Column8\", \"Column9\", \"Column10\", \"Column11\", \"Column12\", \"Column13\", \"Column14\", \"Column15\", \"Column16\", \"Column17\", \"Column18\", \"Column19\", \"Column20\", \"Column21\", \"Column22\", \"Column23\", \"Column24\", \"Column25\", \"Column26\", \"Column27\", \"Column28\", \"Column29\", \"Column30\"}),\n    #\"Tipo cambiado1\" = Table.TransformColumnTypes(#\"Columnas quitadas\",{{\"indice_tiempo\", type date}})\nin\n    #\"Tipo cambiado1\""
+      }
+    }
+  },
+  "source_classification": {
+    "other": [
+      "Banca ordenadas",
+      "CLUSTER FACTURACI\u00d3N",
+      "Canal de Operaci\u00f3n BI",
+      "Moneda de saldos",
+      "Tabla (2)"
+    ],
+    "excel": [
+      "Bancas",
+      "Bind Inversiones",
+      "Boletos IVSA",
+      "CPD-cheques-vendidos",
+      "Calendario",
+      "Calendario semanas",
+      "Celula",
+      "Clientes Traders",
+      "Clusters",
+      "Embajadores",
+      "Empresas",
+      "IAM MOdelo",
+      "IVSA MOdelo",
+      "Oficial BI",
+      "Oficial Banco",
+      "Operaciones BI",
+      "Operaciones BI (2)",
+      "Operaciones BI 3",
+      "Operaciones BI 4",
+      "Operaciones BI 5",
+      "Operaciones BI 6",
+      "Operaciones IAM",
+      "Operaciones por canal IAM",
+      "PEA embajadores",
+      "Presupuesto x sem x producto",
+      "Presupuesto x sem y of BI",
+      "Presupuesto x sem y of Banco",
+      "Productos",
+      "Referidos",
+      "Region",
+      "Resumen OP BI",
+      "Saldos ivsa",
+      "boletos IAM 3",
+      "boletos IAM 4",
+      "boletos IAM 5",
+      "boletos IAM 6",
+      "inflaci\u00f3n"
+    ],
+    "unknown": [
+      "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "Seguimiento Bind Inversiones Sem",
+      "Seguimiento Bind Inversiones mensual",
+      "Seguimiento IAM mensual",
+      "Seguimiento IVSA mensual"
+    ]
+  },
+  "potential_duplicates": {
+    "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd, LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3, LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5, LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074, LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf, LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543, LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc, LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d, LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8, LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49, LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f, LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099, LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5, LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62, LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949, LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593": {
+      "tables": [
+        "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+        "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+        "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+        "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+        "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+        "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+        "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+        "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+        "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+        "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+        "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+        "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+        "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+        "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+        "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+        "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593"
+      ],
+      "shared_columns": [
+        "A\u00f1o",
+        "D\u00eda",
+        "Mes",
+        "NroMes",
+        "NroTrimestre",
+        "Trimestre"
+      ],
+      "column_count": 6
+    },
+    "boletos IAM 4, boletos IAM 6": {
+      "tables": [
+        "boletos IAM 4",
+        "boletos IAM 6"
+      ],
+      "shared_columns": [
+        "$ Facturaci\u00f3n CP",
+        "$ PN Cuotap. (23/01/22)",
+        "A\u00f1o",
+        "Fecha",
+        "Mes",
+        "NomCuotapartista",
+        "NombreFondoAbreviado",
+        "NumCuotapartista",
+        "NumCuotapartista_1"
+      ],
+      "column_count": 9
+    }
+  },
+  "relationships": [
+    {
+      "from_table": "Oficial Banco",
+      "to_table": "Bancas",
+      "from_column": "N\u00b0 Banca",
+      "to_column": "N\u00b0 Banca",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Oficial Banco",
+      "to_table": "Oficial BI",
+      "from_column": "N\u00b0 Oficial BI",
+      "to_column": "N\u00b0 Oficial BI",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Bind Inversiones",
+      "to_table": "Oficial Banco",
+      "from_column": "Oficial",
+      "to_column": "N\u00b0 Oficial Banco",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Bind Inversiones",
+      "to_table": "Clientes Traders",
+      "from_column": "Trader",
+      "to_column": "Cod Trader",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Bind Inversiones",
+      "to_table": "Oficial BI",
+      "from_column": "Oficial BI",
+      "to_column": "N\u00b0 Oficial BI",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Bind Inversiones",
+      "to_table": NaN,
+      "from_column": "fecha inicio",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem y of Banco",
+      "to_table": "Oficial Banco",
+      "from_column": "ID Oficial",
+      "to_column": "N\u00b0 Oficial Banco",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem y of Banco",
+      "to_table": "Empresas",
+      "from_column": "Empresa",
+      "to_column": "N\u00b0 Empresa",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem y of Banco",
+      "to_table": "Calendario semanas",
+      "from_column": "ID Semana",
+      "to_column": "ID Semana",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem x producto",
+      "to_table": "Productos",
+      "from_column": "N\u00ba Producto",
+      "to_column": "N\u00b0 Producto",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem x producto",
+      "to_table": "Empresas",
+      "from_column": "Empresa",
+      "to_column": "N\u00b0 Empresa",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem x producto",
+      "to_table": "Calendario semanas",
+      "from_column": "ID Semana",
+      "to_column": "ID Semana",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones IAM",
+      "to_table": "Bind Inversiones",
+      "from_column": "N\u00ba Bind Inversiones",
+      "to_column": "N\u00ba Bind Inv",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones IAM",
+      "to_table": "Calendario",
+      "from_column": "Fecha",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones IAM",
+      "to_table": "Productos",
+      "from_column": "NombreFondoAbreviado",
+      "to_column": "N\u00b0 Producto",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Boletos IVSA",
+      "to_table": "Calendario",
+      "from_column": "Fecha Operaci\u00f3n",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Boletos IVSA",
+      "to_table": "Productos",
+      "from_column": "Asset Class",
+      "to_column": "N\u00b0 Producto",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Boletos IVSA",
+      "to_table": "Bind Inversiones",
+      "from_column": "N\u00b0 Bind Inversiones",
+      "to_column": "N\u00ba Bind Inv",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Calendario",
+      "to_table": NaN,
+      "from_column": "Mes",
+      "to_column": NaN,
+      "cardinality": "M:M",
+      "cross_filter": "Both",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Calendario",
+      "to_table": "Calendario semanas",
+      "from_column": "ID Semana",
+      "to_column": "ID Semana",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Resumen OP BI",
+      "to_table": "Empresas",
+      "from_column": "Empresa",
+      "to_column": "N\u00b0 Empresa",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Resumen OP BI",
+      "to_table": "Calendario",
+      "from_column": "Fecha",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "CPD-cheques-vendidos",
+      "to_table": NaN,
+      "from_column": "Fec. Pago ",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "CPD-cheques-vendidos",
+      "to_table": "Calendario",
+      "from_column": "Fec. Conc.",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Both",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "IVSA MOdelo",
+      "to_table": "Oficial BI",
+      "from_column": "Oficial BI",
+      "to_column": "N\u00b0 Oficial BI",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "IVSA MOdelo",
+      "to_table": "Clientes Traders",
+      "from_column": "trader",
+      "to_column": "Cod Trader",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "IVSA MOdelo",
+      "to_table": "Oficial Banco",
+      "from_column": "Column10",
+      "to_column": "Column6",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones por canal IAM",
+      "to_table": "Bind Inversiones",
+      "from_column": "IAM MOdelo.N\u00ba Bind Inv",
+      "to_column": "N\u00ba Bind Inv",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones por canal IAM",
+      "to_table": "Calendario",
+      "from_column": "Fecha",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Canal de Operaci\u00f3n BI",
+      "to_table": "Empresas",
+      "from_column": "Empresa",
+      "to_column": "N\u00b0 Empresa",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Canal de Operaci\u00f3n BI",
+      "to_table": "Calendario",
+      "from_column": "Fecha de operacion",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Canal de Operaci\u00f3n BI",
+      "to_table": "Bind Inversiones",
+      "from_column": "N\u00b0 Bind Inversiones.1",
+      "to_column": "N\u00ba Bind Inv",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Canal de Operaci\u00f3n BI",
+      "to_table": "Productos",
+      "from_column": "Producto.1",
+      "to_column": "N\u00b0 Producto",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Canal de Operaci\u00f3n BI",
+      "to_table": "Tabla (2)",
+      "from_column": "Canal.1",
+      "to_column": "Canal",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "PEA embajadores",
+      "to_table": "Calendario",
+      "from_column": "Fecha",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "PEA embajadores",
+      "to_table": "Embajadores",
+      "from_column": "N\u00ba Embajador",
+      "to_column": "Cod Embajador",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Embajadores",
+      "to_table": "Oficial Banco",
+      "from_column": "Sucursal",
+      "to_column": "N\u00b0 Oficial Banco",
+      "cardinality": "M:1",
+      "cross_filter": "Both",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI (2)",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem y of BI",
+      "to_table": "Oficial BI",
+      "from_column": "OF BI",
+      "to_column": "N\u00b0 Oficial BI",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem y of BI",
+      "to_table": "Empresas",
+      "from_column": "Empresa",
+      "to_column": "N\u00b0 Empresa",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Presupuesto x sem y of BI",
+      "to_table": "Calendario semanas",
+      "from_column": "ID Semana",
+      "to_column": "ID Semana",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Saldos ivsa",
+      "to_table": "Bind Inversiones",
+      "from_column": "N\u00b0 Bind Inversiones",
+      "to_column": "N\u00ba Bind Inv",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Saldos ivsa",
+      "to_table": "Calendario",
+      "from_column": "Fecha",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "inflaci\u00f3n",
+      "to_table": "Calendario",
+      "from_column": "indice_tiempo",
+      "to_column": "Dia",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 3",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 3",
+      "to_table": "Region",
+      "from_column": "Cod Region",
+      "to_column": "Cod Region",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "boletos IAM 3",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Banca ordenadas",
+      "to_table": "Bancas",
+      "from_column": "BANCA",
+      "to_column": "Banca",
+      "cardinality": "1:1",
+      "cross_filter": "Both",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Referidos",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Referidos",
+      "to_table": "Bind Inversiones",
+      "from_column": "n\u00ba Bind Inversiones",
+      "to_column": "N\u00ba Bind Inv",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 4",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 4",
+      "to_table": "Region",
+      "from_column": "Cod Region",
+      "to_column": "Cod Region",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 4",
+      "to_table": "Oficial Banco",
+      "from_column": "Column13",
+      "to_column": "Column6",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "boletos IAM 4",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 5",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 5",
+      "to_table": "Region",
+      "from_column": "Cod Region",
+      "to_column": "Cod Region",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 5",
+      "to_table": "Bancas",
+      "from_column": "Column13",
+      "to_column": "Column5",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "boletos IAM 5",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 6",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI 6",
+      "to_table": "Region",
+      "from_column": "Cod Region",
+      "to_column": "Cod Region",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "boletos IAM 6",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI",
+      "to_table": NaN,
+      "from_column": "Fecha",
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI",
+      "to_table": "Calendario semanas",
+      "from_column": "ID Semana",
+      "to_column": "ID Semana",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI",
+      "to_table": "Bind Inversiones",
+      "from_column": "N\u00ba Bind Inversiones",
+      "to_column": "N\u00ba Bind Inv",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI",
+      "to_table": "Productos",
+      "from_column": "Producto",
+      "to_column": "N\u00b0 Producto",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI",
+      "to_table": "Region",
+      "from_column": "Cod Region",
+      "to_column": "Cod Region",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Operaciones BI",
+      "to_table": "Empresas",
+      "from_column": "Empresa",
+      "to_column": "N\u00b0 Empresa",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Seguimiento Bind Inversiones Sem",
+      "to_table": "Calendario semanas",
+      "from_column": NaN,
+      "to_column": "ID Semana",
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    },
+    {
+      "from_table": "Seguimiento Bind Inversiones mensual",
+      "to_table": NaN,
+      "from_column": NaN,
+      "to_column": NaN,
+      "cardinality": "M:1",
+      "cross_filter": "Single",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+    }
+  ]
+}
