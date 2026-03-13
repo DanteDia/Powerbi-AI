@@ -1,0 +1,4324 @@
+{
+  "summary": {
+    "total_measures": 82,
+    "unique_measures": 82,
+    "calculated_columns": 134,
+    "calculated_tables": 22,
+    "sql_conversion_difficulty": {
+      "easy": 31,
+      "medium": 17,
+      "hard": 34
+    }
+  },
+  "measures": [
+    {
+      "name": "Media acumulada de Recuento de N\u00ba Bind Inv",
+      "table": "Bind Inversiones",
+      "expression": "\nIF(\n\tISFILTERED('Bind Inversiones'[fecha inicio]),\n\tERROR(\"La medida r\u00e1pida de inteligencia de tiempo solo se puede agrupar o filtrar mediante la jerarqu\u00eda de datos proporcionada por Power BI o por la columna de datos principal.\"),\n\tVAR __LAST_DATE = LASTDATE('Bind Inversiones'[fecha inicio].[Date])\n\tRETURN\n\t\tAVERAGEX(\n\t\t\tDATESBETWEEN(\n\t\t\t\t'Bind Inversiones'[fecha inicio].[Date],\n\t\t\t\tDATEADD(__LAST_DATE, -1, DAY),\n\t\t\t\tDATEADD(__LAST_DATE, 1, DAY)\n\t\t\t),\n\t\t\tCALCULATE(COUNTA('Bind Inversiones'[N\u00ba Bind Inv]))\n\t\t)\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[N\u00ba Bind Inv]",
+        "Bind Inversiones[fecha inicio]",
+        "Bind Inversiones[fecha inicio].[Date]"
+      ],
+      "dax_functions": [
+        "AVERAGEX",
+        "CALCULATE",
+        "COUNTA",
+        "DATEADD",
+        "DATESBETWEEN",
+        "ERROR",
+        "IF",
+        "ISFILTERED",
+        "LASTDATE"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "FC CPD Compra s/BG",
+      "table": "Medidas",
+      "expression": "calculate(sum('Boletos IVSA'[Fee]), 'Boletos IVSA'[OPERACION] = \"COMPRA MAV CH\")*(CALCULATE(SUM('CPD-cheques-vendidos'[Monto Nominal]),'CPD-cheques-vendidos'[SGR]<>\"GARANTIAS BIND S.G.R.\",'CPD-cheques-vendidos'[Tipo de op] = \"compra\")/calculate(SUMX(ALLSELECTED('CPD-cheques-vendidos'),'CPD-cheques-vendidos'[Monto Nominal]),'CPD-cheques-vendidos'[Tipo de op] = \"compra\"))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Boletos IVSA",
+        "CPD-cheques-vendidos"
+      ],
+      "referenced_columns": [
+        "Boletos IVSA[Fee]",
+        "Boletos IVSA[OPERACION]",
+        "CPD-cheques-vendidos[Monto Nominal]",
+        "CPD-cheques-vendidos[SGR]",
+        "CPD-cheques-vendidos[Tipo de op]"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "CALCULATE",
+        "SUM",
+        "SUMX"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "FC CPD Venta s/BG y Bain",
+      "table": "Medidas",
+      "expression": "calculate(sum('Boletos IVSA'[Fee]), 'Boletos IVSA'[OPERACION] = \"venta mav CH\",'Oficial Banco'[N\u00b0 Banca] in {2,3,13})*(1-(CALCULATE(SUM('CPD-cheques-vendidos'[Monto Nominal]), 'CPD-cheques-vendidos'[SGR] in {\"GARANTIAS BIND S.G.R.\", \"FISICOS BAIN\"},'CPD-cheques-vendidos'[Tipo de op] = \"venta\")/calculate(SUMX(ALLSELECTED('CPD-cheques-vendidos'),'CPD-cheques-vendidos'[Monto Nominal]), 'CPD-cheques-vendidos'[Tipo de op] = \"venta\")))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Boletos IVSA",
+        "CPD-cheques-vendidos",
+        "Oficial Banco"
+      ],
+      "referenced_columns": [
+        "Boletos IVSA[Fee]",
+        "Boletos IVSA[OPERACION]",
+        "CPD-cheques-vendidos[Monto Nominal]",
+        "CPD-cheques-vendidos[SGR]",
+        "CPD-cheques-vendidos[Tipo de op]",
+        "Oficial Banco[N\u00b0 Banca]"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "CALCULATE",
+        "SUM",
+        "SUMX"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Total acumulado de Cant Clientes en A\u00f1o",
+      "table": "Medidas",
+      "expression": "\nCALCULATE(\n\t[Cant Clientes],\n\tFILTER(\n\t\tALLSELECTED('Bind Inversiones'[fecha inicio].[A\u00f1o]),\n\t\tISONORAFTER('Bind Inversiones'[fecha inicio].[A\u00f1o], MAX('Bind Inversiones'[fecha inicio].[A\u00f1o]), DESC)\n\t)\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[fecha inicio].[A\u00f1o]"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "CALCULATE",
+        "FILTER",
+        "ISONORAFTER",
+        "MAX"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldo a ayer -2",
+      "table": "Moneda de saldos",
+      "expression": "if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-2)=1, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-4,DAY)), if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-2)=7, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-4,DAY)), calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-2,DAY))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DATEADD",
+        "IF",
+        "SELECTEDVALUE",
+        "WEEKDAY"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldo a ayer -3",
+      "table": "Moneda de saldos",
+      "expression": "if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-3)=1, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-5,DAY)), if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-3)=7, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-5,DAY)),if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-3)=6, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-5,DAY)) ,calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-3,DAY)))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DATEADD",
+        "IF",
+        "SELECTEDVALUE",
+        "WEEKDAY"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldo ayer -4",
+      "table": "Moneda de saldos",
+      "expression": "if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-4)=1, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-6,DAY)), if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-4)=7, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-6,DAY)),if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-4)=6, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-6,DAY)), if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-4)=5, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-6,DAY)) ,calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-4,DAY))))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DATEADD",
+        "IF",
+        "SELECTEDVALUE",
+        "WEEKDAY"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "saldo a ayer-1",
+      "table": "Moneda de saldos",
+      "expression": "if(WEEKDAY(SELECTEDVALUE(Calendario[Dia])-1)=1, calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-3,DAY)), calculate([Medida a usar Promedio], DATEADD(Calendario[Dia],-1,DAY)))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DATEADD",
+        "IF",
+        "SELECTEDVALUE",
+        "WEEKDAY"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Pareto %",
+      "table": "Pareto",
+      "expression": "\nVAR Total = [Facturaci\u00f3n YTD]\nVAR TotalGlobal = CALCULATE([Facturaci\u00f3n YTD],ALLSELECTED('Operaciones BI'))\n\nreturn\nDIVIDE(\n SUMX(FILTER(SUMMARIZE(ALLSELECTED('Operaciones BI'), 'Operaciones BI'[N\u00ba Bind Inversiones],\"_Total\", [Facturaci\u00f3n YTD]), [_Total] >=Total),[_Total]),TotalGlobal,0)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[N\u00ba Bind Inversiones]"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "CALCULATE",
+        "DIVIDE",
+        "FILTER",
+        "SUMMARIZE",
+        "SUMX"
+      ],
+      "complexity_score": 10,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "MTD de Recuento de N\u00ba Bind Inv",
+      "table": "Bind Inversiones",
+      "expression": "\nIF(\n\tISFILTERED('Bind Inversiones'[fecha inicio]),\n\tERROR(\"La medida r\u00e1pida de inteligencia de tiempo solo se puede agrupar o filtrar mediante la jerarqu\u00eda de datos proporcionada por Power BI o por la columna de datos principal.\"),\n\tTOTALMTD(\n\t\tCOUNTA('Bind Inversiones'[N\u00ba Bind Inv]),\n\t\t'Bind Inversiones'[fecha inicio].[Date]\n\t)\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[N\u00ba Bind Inv]",
+        "Bind Inversiones[fecha inicio]",
+        "Bind Inversiones[fecha inicio].[Date]"
+      ],
+      "dax_functions": [
+        "COUNTA",
+        "ERROR",
+        "IF",
+        "ISFILTERED",
+        "TOTALMTD"
+      ],
+      "complexity_score": 9,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "FC CPD s/BG",
+      "table": "Medidas",
+      "expression": "calculate(sum('Operaciones BI'[Facturacion]), Productos[Producto] = \"CPD\")*(1-CALCULATE(SUM('CPD-cheques-vendidos'[Monto Nominal]),'CPD-cheques-vendidos'[SGR]=\"GARANTIAS BIND S.G.R.\",'CPD-cheques-vendidos'[Tipo de op] = \"compra\")/SUMX(ALLSELECTED('CPD-cheques-vendidos'),'CPD-cheques-vendidos'[Monto Nominal]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "CPD-cheques-vendidos",
+        "Operaciones BI",
+        "Productos"
+      ],
+      "referenced_columns": [
+        "CPD-cheques-vendidos[Monto Nominal]",
+        "CPD-cheques-vendidos[SGR]",
+        "CPD-cheques-vendidos[Tipo de op]",
+        "Operaciones BI[Facturacion]",
+        "Productos[Producto]"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "CALCULATE",
+        "SUM",
+        "SUMX"
+      ],
+      "complexity_score": 9,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Facturaci\u00f3n acumulada",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Operaciones BI'[Facturacion]), FILTER(ALLEXCEPT(Calendario, Calendario[A\u00f1o]), Calendario[Dia] <= MAX(Calendario[Dia]))) ",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Calendario[Dia]",
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "ALLEXCEPT",
+        "CALCULATE",
+        "FILTER",
+        "MAX",
+        "SUM"
+      ],
+      "complexity_score": 9,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "PEA CPD Empresa s/ BG",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Presupuesto x sem x producto'[PEA])*CONVERT(\"0,6236\",DOUBLE),'Presupuesto x sem x producto'[Producto] = \"CPD\")*(1-CALCULATE(SUM('CPD-cheques-vendidos'[Monto Nominal]),'CPD-cheques-vendidos'[SGR]=\"GARANTIAS BIND S.G.R.\", 'CPD-cheques-vendidos'[Tipo de op] = \"compra\")/SUMX(ALLSELECTED('CPD-cheques-vendidos'),'CPD-cheques-vendidos'[Monto Nominal]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "CPD-cheques-vendidos",
+        "Presupuesto x sem x producto"
+      ],
+      "referenced_columns": [
+        "CPD-cheques-vendidos[Monto Nominal]",
+        "CPD-cheques-vendidos[SGR]",
+        "CPD-cheques-vendidos[Tipo de op]",
+        "Presupuesto x sem x producto[PEA]",
+        "Presupuesto x sem x producto[Producto]"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "CALCULATE",
+        "CONVERT",
+        "SUM",
+        "SUMX"
+      ],
+      "complexity_score": 9,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "PEA YTD",
+      "table": "Medidas",
+      "expression": "\nCALCULATE(\n    SUM('Presupuesto x sem y of Banco'[PEA]),\n    FILTER(\n        ALL('Calendario semanas'[A\u00f1o]),\n        'Calendario semanas'[A\u00f1o] <= MAX('Calendario semanas'[A\u00f1o])\n    )\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario semanas",
+        "Presupuesto x sem y of Banco"
+      ],
+      "referenced_columns": [
+        "Calendario semanas[A\u00f1o]",
+        "Presupuesto x sem y of Banco[PEA]"
+      ],
+      "dax_functions": [
+        "ALL",
+        "CALCULATE",
+        "FILTER",
+        "MAX",
+        "SUM"
+      ],
+      "complexity_score": 9,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "modelo Minorista",
+      "table": "Medidas",
+      "expression": "if(sum('Operaciones BI'[Facturacion]) -  CALCULATE(sum('Operaciones BI'[Facturacion]), Calendario[Mes] = 6, Calendario[A\u00f1o] = 2022) >= 0, sum('Operaciones BI'[Facturacion]) -  CALCULATE(sum('Operaciones BI'[Facturacion]), Calendario[Mes] = 6, Calendario[A\u00f1o] = 2022), 0)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Calendario[Mes]",
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "IF",
+        "SUM"
+      ],
+      "complexity_score": 9,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "suscipriones netas acumuladas",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Canal de Operaci\u00f3n BI'[Importe real Operacion]),FILTER(ALL(Calendario), Calendario[Mes] <= MAX(Calendario[Mes])))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Canal de Operaci\u00f3n BI"
+      ],
+      "referenced_columns": [
+        "Calendario[Mes]",
+        "Canal de Operaci\u00f3n BI[Importe real Operacion]"
+      ],
+      "dax_functions": [
+        "ALL",
+        "CALCULATE",
+        "FILTER",
+        "MAX",
+        "SUM"
+      ],
+      "complexity_score": 9,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Clientes Operativos mes anterior",
+      "table": "Medidas",
+      "expression": "calculate(DISTINCTCOUNT('Operaciones BI'[N\u00ba Bind Inversiones]), PREVIOUSMONTH(Calendario[Dia]), REMOVEFILTERS('Bind Inversiones'[fecha inicio]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones",
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[fecha inicio]",
+        "Calendario[Dia]",
+        "Operaciones BI[N\u00ba Bind Inversiones]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DISTINCTCOUNT",
+        "PREVIOUSMONTH",
+        "REMOVEFILTERS"
+      ],
+      "complexity_score": 8,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Clientes acumulados",
+      "table": "Medidas",
+      "expression": "CALCULATE(COUNT('Bind Inversiones'[N\u00ba Bind Inv]), all('Bind Inversiones'),'Bind Inversiones'[fecha inicio] <= max('Bind Inversiones'[fecha inicio]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[N\u00ba Bind Inv]",
+        "Bind Inversiones[fecha inicio]"
+      ],
+      "dax_functions": [
+        "ALL",
+        "CALCULATE",
+        "COUNT",
+        "MAX"
+      ],
+      "complexity_score": 8,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "PN modelo minorista",
+      "table": "Medidas",
+      "expression": "if( 'Operaciones BI'[PN Prom bi] -  CALCULATE('Operaciones BI'[PN Prom bi], Calendario[Mes] = 6, Calendario[A\u00f1o] = 2022) >= 0, 'Operaciones BI'[PN Prom bi] -  CALCULATE('Operaciones BI'[PN Prom bi], Calendario[Mes] = 6, Calendario[A\u00f1o] = 2022), 0)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Calendario[Mes]",
+        "Operaciones BI[PN Prom bi]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "IF"
+      ],
+      "complexity_score": 8,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Pareto",
+      "table": "Pareto",
+      "expression": "\nVAR Total = [Facturaci\u00f3n YTD]\nreturn\n SUMX(FILTER(SUMMARIZE(ALLSELECTED('Operaciones BI'), 'Operaciones BI'[N\u00ba Bind Inversiones],\"_Total\", [Facturaci\u00f3n YTD]), [_Total] >=Total),[_Total])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[N\u00ba Bind Inversiones]"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "FILTER",
+        "SUMMARIZE",
+        "SUMX"
+      ],
+      "complexity_score": 8,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "% Canal Digital",
+      "table": "Canal de Operaci\u00f3n BI",
+      "expression": "CALCULATE(count('Canal de Operaci\u00f3n BI'[N\u00b0 de Operacion]), KEEPFILTERS('Canal de Operaci\u00f3n BI'[Canal.1]=\"WEB\" || 'Canal de Operaci\u00f3n BI'[Canal.1]=\"bot\") )/count('Canal de Operaci\u00f3n BI'[N\u00b0 de Operacion])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Canal de Operaci\u00f3n BI"
+      ],
+      "referenced_columns": [
+        "Canal de Operaci\u00f3n BI[Canal.1]",
+        "Canal de Operaci\u00f3n BI[N\u00b0 de Operacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "COUNT",
+        "KEEPFILTERS"
+      ],
+      "complexity_score": 7,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "PEA Productos YTD",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Presupuesto x sem x producto'[PEA]), REMOVEFILTERS(Calendario[Mes]),KEEPFILTERS(Calendario[A\u00f1o]=2023), Calendario[Mes] < MONTH(TODAY()))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Presupuesto x sem x producto"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Calendario[Mes]",
+        "Presupuesto x sem x producto[PEA]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "KEEPFILTERS",
+        "MONTH",
+        "REMOVEFILTERS",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 7,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "cant de Op web",
+      "table": "Medidas",
+      "expression": "CALCULATE(COUNT('Canal de Operaci\u00f3n BI'[N\u00b0 de Operacion]),'Canal de Operaci\u00f3n BI'[Canal.1] = \"web\") + CALCULATE(COUNT('Canal de Operaci\u00f3n BI'[N\u00b0 de Operacion]),'Canal de Operaci\u00f3n BI'[Canal.1] = \"BOT\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Canal de Operaci\u00f3n BI"
+      ],
+      "referenced_columns": [
+        "Canal de Operaci\u00f3n BI[Canal.1]",
+        "Canal de Operaci\u00f3n BI[N\u00b0 de Operacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "COUNT"
+      ],
+      "complexity_score": 7,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "% Canal BOT",
+      "table": "Canal de Operaci\u00f3n BI",
+      "expression": "CALCULATE(count('Canal de Operaci\u00f3n BI'[N\u00b0 de Operacion]), KEEPFILTERS('Canal de Operaci\u00f3n BI'[Canal.1]=\"bot\") )/count('Canal de Operaci\u00f3n BI'[N\u00b0 de Operacion])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Canal de Operaci\u00f3n BI"
+      ],
+      "referenced_columns": [
+        "Canal de Operaci\u00f3n BI[Canal.1]",
+        "Canal de Operaci\u00f3n BI[N\u00b0 de Operacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "COUNT",
+        "KEEPFILTERS"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "% OP",
+      "table": "Canal de Operaci\u00f3n BI",
+      "expression": "COUNT('Canal de Operaci\u00f3n BI'[N\u00b0 de Operacion])/calculate(count('Canal de Operaci\u00f3n BI'[N\u00b0 de Operacion]), REMOVEFILTERS('Canal de Operaci\u00f3n BI'[Canal.1]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Canal de Operaci\u00f3n BI"
+      ],
+      "referenced_columns": [
+        "Canal de Operaci\u00f3n BI[Canal.1]",
+        "Canal de Operaci\u00f3n BI[N\u00b0 de Operacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "COUNT",
+        "REMOVEFILTERS"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "% vol de OP",
+      "table": "Canal de Operaci\u00f3n BI",
+      "expression": "CALCULATE(sum('Canal de Operaci\u00f3n BI'[Volumen BI]), KEEPFILTERS('Canal de Operaci\u00f3n BI'[Canal.1]=\"bot\") )/sum('Canal de Operaci\u00f3n BI'[Volumen BI])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Canal de Operaci\u00f3n BI"
+      ],
+      "referenced_columns": [
+        "Canal de Operaci\u00f3n BI[Canal.1]",
+        "Canal de Operaci\u00f3n BI[Volumen BI]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "KEEPFILTERS",
+        "SUM"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "% de diferencia entre Clientes acumulados y Clientes acumulados",
+      "table": "Medidas",
+      "expression": "\nVAR __BASELINE_VALUE = [Clientes acumulados]\nVAR __VALUE_TO_COMPARE = [Clientes acumulados]\nRETURN\n\tIF(\n\t\tNOT ISBLANK(__VALUE_TO_COMPARE),\n\t\tDIVIDE(__VALUE_TO_COMPARE - __BASELINE_VALUE, __BASELINE_VALUE)\n\t)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DIVIDE",
+        "IF",
+        "ISBLANK"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Clientes Operativos",
+      "table": "Medidas",
+      "expression": "calculate(DISTINCTCOUNT('Operaciones BI'[N\u00ba Bind Inversiones]),REMOVEFILTERS('Bind Inversiones'[fecha inicio]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[fecha inicio]",
+        "Operaciones BI[N\u00ba Bind Inversiones]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DISTINCTCOUNT",
+        "REMOVEFILTERS"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Diferencia",
+      "table": "Medidas",
+      "expression": "CALCULATE(DISTINCTCOUNT('Operaciones BI'[N\u00ba Bind Inversiones]), KEEPFILTERS(Calendario[A\u00f1o]=2022)) - CALCULATE(DISTINCTCOUNT('Operaciones BI'[N\u00ba Bind Inversiones]), KEEPFILTERS(Calendario[A\u00f1o]=2021))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Operaciones BI[N\u00ba Bind Inversiones]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DISTINCTCOUNT",
+        "KEEPFILTERS"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Facturaci\u00f3n - YTD",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Operaciones BI'[Facturacion]),REMOVEFILTERS(Calendario[A\u00f1o]), KEEPFILTERS(Calendario[A\u00f1o]=2024))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "KEEPFILTERS",
+        "REMOVEFILTERS",
+        "SUM"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Facturaci\u00f3n 2021",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Operaciones BI'[Facturacion]),REMOVEFILTERS(Calendario[A\u00f1o]), KEEPFILTERS(Calendario[A\u00f1o]=2021))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "KEEPFILTERS",
+        "REMOVEFILTERS",
+        "SUM"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Facturaci\u00f3n 2022",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Operaciones BI'[Facturacion]),REMOVEFILTERS(Calendario[A\u00f1o]), KEEPFILTERS(Calendario[A\u00f1o]=2022))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "KEEPFILTERS",
+        "REMOVEFILTERS",
+        "SUM"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Facturaci\u00f3n 2023",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Operaciones BI'[Facturacion]),REMOVEFILTERS(Calendario[A\u00f1o]), KEEPFILTERS(Calendario[A\u00f1o]=2023))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "KEEPFILTERS",
+        "REMOVEFILTERS",
+        "SUM"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Facturaci\u00f3n YTD",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Operaciones BI'[Facturacion]),REMOVEFILTERS(Calendario[Mes]), KEEPFILTERS(Calendario[A\u00f1o]=2024))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Calendario[Mes]",
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "KEEPFILTERS",
+        "REMOVEFILTERS",
+        "SUM"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "PEA CPD Empresa",
+      "table": "Medidas",
+      "expression": "CALCULATE(sum('Presupuesto x sem x producto'[PEA])*CONVERT(\"0,6236\",DOUBLE),'Presupuesto x sem x producto'[Producto] = \"CPD\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Presupuesto x sem x producto"
+      ],
+      "referenced_columns": [
+        "Presupuesto x sem x producto[PEA]",
+        "Presupuesto x sem x producto[Producto]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "CONVERT",
+        "SUM"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "hard",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Medida a usar por cliente",
+      "table": "Moneda de saldos",
+      "expression": "if(hasonefilter('Bind Inversiones'[Cuotapartista]),SWITCH('Moneda de saldos'[Moneda seleccionada], 1, sum('Saldos ivsa'[Saldo en Pesos]), 2, sum('Saldos ivsa'[Saldo en Dolar MEP]), 3, sum('Saldos ivsa'[Saldo en Dolar Cable])), BLANK())",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones",
+        "Moneda de saldos",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[Cuotapartista]",
+        "Moneda de saldos[Moneda seleccionada]",
+        "Saldos ivsa[Saldo en Dolar Cable]",
+        "Saldos ivsa[Saldo en Dolar MEP]",
+        "Saldos ivsa[Saldo en Pesos]"
+      ],
+      "dax_functions": [
+        "BLANK",
+        "HASONEFILTER",
+        "IF",
+        "SUM",
+        "SWITCH"
+      ],
+      "complexity_score": 6,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Cant Clientes",
+      "table": "Medidas",
+      "expression": "calculate(count('Bind Inversiones'[Cuotapartista]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[Cuotapartista]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "COUNT"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Clientes Nuevos",
+      "table": "Medidas",
+      "expression": "CALCULATE(COUNT('Bind Inversiones'[N\u00ba Bind Inv]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones"
+      ],
+      "referenced_columns": [
+        "Bind Inversiones[N\u00ba Bind Inv]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "COUNT"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "DIAS DEL MES",
+      "table": "Medidas",
+      "expression": "calculate(DISTINCTCOUNT(Calendario[Dia]), Calendario[A\u00f1o]=2022)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario"
+      ],
+      "referenced_columns": [
+        "Calendario[A\u00f1o]",
+        "Calendario[Dia]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DISTINCTCOUNT"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "DOLAR CABLE HOY",
+      "table": "Medidas",
+      "expression": "Calculate(sum('Saldos ivsa'[Saldo en Dolar Cable]), 'Calendario'[Dia] = today())",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]",
+        "Saldos ivsa[Saldo en Dolar Cable]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "DOLAR MEP HOY",
+      "table": "Medidas",
+      "expression": "Calculate(sum('Saldos ivsa'[Saldo en Dolar MEP]), 'Calendario'[Dia] = today())",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]",
+        "Saldos ivsa[Saldo en Dolar MEP]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldo al inicio CABLE",
+      "table": "Medidas",
+      "expression": "Calculate(sum('Saldos ivsa'[Saldo en Dolar Cable]), Calendario[Dia]= date(2023,04,27))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]",
+        "Saldos ivsa[Saldo en Dolar Cable]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DATE",
+        "SUM"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldo al inicio MEP",
+      "table": "Medidas",
+      "expression": "Calculate(sum('Saldos ivsa'[Saldo en Dolar MEP]), Calendario[Dia]= date(2023,04,27))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]",
+        "Saldos ivsa[Saldo en Dolar MEP]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DATE",
+        "SUM"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldo dia anterior",
+      "table": "Medidas",
+      "expression": "Calculate(sum('Saldos ivsa'[Saldo en Dolar MEP]), Calendario[Dia]=today()-7)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]",
+        "Saldos ivsa[Saldo en Dolar MEP]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldo semana anterior CABLE",
+      "table": "Medidas",
+      "expression": "Calculate(sum('Saldos ivsa'[Saldo en Dolar Cable]), Calendario[Dia]=today()-7)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]",
+        "Saldos ivsa[Saldo en Dolar Cable]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldo semana anterior MEP",
+      "table": "Medidas",
+      "expression": "Calculate(sum('Saldos ivsa'[Saldo en Dolar MEP]), Calendario[Dia]=today()-7)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]",
+        "Saldos ivsa[Saldo en Dolar MEP]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldos hoy CABLE",
+      "table": "Medidas",
+      "expression": "calculate(sum('Saldos ivsa'[Saldo en Dolar Cable]), 'Saldos ivsa'[Fecha]=TODAY())",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Saldos ivsa[Fecha]",
+        "Saldos ivsa[Saldo en Dolar Cable]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldos hoy MEP",
+      "table": "Medidas",
+      "expression": "calculate(sum('Saldos ivsa'[Saldo en Dolar MEP]), 'Saldos ivsa'[Fecha]=TODAY())",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Saldos ivsa[Fecha]",
+        "Saldos ivsa[Saldo en Dolar MEP]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Saldos pesos hoy",
+      "table": "Medidas",
+      "expression": "calculate(sum('Saldos ivsa'[Saldo en Pesos]), 'Saldos ivsa'[Fecha]=TODAY())",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Saldos ivsa[Fecha]",
+        "Saldos ivsa[Saldo en Pesos]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "SUM",
+        "TODAY"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "saldo a fin de mes CABLE",
+      "table": "Medidas",
+      "expression": "Calculate(sum('Saldos ivsa'[Saldo en Dolar Cable]), Calendario[Dia]= date(2023,05,31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Calendario[Dia]",
+        "Saldos ivsa[Saldo en Dolar Cable]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "DATE",
+        "SUM"
+      ],
+      "complexity_score": 5,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Performance YTD",
+      "table": "Medidas",
+      "expression": "CALCULATE([Facturaci\u00f3n YTD])/CALCULATE([PEA YTD])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "CALCULATE"
+      ],
+      "complexity_score": 4,
+      "sql_convertibility": "medium",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "porcentaje de participacion",
+      "table": "Medidas",
+      "expression": "sum('CPD-cheques-vendidos'[Monto Nominal])/ sumx(ALLSELECTED('CPD-cheques-vendidos'),'CPD-cheques-vendidos'[Monto Nominal])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "CPD-cheques-vendidos"
+      ],
+      "referenced_columns": [
+        "CPD-cheques-vendidos[Monto Nominal]"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "SUM",
+        "SUMX"
+      ],
+      "complexity_score": 3,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Medida a usar",
+      "table": "Moneda de saldos",
+      "expression": "SWITCH('Moneda de saldos'[Moneda seleccionada], 1, Medidas[Saldos pesos hoy], 2, Medidas[Saldos hoy MEP], 3, Medidas[Saldos hoy CABLE])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Medidas",
+        "Moneda de saldos"
+      ],
+      "referenced_columns": [
+        "Medidas[Saldos hoy CABLE]",
+        "Medidas[Saldos hoy MEP]",
+        "Medidas[Saldos pesos hoy]",
+        "Moneda de saldos[Moneda seleccionada]"
+      ],
+      "dax_functions": [
+        "SWITCH"
+      ],
+      "complexity_score": 3,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Medida a usar Promedio",
+      "table": "Moneda de saldos",
+      "expression": "SWITCH('Moneda de saldos'[Moneda seleccionada], 1,[Pesos Promedio], 2, 'Moneda de saldos'[Mep Promedio], 3, [Cable Promedio])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Moneda de saldos"
+      ],
+      "referenced_columns": [
+        "Moneda de saldos[Mep Promedio]",
+        "Moneda de saldos[Moneda seleccionada]"
+      ],
+      "dax_functions": [
+        "SWITCH"
+      ],
+      "complexity_score": 3,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "clasificacion ABC",
+      "table": "Pareto",
+      "expression": "SWITCH(true(), Pareto[Pareto %]<=0.8,\"A\",Pareto[Pareto %]>0.8,\"B\",\"C\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Pareto"
+      ],
+      "referenced_columns": [
+        "Pareto[Pareto %]"
+      ],
+      "dax_functions": [
+        "SWITCH",
+        "TRUE"
+      ],
+      "complexity_score": 3,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "PN Prom",
+      "table": "Operaciones IAM",
+      "expression": "sum('Operaciones IAM'[$ PN Cuotap. (23/01/22)])/DISTINCTCOUNT('Operaciones IAM'[Fecha])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones IAM"
+      ],
+      "referenced_columns": [
+        "Operaciones IAM[$ PN Cuotap. (23/01/22)]",
+        "Operaciones IAM[Fecha]"
+      ],
+      "dax_functions": [
+        "CUOTAP.",
+        "DISTINCTCOUNT",
+        "SUM"
+      ],
+      "complexity_score": 2,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "indice fact/vol",
+      "table": "Boletos IVSA",
+      "expression": "sum('Boletos IVSA'[Fee])/sum('Boletos IVSA'[Volumen])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Boletos IVSA"
+      ],
+      "referenced_columns": [
+        "Boletos IVSA[Fee]",
+        "Boletos IVSA[Volumen]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Comisi\u00f3n embajadores",
+      "table": "Embajadores",
+      "expression": "sum('Operaciones BI'[Facturacion])*0.15",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Cant OP x spread",
+      "table": "Medidas",
+      "expression": "[fc/vol]*COUNT('Operaciones BI'[N\u00ba Bind Inversiones])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[N\u00ba Bind Inversiones]"
+      ],
+      "dax_functions": [
+        "COUNT"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Cant de operaciones",
+      "table": "Medidas",
+      "expression": "count('Boletos IVSA'[Boleto])+count('Operaciones por canal IAM'[n\u00b0 Cuotapartista])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Boletos IVSA",
+        "Operaciones por canal IAM"
+      ],
+      "referenced_columns": [
+        "Boletos IVSA[Boleto]",
+        "Operaciones por canal IAM[n\u00b0 Cuotapartista]"
+      ],
+      "dax_functions": [
+        "COUNT"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Comprativo a\u00f1o anterior",
+      "table": "Medidas",
+      "expression": "sum('Operaciones BI'[Facturacion])/[Facturaci\u00f3n 2022]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Crecimiento",
+      "table": "Medidas",
+      "expression": "sum('Presupuesto x sem y of Banco'[PEA])/[Facturaci\u00f3n YTD]-1",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Presupuesto x sem y of Banco"
+      ],
+      "referenced_columns": [
+        "Presupuesto x sem y of Banco[PEA]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Hoy",
+      "table": "Medidas",
+      "expression": "TODAY()",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "TODAY"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Performance BI",
+      "table": "Medidas",
+      "expression": "sum('Operaciones BI'[Facturacion])/sum('Presupuesto x sem y of Bi'[PEA])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI",
+        "Presupuesto x sem y of Bi"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Facturacion]",
+        "Presupuesto x sem y of Bi[PEA]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Vol total",
+      "table": "Medidas",
+      "expression": "sum('Operaciones BI'[Volumen])+ 'Operaciones BI'[PN Prom bi]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[PN Prom bi]",
+        "Operaciones BI[Volumen]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "fc con referidos",
+      "table": "Medidas",
+      "expression": "sum('Operaciones BI'[Facturacion]) + sum(Referidos[Facturaci\u00f3n $])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI",
+        "Referidos"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Facturacion]",
+        "Referidos[Facturaci\u00f3n $]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "fc/vol",
+      "table": "Medidas",
+      "expression": "sum('Operaciones BI'[Facturacion])/sum('Operaciones BI'[Volumen])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Facturacion]",
+        "Operaciones BI[Volumen]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "fc/vol Total",
+      "table": "Medidas",
+      "expression": "sum('Operaciones BI'[Facturacion])/'Medidas'[Vol total]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Medidas",
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Medidas[Vol total]",
+        "Operaciones BI[Facturacion]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "performance con referidoss",
+      "table": "Medidas",
+      "expression": "[fc con referidos]/ sum('Presupuesto x sem y of BI'[PEA])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Presupuesto x sem y of BI"
+      ],
+      "referenced_columns": [
+        "Presupuesto x sem y of BI[PEA]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "vol x spread",
+      "table": "Medidas",
+      "expression": "[fc/vol]*sum('Operaciones BI'[Volumen])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Volumen]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "vol/q ops",
+      "table": "Medidas",
+      "expression": "sum('Operaciones BI'[Volumen])/COUNT('Operaciones BI'[N\u00ba Cliente])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[N\u00ba Cliente]",
+        "Operaciones BI[Volumen]"
+      ],
+      "dax_functions": [
+        "COUNT",
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Cable Promedio",
+      "table": "Moneda de saldos",
+      "expression": "SUM('Saldos ivsa'[Saldo en Dolar Cable])/DISTINCTCOUNT('Saldos ivsa'[Fecha])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Saldos ivsa[Fecha]",
+        "Saldos ivsa[Saldo en Dolar Cable]"
+      ],
+      "dax_functions": [
+        "DISTINCTCOUNT",
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Mep Promedio",
+      "table": "Moneda de saldos",
+      "expression": "SUM('Saldos ivsa'[Saldo en Dolar MEP])/DISTINCTCOUNT('Saldos ivsa'[Fecha])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Saldos ivsa[Fecha]",
+        "Saldos ivsa[Saldo en Dolar MEP]"
+      ],
+      "dax_functions": [
+        "DISTINCTCOUNT",
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Moneda seleccionada",
+      "table": "Moneda de saldos",
+      "expression": "SELECTEDVALUE('Moneda de saldos'[ID Medida])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Moneda de saldos"
+      ],
+      "referenced_columns": [
+        "Moneda de saldos[ID Medida]"
+      ],
+      "dax_functions": [
+        "SELECTEDVALUE"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Pesos Promedio",
+      "table": "Moneda de saldos",
+      "expression": "SUM('Saldos ivsa'[Saldo en Pesos])/DISTINCTCOUNT('Saldos ivsa'[Fecha])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Saldos ivsa"
+      ],
+      "referenced_columns": [
+        "Saldos ivsa[Fecha]",
+        "Saldos ivsa[Saldo en Pesos]"
+      ],
+      "dax_functions": [
+        "DISTINCTCOUNT",
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "PN Prom bi",
+      "table": "Operaciones BI",
+      "expression": "sum('Operaciones BI'[PN])/DISTINCTCOUNT('Operaciones BI'[Fecha])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Fecha]",
+        "Operaciones BI[PN]"
+      ],
+      "dax_functions": [
+        "DISTINCTCOUNT",
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Performance",
+      "table": "Operaciones BI",
+      "expression": "sum('Operaciones BI'[Facturacion])/sum('Presupuesto x sem y of Banco'[PEA])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI",
+        "Presupuesto x sem y of Banco"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Facturacion]",
+        "Presupuesto x sem y of Banco[PEA]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "performance producto",
+      "table": "Operaciones BI",
+      "expression": "sum('Operaciones BI'[Facturacion])/sum('Presupuesto x sem x producto'[PEA])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI",
+        "Presupuesto x sem x producto"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Facturacion]",
+        "Presupuesto x sem x producto[PEA]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Perfromance Embajadores",
+      "table": "PEA embajadores",
+      "expression": "sum('Operaciones BI'[Facturacion])/sum('PEA embajadores'[PEA])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI",
+        "PEA embajadores"
+      ],
+      "referenced_columns": [
+        "Operaciones BI[Facturacion]",
+        "PEA embajadores[PEA]"
+      ],
+      "dax_functions": [
+        "SUM"
+      ],
+      "complexity_score": 1,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Medida",
+      "table": "Medidas",
+      "expression": "",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "Performance Cheques Empresa",
+      "table": "Medidas",
+      "expression": "[FC CPD s/BG]/[PEA CPD Empresa s/ BG]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    },
+    {
+      "name": "dif mes anterior",
+      "table": "Medidas",
+      "expression": "[Clientes Operativos]-[Clientes Operativos mes anterior]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0,
+      "sql_convertibility": "easy",
+      "found_in_reports": [
+        "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix"
+      ]
+    }
+  ],
+  "calculated_columns": [
+    {
+      "name": "CLUSTER IAM",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "IF(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[Cluster PN IAM],'Seguimiento Bind Inversiones Sem'[cluster Facturacion IAM]),\"AA\")=TRUE,\"AA\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[Cluster PN IAM],'Seguimiento Bind Inversiones Sem'[cluster Facturacion IAM]),\"A\")=TRUE,\"A\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[Cluster PN IAM],'Seguimiento Bind Inversiones Sem'[cluster Facturacion IAM]),\"BB\")=TRUE,\"BB\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[Cluster PN IAM],'Seguimiento Bind Inversiones Sem'[cluster Facturacion IAM]),\"B\")=TRUE,\"B\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[Cluster PN IAM],'Seguimiento Bind Inversiones Sem'[cluster Facturacion IAM]),\"CC\")=TRUE,\"CC\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[Cluster PN IAM],'Seguimiento Bind Inversiones Sem'[cluster Facturacion IAM]),\"C\")=TRUE,\"C\",\"INACTIVO\"))))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[Cluster PN IAM]",
+        "Seguimiento Bind Inversiones Sem[cluster Facturacion IAM]"
+      ],
+      "dax_functions": [
+        "CONCATENATE",
+        "CONTAINSSTRING",
+        "IF"
+      ],
+      "complexity_score": 9
+    },
+    {
+      "name": "CLUSTER IVSA",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "IF(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[cluster Vol IVSA],'Seguimiento Bind Inversiones Sem'[cluster Facturacion Ivsa]),\"AA\")=TRUE,\"AA\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[cluster Vol IVSA],'Seguimiento Bind Inversiones Sem'[cluster Facturacion Ivsa]),\"A\")=TRUE,\"A\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[cluster Vol IVSA],'Seguimiento Bind Inversiones Sem'[cluster Facturacion Ivsa]),\"BB\")=TRUE,\"BB\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[cluster Vol IVSA],'Seguimiento Bind Inversiones Sem'[cluster Facturacion Ivsa]),\"B\")=TRUE,\"B\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[cluster Vol IVSA],'Seguimiento Bind Inversiones Sem'[cluster Facturacion Ivsa]),\"CC\")=TRUE,\"CC\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones Sem'[cluster Vol IVSA],'Seguimiento Bind Inversiones Sem'[cluster Facturacion Ivsa]),\"C\")=TRUE,\"C\",\"INACTIVO\"))))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[cluster Facturacion Ivsa]",
+        "Seguimiento Bind Inversiones Sem[cluster Vol IVSA]"
+      ],
+      "dax_functions": [
+        "CONCATENATE",
+        "CONTAINSSTRING",
+        "IF"
+      ],
+      "complexity_score": 9
+    },
+    {
+      "name": "CLUSTER IAM",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "IF(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[Cluster PN IAM],'Seguimiento Bind Inversiones mensual'[cluster Facturacion IAM]),\"AA\")=TRUE,\"AA\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[Cluster PN IAM],'Seguimiento Bind Inversiones mensual'[cluster Facturacion IAM]),\"A\")=TRUE,\"A\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[Cluster PN IAM],'Seguimiento Bind Inversiones mensual'[cluster Facturacion IAM]),\"BB\")=TRUE,\"BB\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[Cluster PN IAM],'Seguimiento Bind Inversiones mensual'[cluster Facturacion IAM]),\"B\")=TRUE,\"B\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[Cluster PN IAM],'Seguimiento Bind Inversiones mensual'[cluster Facturacion IAM]),\"CC\")=TRUE,\"CC\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[Cluster PN IAM],'Seguimiento Bind Inversiones mensual'[cluster Facturacion IAM]),\"C\")=TRUE,\"C\",\"INACTIVO\"))))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[Cluster PN IAM]",
+        "Seguimiento Bind Inversiones mensual[cluster Facturacion IAM]"
+      ],
+      "dax_functions": [
+        "CONCATENATE",
+        "CONTAINSSTRING",
+        "IF"
+      ],
+      "complexity_score": 9
+    },
+    {
+      "name": "CLUSTER IVSA",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "IF(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[cluster Vol IVSA],'Seguimiento Bind Inversiones mensual'[cluster Facturacion Ivsa]),\"AA\")=TRUE,\"AA\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[cluster Vol IVSA],'Seguimiento Bind Inversiones mensual'[cluster Facturacion Ivsa]),\"A\")=TRUE,\"A\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[cluster Vol IVSA],'Seguimiento Bind Inversiones mensual'[cluster Facturacion Ivsa]),\"BB\")=TRUE,\"BB\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[cluster Vol IVSA],'Seguimiento Bind Inversiones mensual'[cluster Facturacion Ivsa]),\"B\")=TRUE,\"B\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[cluster Vol IVSA],'Seguimiento Bind Inversiones mensual'[cluster Facturacion Ivsa]),\"CC\")=TRUE,\"CC\",if(CONTAINSSTRING(CONCATENATE('Seguimiento Bind Inversiones mensual'[cluster Vol IVSA],'Seguimiento Bind Inversiones mensual'[cluster Facturacion Ivsa]),\"C\")=TRUE,\"C\",\"INACTIVO\"))))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[cluster Facturacion Ivsa]",
+        "Seguimiento Bind Inversiones mensual[cluster Vol IVSA]"
+      ],
+      "dax_functions": [
+        "CONCATENATE",
+        "CONTAINSSTRING",
+        "IF"
+      ],
+      "complexity_score": 9
+    },
+    {
+      "name": "CLUSTER",
+      "table": "Seguimiento IAM mensual",
+      "expression": "IF(CONTAINSSTRING(CONCATENATE('Seguimiento IAM mensual'[cluster PN],'Seguimiento IAM mensual'[cluster Facturacion]),\"AA\")=TRUE,\"AA\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IAM mensual'[cluster PN],'Seguimiento iam mensual'[cluster Facturacion]),\"A\")=TRUE,\"A\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IAM mensual'[cluster PN],'Seguimiento IAM mensual'[Cluster facturacion]),\"BB\")=TRUE,\"BB\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IAM mensual'[cluster PN],'Seguimiento IAM mensual'[Cluster facturacion]),\"B\")=TRUE,\"B\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IAM mensual'[cluster PN],'Seguimiento IAM mensual'[Cluster facturacion]),\"CC\")=TRUE,\"CC\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IAM mensual'[cluster PN],'Seguimiento IAM mensual'[Cluster facturacion]),\"C\")=TRUE,\"C\",\"INACTIVO\"))))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IAM mensual",
+        "Seguimiento iam mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IAM mensual[Cluster facturacion]",
+        "Seguimiento IAM mensual[cluster Facturacion]",
+        "Seguimiento IAM mensual[cluster PN]",
+        "Seguimiento iam mensual[cluster Facturacion]"
+      ],
+      "dax_functions": [
+        "CONCATENATE",
+        "CONTAINSSTRING",
+        "IF"
+      ],
+      "complexity_score": 9
+    },
+    {
+      "name": "CLUSTER",
+      "table": "Seguimiento IVSA mensual",
+      "expression": "IF(CONTAINSSTRING(CONCATENATE('Seguimiento IVSA mensual'[cluster vol],'Seguimiento IVSA mensual'[cluster Facturacion]),\"AA\")=TRUE,\"AA\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IVSA mensual'[Cluster vol],'Seguimiento IVSA mensual'[cluster Facturacion]),\"A\")=TRUE,\"A\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IVSA mensual'[cluster vol],'Seguimiento IVSA mensual'[Cluster facturacion]),\"BB\")=TRUE,\"BB\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IVSA mensual'[cluster vol],'Seguimiento IVSA mensual'[Cluster facturacion]),\"B\")=TRUE,\"B\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IVSA mensual'[cluster vol],'Seguimiento IVSA mensual'[Cluster facturacion]),\"CC\")=TRUE,\"CC\",if(CONTAINSSTRING(CONCATENATE('Seguimiento IVSA mensual'[cluster vol],'Seguimiento IVSA mensual'[Cluster facturacion]),\"C\")=TRUE,\"C\",\"INACTIVO\"))))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IVSA mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IVSA mensual[Cluster facturacion]",
+        "Seguimiento IVSA mensual[Cluster vol]",
+        "Seguimiento IVSA mensual[cluster Facturacion]",
+        "Seguimiento IVSA mensual[cluster vol]"
+      ],
+      "dax_functions": [
+        "CONCATENATE",
+        "CONTAINSSTRING",
+        "IF"
+      ],
+      "complexity_score": 9
+    },
+    {
+      "name": "Cluster PN IAM",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "if(and( 'Seguimiento Bind Inversiones Sem'[PN] >convert(\"0\",INTEGER),'Seguimiento Bind Inversiones Sem'[PN] <=convert(\"1475000\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento Bind Inversiones Sem'[PN]>convert(\"1475000\",INTEGER),'Seguimiento Bind Inversiones Sem'[PN]<=convert(\"2950000\",INTEGER)),convert(\"B\",STRING),if('Seguimiento Bind Inversiones Sem'[PN]>convert(\"2950000\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[PN]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Facturacion IAM",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "if(and( 'Seguimiento Bind Inversiones Sem'[fee iam] >convert(\"0\",INTEGER),'Seguimiento Bind Inversiones Sem'[fee iam] <=convert(\"1450\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento Bind Inversiones Sem'[fee iam]>convert(\"1450\",INTEGER),'Seguimiento Bind Inversiones Sem'[fee iam]<=convert(\"2900\",INTEGER)),convert(\"B\",STRING),if('Seguimiento Bind Inversiones Sem'[fee iam]>convert(\"2900\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[fee iam]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Facturacion IVSA",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "if(and( 'Seguimiento Bind Inversiones Sem'[fee ivsa]>convert(\"0\",INTEGER),'Seguimiento Bind Inversiones Sem'[fee ivsa] <=convert(\"1700\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento Bind Inversiones Sem'[fee ivsa]>convert(\"1700\",INTEGER),'Seguimiento Bind Inversiones Sem'[fee ivsa]<=convert(\"3400\",INTEGER)),convert(\"B\",STRING),if('Seguimiento Bind Inversiones Sem'[fee ivsa]>convert(\"3400\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[fee ivsa]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Vol IVSA",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "if(and( 'Seguimiento Bind Inversiones Sem'[volumen] >convert(\"0\",INTEGER),'Seguimiento Bind Inversiones Sem'[volumen] <=convert(\"2500000\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento Bind Inversiones Sem'[volumen]>convert(\"2500000\",INTEGER),'Seguimiento Bind Inversiones Sem'[volumen]<=convert(\"5000000\",INTEGER)),convert(\"B\",STRING),if('Seguimiento Bind Inversiones Sem'[volumen]>convert(\"5000000\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[volumen]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "Cluster PN IAM",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "if(and( 'Seguimiento Bind Inversiones mensual'[PN Prom] >convert(\"0\",INTEGER),'Seguimiento Bind Inversiones mensual'[PN Prom] <=convert(\"5900000\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento Bind Inversiones mensual'[PN Prom]>convert(\"5900000\",INTEGER),'Seguimiento Bind Inversiones mensual'[PN Prom]<=convert(\"11800000\",INTEGER)),convert(\"B\",STRING),if('Seguimiento Bind Inversiones mensual'[PN Prom]>convert(\"11800000\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[PN Prom]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Facturacion IAM",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "if(and( 'Seguimiento Bind Inversiones mensual'[fee IAM] >convert(\"0\",INTEGER),'Seguimiento Bind Inversiones mensual'[fee IAM] <=convert(\"5800\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento Bind Inversiones mensual'[fee IAM]>convert(\"5800\",INTEGER),'Seguimiento Bind Inversiones mensual'[fee IAM]<=convert(\"11600\",INTEGER)),convert(\"B\",STRING),if('Seguimiento Bind Inversiones mensual'[fee IAM]>convert(\"11600\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[fee IAM]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Facturacion IVSA",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "if(and( 'Seguimiento Bind Inversiones mensual'[fee ivsa]>convert(\"0\",INTEGER),'Seguimiento Bind Inversiones mensual'[fee ivsa] <=convert(\"6800\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento Bind Inversiones mensual'[fee ivsa]>convert(\"6800\",INTEGER),'Seguimiento Bind Inversiones mensual'[fee ivsa]<=convert(\"13600\",INTEGER)),convert(\"B\",STRING),if('Seguimiento Bind Inversiones mensual'[fee ivsa]>convert(\"13600\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[fee ivsa]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Vol IVSA",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "if(and( 'Seguimiento Bind Inversiones mensual'[volumen] >convert(\"0\",INTEGER),'Seguimiento Bind Inversiones mensual'[volumen] <=convert(\"10000000\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento Bind Inversiones mensual'[volumen]>convert(\"10000000\",INTEGER),'Seguimiento Bind Inversiones mensual'[volumen]<=convert(\"20000000\",INTEGER)),convert(\"B\",STRING),if('Seguimiento Bind Inversiones mensual'[volumen]>convert(\"20000000\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[volumen]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "dias del mes",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "if(month(today())='Seguimiento Bind Inversiones mensual'[Mes], day(max('Operaciones BI'[Fecha])),\n    \n    CALCULATE(count(Calendario[Mes]),'Seguimiento Bind Inversiones Sem'[Mes]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones BI",
+        "Seguimiento Bind Inversiones Sem",
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Calendario[Mes]",
+        "Operaciones BI[Fecha]",
+        "Seguimiento Bind Inversiones Sem[Mes]",
+        "Seguimiento Bind Inversiones mensual[Mes]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "COUNT",
+        "DAY",
+        "IF",
+        "MAX",
+        "MONTH",
+        "TODAY"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Facturacion",
+      "table": "Seguimiento IAM mensual",
+      "expression": "if(and( 'Seguimiento IAM mensual'[Facturaci\u00f3n] >convert(\"0\",INTEGER),'Seguimiento IAM mensual'[Facturaci\u00f3n] <=convert(\"5800\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento IAM mensual'[Facturaci\u00f3n]>convert(\"5800\",INTEGER),'Seguimiento IAM mensual'[Facturaci\u00f3n]<=convert(\"11600\",INTEGER)),convert(\"B\",STRING),if('Seguimiento IAM mensual'[Facturaci\u00f3n]>convert(\"11600\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IAM mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IAM mensual[Facturaci\u00f3n]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster PN",
+      "table": "Seguimiento IAM mensual",
+      "expression": "if(and( 'Seguimiento IAM mensual'[PN Promedio] >convert(\"0\",INTEGER),'Seguimiento IAM mensual'[PN Promedio] <=convert(\"5900000\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento IAM mensual'[PN Promedio]>convert(\"5900000\",INTEGER),'Seguimiento IAM mensual'[PN Promedio]<=convert(\"11800000\",INTEGER)),convert(\"B\",STRING),if('Seguimiento IAM mensual'[PN Promedio]>convert(\"11800000\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IAM mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IAM mensual[PN Promedio]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "dias del mes",
+      "table": "Seguimiento IAM mensual",
+      "expression": "if(month(today())='Seguimiento IAM mensual'[Mes], day(max('Operaciones IAM'[Fecha])),\n    \n    CALCULATE(count(Calendario[Mes]),'Seguimiento Bind Inversiones Sem'[Mes]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario",
+        "Operaciones IAM",
+        "Seguimiento Bind Inversiones Sem",
+        "Seguimiento IAM mensual"
+      ],
+      "referenced_columns": [
+        "Calendario[Mes]",
+        "Operaciones IAM[Fecha]",
+        "Seguimiento Bind Inversiones Sem[Mes]",
+        "Seguimiento IAM mensual[Mes]"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "COUNT",
+        "DAY",
+        "IF",
+        "MAX",
+        "MONTH",
+        "TODAY"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Facturacion",
+      "table": "Seguimiento IVSA mensual",
+      "expression": "if(and( 'Seguimiento IVSA mensual'[Facturaci\u00f3n]>convert(\"0\",INTEGER),'Seguimiento IVSA mensual'[Facturaci\u00f3n] <=convert(\"6800\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento IVSA mensual'[Facturaci\u00f3n]>convert(\"6800\",INTEGER),'Seguimiento IVSA mensual'[Facturaci\u00f3n]<=convert(\"13600\",INTEGER)),convert(\"B\",STRING),if('Seguimiento IVSA mensual'[Facturaci\u00f3n]>convert(\"13600\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IVSA mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IVSA mensual[Facturaci\u00f3n]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "cluster Vol",
+      "table": "Seguimiento IVSA mensual",
+      "expression": "if(and( 'Seguimiento IVSA mensual'[Volumen]>convert(\"0\",INTEGER),'Seguimiento IVSA mensual'[Volumen] <=convert(\"10000000\",INTEGER)),convert(\"C\",STRING),if(and('Seguimiento IVSA mensual'[Volumen]>convert(\"1000000\",INTEGER),'Seguimiento IVSA mensual'[Volumen]<=convert(\"20000000\",INTEGER)),convert(\"B\",STRING),if('Seguimiento IVSA mensual'[Volumen]>convert(\"20000000\",INTEGER),convert(\"A\",STRING), CONVERT(\"0\",STRING))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IVSA mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IVSA mensual[Volumen]"
+      ],
+      "dax_functions": [
+        "AND",
+        "CONVERT",
+        "IF"
+      ],
+      "complexity_score": 8
+    },
+    {
+      "name": "ID Semana",
+      "table": "Operaciones BI",
+      "expression": "\nVAR Fecha = [Fecha]\nVAR Anio = YEAR(Fecha)\nVAR Mes = MONTH(Fecha)\nVAR Dia = DAY(Fecha)\nVAR SemanaMes = MIN(ROUNDUP(Dia / 7, 0), IF(Mes IN {7, 10}, 5, 4))\nVAR SemanasAnteriores = \n    SWITCH(Mes,\n        1, 0,\n        2, 4,\n        3, 8,\n        4, 12,\n        5, 16,\n        6, 20,\n        7, 24,\n        8, 29,\n        9, 33,\n        10, 37,\n        11, 42,\n        12, 46\n    )\nVAR NumSemana = SemanasAnteriores + SemanaMes\nRETURN\nNumSemana & \"-\" & Anio",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY",
+        "IF",
+        "MIN",
+        "MONTH",
+        "ROUNDUP",
+        "SWITCH",
+        "YEAR"
+      ],
+      "complexity_score": 7
+    },
+    {
+      "name": "Agrupaci\u00f3n de Productos",
+      "table": "Productos",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Productos'[Producto]),\n  \"(En blanco)\",\n  'Productos'[Producto] IN {\"Cauciones\"},\n  \"Cauciones\",\n  'Productos'[Producto] IN {\"CPD\"},\n  \"CPD\",\n  'Productos'[Producto] IN {\"IAM Ahorro Pesos\",\n    \"IAM Renta Plus\",\n    \"IAM Renta Crecimiento\",\n    \"IAM Renta Variable\",\n    \"IAM Abierto Pymes\",\n    \"IAM Renta Capital\",\n    \"IAM Renta Dolares\",\n    \"IAM Estrategia\",\n    \"IAM Performance Americas\",\n    \"IAM Renta Balanceada\",\n    \"IAM Renta Global\",\n    \"IAM Renta Mixta\"},\n  \"FCI\",\n  'Productos'[Producto] IN {\"Indices\"},\n  \"Indices\",\n  'Productos'[Producto] IN {\"Letras\"},\n  \"Letras\",\n  'Productos'[Producto] IN {\"Mercado Fondo\"},\n  \"Mercado Fondo\",\n  'Productos'[Producto] IN {\"Obl Negociables\"},\n  \"Obl Negociables\",\n  'Productos'[Producto] IN {\"Custodia\",\n    \"Colocaciones\",\n    \"Acreencias\"},\n  \"Otros\",\n  'Productos'[Producto] IN {\"Privado\"},\n  \"Privado\",\n  'Productos'[Producto] IN {\"Publico\"},\n  \"Publico\",\n  'Productos'[Producto]\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Productos"
+      ],
+      "referenced_columns": [
+        "Productos[Producto]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 7
+    },
+    {
+      "name": "Productos por empresa",
+      "table": "Productos",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Productos'[Producto]),\n  \"(En blanco)\",\n  'Productos'[Producto] IN {\"IAM Ahorro Pesos\",\n    \"IAM Renta Plus\",\n    \"IAM Renta Crecimiento\",\n    \"IAM Renta Variable\",\n    \"IAM Abierto Pymes\",\n    \"IAM Renta Capital\",\n    \"IAM Renta Dolares\",\n    \"IAM Estrategia\",\n    \"IAM Performance Americas\",\n    \"IAM Renta Balanceada\",\n    \"IAM Renta Global\",\n    \"IAM Renta Mixta\"},\n  \"IAM\",\n  'Productos'[Producto] IN {\"CPD\",\n    \"Cauciones\",\n    \"Indices\",\n    \"Letras\",\n    \"Obl Negociables\",\n    \"Privado\",\n    \"Publico\",\n    \"Custodia\",\n    \"Colocaciones\",\n    \"Acreencias\"},\n  \"IVSA\",\n  'Productos'[Producto] IN {\"Mercado Fondo\"},\n  \"Mercado Fondo\",\n  'Productos'[Producto]\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Productos"
+      ],
+      "referenced_columns": [
+        "Productos[Producto]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 7
+    },
+    {
+      "name": "Bancas agrupados",
+      "table": "Bancas",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Bancas'[Banca]),\n  \"(En blanco)\",\n  'Bancas'[Banca] IN {\"Corporate\"},\n  \"Corporate\",\n  'Bancas'[Banca] IN {\"Digital\",\n    \"ACDI\"},\n  \"Digital & ACDI\",\n  'Bancas'[Banca] IN {\"Empresas\",\n    \"Red Comercial\",\n    \"SOC INTERMEDIAS Y VINCULADAS\",\n    \"BIND PAGOS\"},\n  \"Empresas\",\n  'Bancas'[Banca] IN {\"MELI\"},\n  \"MELI\",\n  'Bancas'[Banca] IN {\"Minorista\"},\n  \"Minorista\",\n  'Bancas'[Banca] IN {\"GDH\",\n    \"IVSA\",\n    \"Bind Garantias\",\n    \"Productores\",\n    \"Sin Banca\"},\n  \"Otros\",\n  'Bancas'[Banca] IN {\"Zafiro\"},\n  \"Zafiro\",\n  'Bancas'[Banca]\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bancas"
+      ],
+      "referenced_columns": [
+        "Bancas[Banca]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "ID Semana Correcto",
+      "table": "Presupuesto x sem x producto",
+      "expression": "\nVAR SemanasAnteriores = \n    SWITCH(\n        [Mes],\n        1, 0,\n        2, 4,\n        3, 8,\n        4, 12,\n        5, 16,\n        6, 20,\n        7, 24,\n        8, 29,   -- Julio tiene 5 semanas\n        9, 33,\n        10, 37,\n        11, 42,  -- Octubre tiene 5 semanas\n        12, 46\n    )\nVAR NumSemanaAnual = SemanasAnteriores + [Semana]\nRETURN\nNumSemanaAnual & \"-\" & [A\u00f1o]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "SWITCH"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "Cluster BI",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "if(LOOKUPVALUE('Clusters'[Valor], 'Clusters'[Cluster], 'Seguimiento Bind Inversiones Sem'[CLUSTER IAM] )>=LOOKUPVALUE('Clusters'[Valor], 'Clusters'[Cluster], 'Seguimiento Bind Inversiones Sem'[CLUSTER IVSA] ), 'Seguimiento Bind Inversiones Sem'[CLUSTER IAM], 'Seguimiento Bind Inversiones Sem'[CLUSTER IVSA])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Clusters",
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Clusters[Cluster]",
+        "Clusters[Valor]",
+        "Seguimiento Bind Inversiones Sem[CLUSTER IAM]",
+        "Seguimiento Bind Inversiones Sem[CLUSTER IVSA]"
+      ],
+      "dax_functions": [
+        "IF",
+        "LOOKUPVALUE"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "TIPO DE CLIENTE",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Seguimiento Bind Inversiones Sem'[Cluster BI]),\n  \"(En blanco)\",\n  'Seguimiento Bind Inversiones Sem'[Cluster BI] IN {\"B\",\n    \"C\",\n    \"CC\"},\n  \"A GESTIONAR\",\n  'Seguimiento Bind Inversiones Sem'[Cluster BI] IN {\"A\",\n    \"AA\",\n    \"BB\"},\n  \"ACTIVO\",\n  'Seguimiento Bind Inversiones Sem'[Cluster BI]\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[Cluster BI]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "TIPO DE CLIENTE IAM",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Seguimiento Bind Inversiones Sem'[CLUSTER IAM]),\n  \"(En blanco)\",\n  'Seguimiento Bind Inversiones Sem'[CLUSTER IAM] IN {\"B\",\n    \"C\",\n    \"CC\"},\n  \"A GESTIONAR\",\n  'Seguimiento Bind Inversiones Sem'[CLUSTER IAM] IN {\"A\",\n    \"AA\",\n    \"BB\"},\n  \"ACTIVO\",\n  'Seguimiento Bind Inversiones Sem'[CLUSTER IAM]\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[CLUSTER IAM]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "TIPO DE CLIENTE IVSA",
+      "table": "Seguimiento Bind Inversiones Sem",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Seguimiento Bind Inversiones Sem'[CLUSTER IVSA]),\n  \"(En blanco)\",\n  'Seguimiento Bind Inversiones Sem'[CLUSTER IVSA] IN {\"B\",\n    \"C\",\n    \"CC\"},\n  \"A GESTIONAR\",\n  'Seguimiento Bind Inversiones Sem'[CLUSTER IVSA] IN {\"A\",\n    \"AA\",\n    \"BB\"},\n  \"ACTIVO\",\n  'Seguimiento Bind Inversiones Sem'[CLUSTER IVSA]\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones Sem"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones Sem[CLUSTER IVSA]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "Cluster BI",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "if(LOOKUPVALUE('Clusters'[Valor], 'Clusters'[Cluster], 'Seguimiento Bind Inversiones mensual'[CLUSTER IAM] )>=LOOKUPVALUE('Clusters'[Valor], 'Clusters'[Cluster], 'Seguimiento Bind Inversiones mensual'[CLUSTER IVSA] ), 'Seguimiento Bind Inversiones mensual'[CLUSTER IAM], 'Seguimiento Bind Inversiones mensual'[CLUSTER IVSA])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Clusters",
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Clusters[Cluster]",
+        "Clusters[Valor]",
+        "Seguimiento Bind Inversiones mensual[CLUSTER IAM]",
+        "Seguimiento Bind Inversiones mensual[CLUSTER IVSA]"
+      ],
+      "dax_functions": [
+        "IF",
+        "LOOKUPVALUE"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "TIPO DE CLIENTE (IAM)",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Seguimiento Bind Inversiones mensual'[CLUSTER IAM]),\n  \"(En blanco)\",\n  'Seguimiento Bind Inversiones mensual'[CLUSTER IAM] IN {\"B\",\n    \"C\",\n    \"CC\"},\n  \"A GESTIONAR\",\n  'Seguimiento Bind Inversiones mensual'[CLUSTER IAM] IN {\"A\",\n    \"AA\",\n    \"BB\"},\n  \"ACTIVO\",\n  \"INACTIVO\"\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[CLUSTER IAM]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "TIPO DE CLIENTE (IVSA)",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Seguimiento Bind Inversiones mensual'[CLUSTER IVSA]),\n  \"(En blanco)\",\n  'Seguimiento Bind Inversiones mensual'[CLUSTER IVSA] IN {\"B\",\n    \"C\",\n    \"CC\"},\n  \"A GESTIONAR\",\n  'Seguimiento Bind Inversiones mensual'[CLUSTER IVSA] IN {\"A\",\n    \"AA\",\n    \"BB\"},\n  \"ACTIVO\",\n  \"INACTIVO\"\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[CLUSTER IVSA]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "TIPO DE CLIENTE BI",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Seguimiento Bind Inversiones mensual'[Cluster BI]),\n  \"(En blanco)\",\n  'Seguimiento Bind Inversiones mensual'[Cluster BI] IN {\"B\",\n    \"C\",\n    \"CC\"},\n  \"A GESTIONAR\",\n  'Seguimiento Bind Inversiones mensual'[Cluster BI] IN {\"A\",\n    \"AA\",\n    \"BB\"},\n  \"ACTIVO\",\n  \"INACTIVO\"\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[Cluster BI]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 6
+    },
+    {
+      "name": "TIPO DE CLIENTE",
+      "table": "Seguimiento IAM mensual",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Seguimiento IAM mensual'[CLUSTER]),\n  \"(En blanco)\",\n  'Seguimiento IAM mensual'[CLUSTER] IN {\"B\",\n    \"C\",\n    \"CC\"},\n  \"A GESTIONAR\",\n  'Seguimiento IAM mensual'[CLUSTER] IN {\"A\",\n    \"AA\",\n    \"BB\"},\n  \"ACTIVO\",\n  \"INACTIVO\"\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IAM mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IAM mensual[CLUSTER]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 5
+    },
+    {
+      "name": "TIPO DE CLIENTE",
+      "table": "Seguimiento IVSA mensual",
+      "expression": "SWITCH(\n  TRUE,\n  ISBLANK('Seguimiento IVSA mensual'[CLUSTER]),\n  \"(En blanco)\",\n  'Seguimiento IVSA mensual'[CLUSTER] IN {\"B\",\n    \"C\",\n    \"CC\"},\n  \"A GESTIONAR\",\n  'Seguimiento IVSA mensual'[CLUSTER] IN {\"A\",\n    \"AA\",\n    \"BB\"},\n  \"ACTIVO\",\n  \"INACTIVO\"\n)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IVSA mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IVSA mensual[CLUSTER]"
+      ],
+      "dax_functions": [
+        "ISBLANK",
+        "SWITCH"
+      ],
+      "complexity_score": 5
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "NroTrimestre",
+      "table": "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "expression": "INT(([NroMes] + 2) / 3)",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "INT"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "PN Prom",
+      "table": "Seguimiento Bind Inversiones mensual",
+      "expression": "'Seguimiento Bind Inversiones mensual'[PN (no usar)]/ 'Seguimiento Bind Inversiones mensual'[dias del mes]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento Bind Inversiones mensual[PN (no usar)]",
+        "Seguimiento Bind Inversiones mensual[dias del mes]"
+      ],
+      "dax_functions": [
+        "PN"
+      ],
+      "complexity_score": 2
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "A\u00f1o",
+      "table": "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "expression": "YEAR([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "YEAR"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "D\u00eda",
+      "table": "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "expression": "DAY([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "DAY"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Mes",
+      "table": "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "expression": "FORMAT([Date], \"MMMM\")",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "FORMAT"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "NroMes",
+      "table": "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "expression": "MONTH([Date])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [
+        "MONTH"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "PN Promedio",
+      "table": "Seguimiento IAM mensual",
+      "expression": "'Seguimiento IAM mensual'[patrimonio (no usar)]/'Seguimiento IAM mensual'[dias del mes]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento IAM mensual"
+      ],
+      "referenced_columns": [
+        "Seguimiento IAM mensual[dias del mes]",
+        "Seguimiento IAM mensual[patrimonio (no usar)]"
+      ],
+      "dax_functions": [
+        "PATRIMONIO"
+      ],
+      "complexity_score": 1
+    },
+    {
+      "name": "Trimestre",
+      "table": "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Trimestre",
+      "table": "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "expression": "\"Trim. \" & [NroTrimestre]",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    },
+    {
+      "name": "Columna",
+      "table": "Presupuesto x sem x producto",
+      "expression": "",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "referenced_columns": [],
+      "dax_functions": [],
+      "complexity_score": 0
+    }
+  ],
+  "calculated_tables": [
+    {
+      "name": "DateTableTemplate_87f2cac1-29e4-49c6-8268-c17c71d788bd",
+      "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE"
+      ]
+    },
+    {
+      "name": "Seguimiento IVSA mensual",
+      "expression": "SUMMARIZE('Boletos IVSA','Bind Inversiones'[N\u00ba Bind Inv],'Bind Inversiones'[Cuotapartista],Bancas[Banca],'Oficial Banco'[Oficial Banco], 'Oficial BI'[Oficial BI],Calendario[Mes], \"Volumen\", sum('Boletos IVSA'[Volumen]),\"Facturaci\u00f3n\",sum('Boletos IVSA'[Fee]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bancas",
+        "Bind Inversiones",
+        "Boletos IVSA",
+        "Calendario",
+        "Oficial BI",
+        "Oficial Banco"
+      ],
+      "dax_functions": [
+        "SUM",
+        "SUMMARIZE"
+      ]
+    },
+    {
+      "name": "Seguimiento Bind Inversiones Sem",
+      "expression": "SUMMARIZE('Operaciones BI', 'Bind Inversiones'[N\u00ba Bind Inv],'Bind Inversiones'[Cuotapartista],Bancas[Banca],'Oficial Banco'[Oficial Banco],'Oficial BI'[Oficial BI], 'Calendario semanas'[ID Semana], 'Calendario semanas'[Mes], 'Calendario semanas'[A\u00f1o], \"volumen\",sum('Operaciones BI'[Volumen]),\"PN\",sum('Operaciones BI'[PN])/7,\"fee IAM\",calculate(sum('Operaciones BI'[Facturacion]), FILTER('Operaciones BI','Operaciones BI'[Empresa]=CONVERT(\"1\",INTEGER))), \"fee IVSA\",calculate(sum('Operaciones BI'[Facturacion]), FILTER('Operaciones BI','Operaciones BI'[Empresa]=CONVERT(\"2\",INTEGER))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bancas",
+        "Bind Inversiones",
+        "Calendario semanas",
+        "Oficial BI",
+        "Oficial Banco",
+        "Operaciones BI"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "CONVERT",
+        "FILTER",
+        "SUM",
+        "SUMMARIZE"
+      ]
+    },
+    {
+      "name": "Seguimiento IAM mensual",
+      "expression": "SUMMARIZE('Operaciones IAM','Bind Inversiones'[N\u00ba Bind Inv],'Bind Inversiones'[Cuotapartista],Bancas[Banca],'Oficial Banco'[Oficial Banco], 'Oficial BI'[Oficial BI],Calendario[Mes],\"patrimonio (no usar)\", sum('Operaciones IAM'[$ PN Cuotap. (23/01/22)]),\"Facturaci\u00f3n\",sum('Operaciones IAM'[$ Facturaci\u00f3n CP]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bancas",
+        "Bind Inversiones",
+        "Calendario",
+        "Oficial BI",
+        "Oficial Banco",
+        "Operaciones IAM"
+      ],
+      "dax_functions": [
+        "CUOTAP.",
+        "PATRIMONIO",
+        "SUM",
+        "SUMMARIZE"
+      ]
+    },
+    {
+      "name": "LocalDateTable_6659bb53-d4f6-4ccc-acd5-18ca132da20d",
+      "expression": "Calendar(Date(Year(MIN('CPD-cheques-vendidos'[Fec. Pago ])), 1, 1), Date(Year(MAX('CPD-cheques-vendidos'[Fec. Pago ])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "CPD-cheques-vendidos"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_f8188739-932a-4162-973f-dfb89b57b593",
+      "expression": "Calendar(Date(Year(MIN('Calendario'[Dia])), 1, 1), Date(Year(MAX('Calendario'[Dia])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Calendario"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "Seguimiento Bind Inversiones mensual",
+      "expression": "SUMMARIZE('Operaciones BI', 'Bind Inversiones'[N\u00ba Bind Inv],'Bind Inversiones'[Cuotapartista] ,Bancas[Banca],'Oficial Banco'[Oficial Banco],'Bind Inversiones'[fecha inicio],'Oficial BI'[Oficial BI], 'Calendario semanas'[Mes], 'Calendario semanas'[A\u00f1o],\"n\u00b0 Banca\",sum('Bind Inversiones'[Banca]), \"volumen\",sum('Operaciones BI'[Volumen]),\"PN (no usar)\",sum('Operaciones BI'[PN]),\"fee IAM\",calculate(sum('Operaciones BI'[Facturacion]), FILTER('Operaciones BI','Operaciones BI'[Empresa]=CONVERT(\"1\",INTEGER))), \"fee IVSA\",calculate(sum('Operaciones BI'[Facturacion]), FILTER('Operaciones BI','Operaciones BI'[Empresa]=CONVERT(\"2\",INTEGER))))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bancas",
+        "Bind Inversiones",
+        "Calendario semanas",
+        "Oficial BI",
+        "Oficial Banco",
+        "Operaciones BI"
+      ],
+      "dax_functions": [
+        "CALCULATE",
+        "CONVERT",
+        "FILTER",
+        "PN",
+        "SUM",
+        "SUMMARIZE"
+      ]
+    },
+    {
+      "name": "Tabla",
+      "expression": "SUMMARIZE('Operaciones BI','Bind Inversiones'[Cuotapartista], Productos[Producto],\"volumen\", sum('Operaciones BI'[Volumen]))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones",
+        "Operaciones BI",
+        "Productos"
+      ],
+      "dax_functions": [
+        "SUM",
+        "SUMMARIZE"
+      ]
+    },
+    {
+      "name": "Pareto",
+      "expression": "SUMMARIZE(ALLSELECTED('Operaciones BI'), 'Operaciones BI'[N\u00ba Bind Inversiones],\"_Total\", [Facturaci\u00f3n YTD])",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "dax_functions": [
+        "ALLSELECTED",
+        "SUMMARIZE"
+      ]
+    },
+    {
+      "name": "LocalDateTable_e7dcb9bf-022b-427b-b9c2-6ff9d50003c5",
+      "expression": "Calendar(Date(Year(MIN('Operaciones BI (2)'[Fecha])), 1, 1), Date(Year(MAX('Operaciones BI (2)'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI (2)"
+      ],
+      "dax_functions": [
+        "BI",
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_7ac6c5b8-4018-4f7d-bee3-be4301dc36f8",
+      "expression": "Calendar(Date(Year(MIN('Operaciones BI 3'[Fecha])), 1, 1), Date(Year(MAX('Operaciones BI 3'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI 3"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_21aaf88e-9560-4264-9769-1b923a1eb543",
+      "expression": "Calendar(Date(Year(MIN('boletos IAM 3'[Fecha])), 1, 1), Date(Year(MAX('boletos IAM 3'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "boletos IAM 3"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_05265c9b-d7dc-4ed3-aa23-866fc1bc28d5",
+      "expression": "Calendar(Date(Year(MIN('Bind Inversiones'[fecha inicio])), 1, 1), Date(Year(MAX('Bind Inversiones'[fecha inicio])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Bind Inversiones"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_b3ede445-f065-4bf2-9a1b-64e8f0b84f9f",
+      "expression": "Calendar(Date(Year(MIN('Referidos'[Fecha])), 1, 1), Date(Year(MAX('Referidos'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Referidos"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_0c52aabc-3d0f-4cd0-a3d7-5d040abbadbf",
+      "expression": "Calendar(Date(Year(MIN('Operaciones BI 4'[Fecha])), 1, 1), Date(Year(MAX('Operaciones BI 4'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI 4"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_952f923b-f7a0-409f-8c27-f9d8fc155d49",
+      "expression": "Calendar(Date(Year(MIN('boletos IAM 4'[Fecha])), 1, 1), Date(Year(MAX('boletos IAM 4'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "boletos IAM 4"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_5487c9d7-86cb-4736-8a14-52865b52a6dc",
+      "expression": "Calendar(Date(Year(MIN('Operaciones BI 5'[Fecha])), 1, 1), Date(Year(MAX('Operaciones BI 5'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI 5"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_036f2928-2841-4ddb-9864-a544e4cd9cd3",
+      "expression": "Calendar(Date(Year(MIN('boletos IAM 5'[Fecha])), 1, 1), Date(Year(MAX('boletos IAM 5'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "boletos IAM 5"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_f20b6962-c6b9-462c-afcc-6d50c642d949",
+      "expression": "Calendar(Date(Year(MIN('Operaciones BI 6'[Fecha])), 1, 1), Date(Year(MAX('Operaciones BI 6'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI 6"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_b6b1a558-467e-4bcd-89e8-629d03736099",
+      "expression": "Calendar(Date(Year(MIN('boletos IAM 6'[Fecha])), 1, 1), Date(Year(MAX('boletos IAM 6'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "boletos IAM 6"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_eee5078f-7a4b-481c-bae5-2a1dbcfd9b62",
+      "expression": "Calendar(Date(Year(MIN('Operaciones BI'[Fecha])), 1, 1), Date(Year(MAX('Operaciones BI'[Fecha])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Operaciones BI"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    },
+    {
+      "name": "LocalDateTable_07a467dc-e26b-4ab4-8cea-ac56e7981074",
+      "expression": "Calendar(Date(Year(MIN('Seguimiento Bind Inversiones mensual'[fecha inicio])), 1, 1), Date(Year(MAX('Seguimiento Bind Inversiones mensual'[fecha inicio])), 12, 31))",
+      "report": "SEGUIMIENTO COMERCIAL BIND INVERSIONES 3.pbix",
+      "referenced_tables": [
+        "Seguimiento Bind Inversiones mensual"
+      ],
+      "dax_functions": [
+        "CALENDAR",
+        "DATE",
+        "MAX",
+        "MIN",
+        "YEAR"
+      ]
+    }
+  ],
+  "dependency_map": {
+    "Operaciones BI[Performance]": [
+      "Operaciones BI",
+      "Presupuesto x sem y of Banco"
+    ],
+    "Operaciones BI[performance producto]": [
+      "Operaciones BI",
+      "Presupuesto x sem x producto"
+    ],
+    "Operaciones BI[PN Prom bi]": [
+      "Operaciones BI"
+    ],
+    "Operaciones IAM[PN Prom]": [
+      "Operaciones IAM"
+    ],
+    "Boletos IVSA[indice fact/vol]": [
+      "Boletos IVSA"
+    ],
+    "Medidas[PEA CPD Empresa s/ BG]": [
+      "CPD-cheques-vendidos",
+      "Presupuesto x sem x producto"
+    ],
+    "Medidas[porcentaje de participacion]": [
+      "CPD-cheques-vendidos"
+    ],
+    "Medidas[FC CPD s/BG]": [
+      "CPD-cheques-vendidos",
+      "Operaciones BI",
+      "Productos"
+    ],
+    "Medidas[PEA CPD Empresa]": [
+      "Presupuesto x sem x producto"
+    ],
+    "Medidas[fc/vol]": [
+      "Operaciones BI"
+    ],
+    "Medidas[vol/q ops]": [
+      "Operaciones BI"
+    ],
+    "Medidas[Facturaci\u00f3n YTD]": [
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[PEA YTD]": [
+      "Calendario semanas",
+      "Presupuesto x sem y of Banco"
+    ],
+    "Medidas[Facturaci\u00f3n 2021]": [
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[Comprativo a\u00f1o anterior]": [
+      "Operaciones BI"
+    ],
+    "Medidas[suscipriones netas acumuladas]": [
+      "Calendario",
+      "Canal de Operaci\u00f3n BI"
+    ],
+    "Medidas[Facturaci\u00f3n acumulada]": [
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[modelo Minorista]": [
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[PN modelo minorista]": [
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[Vol total]": [
+      "Operaciones BI"
+    ],
+    "Medidas[fc/vol Total]": [
+      "Medidas",
+      "Operaciones BI"
+    ],
+    "Medidas[DIAS DEL MES]": [
+      "Calendario"
+    ],
+    "Medidas[Cant Clientes]": [
+      "Bind Inversiones"
+    ],
+    "Medidas[Performance BI]": [
+      "Operaciones BI",
+      "Presupuesto x sem y of Bi"
+    ],
+    "Medidas[Crecimiento]": [
+      "Presupuesto x sem y of Banco"
+    ],
+    "Medidas[Diferencia]": [
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[Facturaci\u00f3n 2022]": [
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[PEA Productos YTD]": [
+      "Calendario",
+      "Presupuesto x sem x producto"
+    ],
+    "Medidas[Cant de operaciones]": [
+      "Boletos IVSA",
+      "Operaciones por canal IAM"
+    ],
+    "Medidas[FC CPD Compra s/BG]": [
+      "Boletos IVSA",
+      "CPD-cheques-vendidos"
+    ],
+    "Medidas[FC CPD Venta s/BG y Bain]": [
+      "Boletos IVSA",
+      "CPD-cheques-vendidos",
+      "Oficial Banco"
+    ],
+    "Medidas[Saldos pesos hoy]": [
+      "Saldos ivsa"
+    ],
+    "Medidas[Saldos hoy MEP]": [
+      "Saldos ivsa"
+    ],
+    "Medidas[Saldos hoy CABLE]": [
+      "Saldos ivsa"
+    ],
+    "Medidas[Clientes Operativos]": [
+      "Bind Inversiones",
+      "Operaciones BI"
+    ],
+    "Medidas[Clientes Operativos mes anterior]": [
+      "Bind Inversiones",
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[DOLAR MEP HOY]": [
+      "Calendario",
+      "Saldos ivsa"
+    ],
+    "Medidas[Saldo semana anterior MEP]": [
+      "Calendario",
+      "Saldos ivsa"
+    ],
+    "Medidas[DOLAR CABLE HOY]": [
+      "Calendario",
+      "Saldos ivsa"
+    ],
+    "Medidas[Saldo semana anterior CABLE]": [
+      "Calendario",
+      "Saldos ivsa"
+    ],
+    "Medidas[Saldo al inicio CABLE]": [
+      "Calendario",
+      "Saldos ivsa"
+    ],
+    "Medidas[saldo a fin de mes CABLE]": [
+      "Calendario",
+      "Saldos ivsa"
+    ],
+    "Medidas[Saldo al inicio MEP]": [
+      "Calendario",
+      "Saldos ivsa"
+    ],
+    "Medidas[Saldo dia anterior]": [
+      "Calendario",
+      "Saldos ivsa"
+    ],
+    "Medidas[cant de Op web]": [
+      "Canal de Operaci\u00f3n BI"
+    ],
+    "Medidas[Cant OP x spread]": [
+      "Operaciones BI"
+    ],
+    "Medidas[vol x spread]": [
+      "Operaciones BI"
+    ],
+    "Canal de Operaci\u00f3n BI[% OP]": [
+      "Canal de Operaci\u00f3n BI"
+    ],
+    "Canal de Operaci\u00f3n BI[% Canal Digital]": [
+      "Canal de Operaci\u00f3n BI"
+    ],
+    "Canal de Operaci\u00f3n BI[% Canal BOT]": [
+      "Canal de Operaci\u00f3n BI"
+    ],
+    "Canal de Operaci\u00f3n BI[% vol de OP]": [
+      "Canal de Operaci\u00f3n BI"
+    ],
+    "Embajadores[Comisi\u00f3n embajadores]": [
+      "Operaciones BI"
+    ],
+    "PEA embajadores[Perfromance Embajadores]": [
+      "Operaciones BI",
+      "PEA embajadores"
+    ],
+    "Pareto[Pareto]": [
+      "Operaciones BI"
+    ],
+    "Pareto[Pareto %]": [
+      "Operaciones BI"
+    ],
+    "Pareto[clasificacion ABC]": [
+      "Pareto"
+    ],
+    "Moneda de saldos[Moneda seleccionada]": [
+      "Moneda de saldos"
+    ],
+    "Moneda de saldos[Medida a usar]": [
+      "Medidas",
+      "Moneda de saldos"
+    ],
+    "Moneda de saldos[Pesos Promedio]": [
+      "Saldos ivsa"
+    ],
+    "Moneda de saldos[Mep Promedio]": [
+      "Saldos ivsa"
+    ],
+    "Moneda de saldos[Cable Promedio]": [
+      "Saldos ivsa"
+    ],
+    "Moneda de saldos[Medida a usar Promedio]": [
+      "Moneda de saldos"
+    ],
+    "Moneda de saldos[Medida a usar por cliente]": [
+      "Bind Inversiones",
+      "Moneda de saldos",
+      "Saldos ivsa"
+    ],
+    "Moneda de saldos[saldo a ayer-1]": [
+      "Calendario"
+    ],
+    "Moneda de saldos[Saldo a ayer -2]": [
+      "Calendario"
+    ],
+    "Moneda de saldos[Saldo a ayer -3]": [
+      "Calendario"
+    ],
+    "Moneda de saldos[Saldo ayer -4]": [
+      "Calendario"
+    ],
+    "Bind Inversiones[Media acumulada de Recuento de N\u00ba Bind Inv]": [
+      "Bind Inversiones"
+    ],
+    "Bind Inversiones[MTD de Recuento de N\u00ba Bind Inv]": [
+      "Bind Inversiones"
+    ],
+    "Medidas[Total acumulado de Cant Clientes en A\u00f1o]": [
+      "Bind Inversiones"
+    ],
+    "Medidas[Clientes acumulados]": [
+      "Bind Inversiones"
+    ],
+    "Medidas[Clientes Nuevos]": [
+      "Bind Inversiones"
+    ],
+    "Medidas[fc con referidos]": [
+      "Operaciones BI",
+      "Referidos"
+    ],
+    "Medidas[performance con referidoss]": [
+      "Presupuesto x sem y of BI"
+    ],
+    "Medidas[Facturaci\u00f3n - YTD]": [
+      "Calendario",
+      "Operaciones BI"
+    ],
+    "Medidas[Facturaci\u00f3n 2023]": [
+      "Calendario",
+      "Operaciones BI"
+    ]
+  }
+}
