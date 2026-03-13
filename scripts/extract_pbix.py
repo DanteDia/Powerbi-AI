@@ -254,7 +254,13 @@ def extract_all(input_dir, output_dir):
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
-    pbix_files = sorted(input_path.glob("*.pbix"))
+    if input_path.is_file():
+        pbix_files = [input_path] if input_path.suffix.lower() == ".pbix" else []
+    else:
+        pbix_files = sorted(
+            path for path in input_path.glob("*.pbix") if path.is_file()
+        )
+
     if not pbix_files:
         print(f"No .pbix files found in {input_dir}")
         return []

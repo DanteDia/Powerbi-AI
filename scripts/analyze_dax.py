@@ -9,6 +9,7 @@ Produces:
 """
 
 import json
+import math
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -41,21 +42,57 @@ DAX_TIME_INTELLIGENCE = {
 }
 
 
+def _normalize_text(value):
+    """Normalize extracted values that may be None/NaN/non-strings."""
+    if value is None:
+        return ""
+    if isinstance(value, float) and math.isnan(value):
+        return ""
+    if isinstance(value, str):
+        return value
+    return str(value)
+
+
 def _extract_table_references(dax_expression):
     """Extract table and column references from a DAX expression."""
+    dax_expression = _normalize_text(dax_expression)
     if not dax_expression:
         return [], []
 
-    # Match 'TableName'[ColumnName] or TableName[ColumnName]
-    col_refs = re.findall(r"'?([^'\[\]]+)'?\[([^\]]+)\]", dax_expression)
-    tables = sorted(set(t.strip() for t, c in col_refs))
-    columns = sorted(set(f"{t.strip()}[{c}]" for t, c in col_refs))
+    col_refs = []
+
+    quoted_pattern = re.compile(
+        r"'([^']+)'\[([^\]]+)\](?:\.\[([^\]]+)\])?"
+    )
+    unquoted_pattern = re.compile(
+        r"(?:(?<=^)|(?<=[\s,(=+\-*/]))"
+        r"([A-Za-zÀ-ÿ_][A-Za-zÀ-ÿ0-9_ .-]*)\[([^\]]+)\](?:\.\[([^\]]+)\])?"
+    )
+
+    for table, column, level in quoted_pattern.findall(dax_expression):
+        col_refs.append((table.strip(), column.strip(), level.strip()))
+
+    for table, column, level in unquoted_pattern.findall(dax_expression):
+        cleaned_table = table.strip()
+        if not cleaned_table:
+            continue
+        col_refs.append((cleaned_table, column.strip(), level.strip()))
+
+    tables = sorted({table for table, _, _ in col_refs if table})
+    columns = sorted(
+        {
+            f"{table}[{column}]" + (f".[{level}]" if level else "")
+            for table, column, level in col_refs
+            if table and column
+        }
+    )
 
     return tables, columns
 
 
 def _extract_dax_functions(dax_expression):
     """Extract DAX function names used in an expression."""
+    dax_expression = _normalize_text(dax_expression)
     if not dax_expression:
         return []
     # Match function calls: FUNCTIONNAME(
@@ -65,6 +102,7 @@ def _extract_dax_functions(dax_expression):
 
 def _score_complexity(dax_expression, functions_used):
     """Score the complexity of a DAX expression for migration difficulty."""
+    dax_expression = _normalize_text(dax_expression)
     if not dax_expression:
         return 0
 
@@ -153,9 +191,9 @@ def analyze_dax(extracted_dir, output_dir):
         # Process DAX measures
         # pbixray columns: TableName, Name, Expression, DisplayFolder, Description
         for measure in extraction.get("dax_measures", []):
-            name = measure.get("Name", "")
-            table = measure.get("TableName", "")
-            expression = measure.get("Expression", "")
+            name = _normalize_text(measure.get("Name", ""))
+            table = _normalize_text(measure.get("TableName", ""))
+            expression = _normalize_text(measure.get("Expression", ""))
 
             tables_ref, columns_ref = _extract_table_references(expression)
             functions = _extract_dax_functions(expression)
@@ -182,9 +220,9 @@ def analyze_dax(extracted_dir, output_dir):
         # Process calculated columns
         # pbixray columns: TableName, ColumnName, Expression
         for col in extraction.get("dax_columns", []):
-            name = col.get("ColumnName", "")
-            table = col.get("TableName", "")
-            expression = col.get("Expression", "")
+            name = _normalize_text(col.get("ColumnName", ""))
+            table = _normalize_text(col.get("TableName", ""))
+            expression = _normalize_text(col.get("Expression", ""))
 
             tables_ref, columns_ref = _extract_table_references(expression)
             functions = _extract_dax_functions(expression)
@@ -205,8 +243,8 @@ def analyze_dax(extracted_dir, output_dir):
         # Process calculated tables
         # pbixray columns: TableName, Expression
         for tbl in extraction.get("dax_tables", []):
-            name = tbl.get("TableName", "")
-            expression = tbl.get("Expression", "")
+            name = _normalize_text(tbl.get("TableName", ""))
+            expression = _normalize_text(tbl.get("Expression", ""))
 
             tables_ref, columns_ref = _extract_table_references(expression)
             functions = _extract_dax_functions(expression)

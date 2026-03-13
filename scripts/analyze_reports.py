@@ -10,8 +10,64 @@ Produces:
 """
 
 import json
+import math
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
+
+
+def _normalize_text(value):
+    """Normalize extracted values that may be None/NaN/non-strings."""
+    if value is None:
+        return ""
+    if isinstance(value, float) and math.isnan(value):
+        return ""
+    if isinstance(value, str):
+        return value
+    return str(value)
+
+
+def _unwrap_aggregation(query_ref):
+    """Strip simple wrappers like Sum(Table.Column) from queryRef values."""
+    cleaned = _normalize_text(query_ref).strip()
+    pattern = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*\((.+)\)$")
+    while cleaned:
+        match = pattern.match(cleaned)
+        if not match:
+            break
+        inner = match.group(1).strip()
+        if inner.count("(") != inner.count(")"):
+            break
+        cleaned = inner
+    return cleaned
+
+
+def _parse_query_ref(query_ref):
+    """Parse a report queryRef into either a table-field pair or a measure."""
+    cleaned = _unwrap_aggregation(query_ref)
+    if not cleaned:
+        return None
+
+    if cleaned.startswith("[") and cleaned.endswith("]"):
+        return {"kind": "measure", "name": cleaned[1:-1].strip()}
+
+    if "." not in cleaned:
+        return {"kind": "measure", "name": cleaned}
+
+    table, field = cleaned.split(".", 1)
+    table = table.strip().strip("'")
+    field = field.strip()
+    if field.startswith("[") and field.endswith("]"):
+        field = field[1:-1].strip()
+
+    if not table or not field:
+        return {"kind": "measure", "name": cleaned}
+
+    return {
+        "kind": "field",
+        "table": table,
+        "field": field,
+    }
 
 
 def _load_extracted(extracted_dir):
@@ -50,16 +106,19 @@ def _analyze_single_report(extraction):
             # Track data field usage
             for role, fields in visual.get("dataFields", {}).items():
                 for field_ref in fields:
-                    # Parse "Table.Column" or "Table.Measure" references
-                    if "." in field_ref:
-                        parts = field_ref.split(".", 1)
-                        table = parts[0]
-                        col = parts[1]
-                        page_data_fields[table].add(col)
-                        all_data_fields[table].add(col)
+                    parsed_ref = _parse_query_ref(field_ref)
+                    if not parsed_ref:
+                        continue
+
+                    if parsed_ref["kind"] == "field":
+                        table = parsed_ref["table"]
+                        field = parsed_ref["field"]
+                        page_data_fields[table].add(field)
+                        all_data_fields[table].add(field)
                     else:
-                        all_measures_used.add(field_ref)
-                        page_measures.add(field_ref)
+                        measure_name = parsed_ref["name"]
+                        all_measures_used.add(measure_name)
+                        page_measures.add(measure_name)
 
         page_summary = {
             "name": page.get("displayName", page.get("name", "")),
@@ -71,6 +130,7 @@ def _analyze_single_report(extraction):
             "fields_used": {
                 t: sorted(cols) for t, cols in page_data_fields.items()
             },
+            "measures_referenced": sorted(page_measures),
         }
         page_summaries.append(page_summary)
 
@@ -85,6 +145,7 @@ def _analyze_single_report(extraction):
         "fields_used": {
             t: sorted(cols) for t, cols in all_data_fields.items()
         },
+        "measures_referenced": sorted(all_measures_used),
         "pages": page_summaries,
     }
 
