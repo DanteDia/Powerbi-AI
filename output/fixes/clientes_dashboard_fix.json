@@ -1,0 +1,122 @@
+{
+  "target_page": "Clientes nuevos y Operativos PARA COMITE",
+  "root_cause": {
+    "broken_relationship": "Operaciones BI[Fecha] -> nan[nan]",
+    "missing_relationship": {
+      "from_table": "Operaciones BI",
+      "from_column": "Fecha",
+      "to_table": "Calendario",
+      "to_column": "Dia",
+      "cardinality": "Many-to-One",
+      "cross_filter": "Single",
+      "description": "This is the CRITICAL fix. Without this relationship, PREVIOUSMONTH/DATEADD on Calendario[Dia] cannot filter Operaciones BI, causing all MoM measures to return BLANK/zero."
+    },
+    "filter_conflict": "Año/Mes slicers block PREVIOUSMONTH from accessing previous year data"
+  },
+  "relationship_fix": {
+    "from_table": "Operaciones BI",
+    "from_column": "Fecha",
+    "to_table": "Calendario",
+    "to_column": "Dia",
+    "cardinality": "Many-to-One",
+    "cross_filter": "Single",
+    "description": "This is the CRITICAL fix. Without this relationship, PREVIOUSMONTH/DATEADD on Calendario[Dia] cannot filter Operaciones BI, causing all MoM measures to return BLANK/zero."
+  },
+  "dax_changes": {
+    "Calendario[MesAño]": {
+      "type": "calculated_column",
+      "table": "Calendario",
+      "name": "MesAño",
+      "expression": "FORMAT(Calendario[Dia], \"YYYY-MM\")",
+      "description": "Calculated column for month-year slicer. Allows filtering by month without blocking previous month data."
+    },
+    "Clientes Operativos mes anterior": {
+      "type": "measure",
+      "table": "Medidas",
+      "name": "Clientes Operativos mes anterior",
+      "expression": "CALCULATE(\n    DISTINCTCOUNT('Operaciones BI'[Nº Bind Inversiones]),\n    DATEADD(Calendario[Dia], -1, MONTH),\n    REMOVEFILTERS('Bind Inversiones'[fecha inicio])\n)",
+      "description": "REPLACE existing. Uses DATEADD instead of PREVIOUSMONTH for robustness with partial month selections."
+    },
+    "dif mes anterior": {
+      "type": "measure",
+      "table": "Medidas",
+      "name": "dif mes anterior",
+      "expression": "VAR _current = [Clientes Operativos]\nVAR _previous = [Clientes Operativos mes anterior]\nRETURN\n    IF(\n        NOT ISBLANK(_previous) && NOT ISBLANK(_current),\n        _current - _previous,\n        BLANK()\n    )",
+      "description": "REPLACE existing. Returns BLANK instead of 0 when data is missing."
+    },
+    "% cambio MoM Clientes Operativos": {
+      "type": "measure",
+      "table": "Medidas",
+      "name": "% cambio MoM Clientes Operativos",
+      "expression": "VAR _current = [Clientes Operativos]\nVAR _previous = [Clientes Operativos mes anterior]\nRETURN\n    IF(\n        NOT ISBLANK(_previous) && _previous <> 0,\n        DIVIDE(_current - _previous, _previous),\n        BLANK()\n    )",
+      "description": "NEW. Percentage change month-over-month for Clientes Operativos."
+    },
+    "Clientes Nuevos mes anterior": {
+      "type": "measure",
+      "table": "Medidas",
+      "name": "Clientes Nuevos mes anterior",
+      "expression": "CALCULATE(\n    COUNT('Bind Inversiones'[Nº Bind Inv]),\n    DATEADD(Calendario[Dia], -1, MONTH)\n)",
+      "description": "NEW. Count of new clients from previous month."
+    },
+    "dif Clientes Nuevos MoM": {
+      "type": "measure",
+      "table": "Medidas",
+      "name": "dif Clientes Nuevos MoM",
+      "expression": "VAR _current = [Clientes Nuevos]\nVAR _previous = [Clientes Nuevos mes anterior]\nRETURN\n    IF(\n        NOT ISBLANK(_previous) && NOT ISBLANK(_current),\n        _current - _previous,\n        BLANK()\n    )",
+      "description": "NEW. Month-over-month difference for Clientes Nuevos."
+    }
+  },
+  "visual_layout": {
+    "page_size": {
+      "width": 1280,
+      "height": 720
+    },
+    "visuals": [
+      {
+        "type": "slicer",
+        "field": "Calendario.MesAño",
+        "position": "top-left"
+      },
+      {
+        "type": "slicer",
+        "field": "Bancas.Banca",
+        "position": "top-center"
+      },
+      {
+        "type": "card",
+        "measure": "Clientes Operativos"
+      },
+      {
+        "type": "card",
+        "measure": "dif mes anterior"
+      },
+      {
+        "type": "card",
+        "measure": "% cambio MoM Clientes Operativos"
+      },
+      {
+        "type": "card",
+        "measure": "Clientes Nuevos"
+      },
+      {
+        "type": "tableEx",
+        "columns": [
+          "Banca",
+          "Clientes Operativos",
+          "Clientes Nuevos",
+          "dif mes anterior",
+          "% cambio MoM",
+          "dif Clientes Nuevos MoM"
+        ]
+      },
+      {
+        "type": "clusteredBarChart",
+        "category": "Banca",
+        "measures": [
+          "Clientes Operativos",
+          "Clientes Operativos mes anterior"
+        ]
+      }
+    ]
+  }
+}
